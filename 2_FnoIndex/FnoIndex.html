@@ -355,7 +355,7 @@
 	      OptionChain(data); // Update Option Chain
 	      //FutData(data); // Update Future Data
               GetSentiment(data);
-              PCRPlot();
+              //PCRPlot();
 	    } else {
 	      console.error("Failed to update website: Data could not be loaded.");
 	    }
@@ -371,7 +371,15 @@
 		    OptionChain(data);
 		    //FutData(data);
 		    GetSentiment(data);
-        	    PCRPlot();
+        	    //PCRPlot();
+	    }
+    })();
+
+    (async function() {
+	    csvfile = await loadCSV('pcr.csv')
+	    if (csvfile)
+	    {
+		    PCRPlot(csvfile);
 	    }
     })();
 
