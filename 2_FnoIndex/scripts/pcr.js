@@ -46,7 +46,7 @@ async function loadCSV(filePath) {
   async function PCRPlot() {
     try {
       // Load CSV file
-      const csvData = await loadCSV('../pcr.csv'); // Adjust the path if needed
+      const csvData = await loadCSV('https://github.com/SirshenduSamanta/FnoData/blob/main/2_FnoIndex/pcr.csv'); // Adjust the path if needed
       const chartData = parseCSV(csvData);
 
       // Create the chart
