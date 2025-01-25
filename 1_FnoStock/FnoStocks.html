@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Fno Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    select, table {
+      margin-top: 10px;
+    }
+    .main-container {
+            display : flex;
+            gap : 30px;
+            justify-content: center;
+    }
+
+    .table-container {
+            display: flex;
+            /*justify-content: space-between;*/
+            align-items: flex-start; /* Align tables at the top */
+            gap: 70px; /* Space between tables */
+            /*width: 1000px;*/
+        }
+    table {
+      border-collapse: collapse;
+      margin-top: 50px; /* Add space only at the top */
+      /* border: 1px solid #ccc;  Table border */
+    }
+    #option-chain {
+      width: 900px;
+      height: 300px;/* Fixed height for each table */
+      overflow-y: auto; /* Add scroll if content overflows */
+    }
+    #FutData {
+      width: 800px;
+      /* height: 300px; Fixed height for each table */
+      overflow-y: auto; /* Add scroll if content overflows */
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f4f4f4;
+      /* font-size: 6px; */
+    }
+    td{
+      font-size: 14px;
+      padding: 3.3px;
+    }
+    .negative {
+      color: red;
+    }
+    .positive {
+      color: green;
+    }
+    .highlight {
+    background-color: #ffffcc; /* Light yellow for testing */
+   }
+    .bold-row {
+    font-weight: bold;
+    background-color: #f2f2f2; /* Optional: Highlight the row with a background color */
+  }
+   .strikeColumnColor{
+    background-color: #ececf9;
+    }
+
+   .labelContainer {
+      display: flex;
+      position: relative;
+      /*justify-content: space-between;  Space elements evenly */
+      /*align-items: center;  Align vertically */
+      /*margin: 20px;*/
+    }
+    .left-section {
+      /* margin-right: auto; Stick to the left */
+      position: absolute;
+      left: 0; /* Aligns to the left */
+    }
+    .middle-section {
+      /* margin-left: auto; Push to the middle */
+     position: absolute;
+     left: 55%; /* Start from the middle of the page */
+     /*transform: translateX(-50%);  Adjust to truly center */
+    }
+
+    .ForHeader {
+      position: relative;
+      height: 50px; /* Set height to avoid overlap if needed */
+    }
+    .left-header {
+      position: absolute;
+      left: 20%; /* Align to the left */
+      margin: 0; /* Reset default margin */
+    }
+    .middle-header {
+      position: absolute;
+      left: 75%; /* Start from the middle */
+      transform: translateX(-50%); /* Adjust to truly center */
+      margin: 0; /* Reset default margin */
+    }
+
+    
+
+    .bar-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 30px;
+  margin: 5px 0;
+  position: relative;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.bar.bullish {
+  background-color: #28a745; /* Green for Bullish */
+  width: 48%; /* Adjust width to fit both bars */
+}
+
+.bar.bearish {
+  background-color: #dc3545; /* Red for Bearish */
+  width: 48%; /* Adjust width to fit both bars */
+}
+
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -10px);
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.bar:hover .tooltip {
+  opacity: 1;
+  transform: translate(-50%, -20px);
+}
+
+.bar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+  </style>
+</head>
+<body>
+
+  <!--------------- This is for Option Chain -------------->
+
+    <div class="ForHeader">
+    <!-- Left Section -->
+    <h1 class="left-header">Option Chain Viewer</h1>
+    <!-- Middle Section -->
+    <h1 class="middle-header">Future Data Viewer</h1>
+  </div>
+
+  <div class="labelContainer">
+
+      <div class="left-section">
+	      <label for="stock-select">Opt Chain:</label>
+	      <select id="stock-select">
+		<option value="">--Select a Stock--</option>
+	      </select>
+		  <!----- add different data at the top of the option chain table ----->
+		  <label id="PCR" style="display: none; padding: 3px;">PCR:</label>
+		  <label id="BullBearFactor" style="display: none; padding: 3px;">BullBearFactor:</label>
+		  <label id="VolTimes" style="display: none; padding: 3px;">VolTimes:</label>
+		  <label id="FutOICng" style="display: none; padding: 3px;">FutOICng:</label>
+		  <label id="SpotPriceCng" style="display: none; padding: 3px;">SpotPriceCng:</label>
+      </div>
+
+      <div class="middle-section">
+        <!--- FutDatalabel -->
+        <label for="FutDatalabel">Fut Data:</label>
+        <select id="FutDatalabel">
+          <option value="">--Select--</option>
+        </select>
+
+        <!---  -->
+        <label>Filter:</label>
+        <select id="VolTimesFilter">
+          <option value="">-- VolTimes --</option>
+        </select>
+      </div>
+
+  </div>
+
+
+ <!--- 
+  <label id="PCR" style="display: none; padding: 3px;">PCR:</label>
+  <label id="BullBearFactor" style="display: none; padding: 3px;">BullBearFactor:</label>
+  <label id="VolTimes" style="display: none; padding: 3px;">VolTimes:</label>
+  <label id="FutOICng" style="display: none; padding: 3px;">FutOICng:</label>
+  <label id="SpotPriceCng" style="display: none; padding: 3px;">SpotPriceCng:</label>
+ -->
+
+  <div class="table-container">
+
+  <table id="option-chain" style="display: none;">
+    <thead>
+      <tr>
+        <th>CE OI</th>
+        <th>CE OI Cng%</th>
+        <th>LTP</th>
+        <th>LTP Cng%</th>
+        <th>Position Shifting</th>
+        <th>Strike Price</th>
+        <th>Position Shifting</th>
+        <th>LTP Cng%</th>
+        <th>LTP</th>
+        <th>PE OI Cng%</th>
+        <th>PE OI</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+
+
+  <!--------- This is for Future data ---------->
+
+    <table class="sortable" id="FutData" style="display: none;">
+    <thead>
+      <tr>
+        <th>STOCK</th>
+        <th>FUT OI</th>
+        <th>Position Shifting</th>
+        <th>FUT OI Cng%</th>
+        <th>VolTimes</th>
+        <th>SpotPrice Cng%</th>
+        <th>PCR</th>
+        <th>BullBearFac</th>
+        <th>Sentiment</th>
+	<!---<th>FreeFloatMktShare%</th>--->
+	<!---<th>Avg. Daily Cng%</th>--->
+	<!---<th>Std Dev</th>--->
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  </div>
+
+  
+  <!-- For Fut-Vol combination
+  <h1>Fut-Volume Combination</h1>
+  <label for="fut-vol">Fut-Vol:</label>
+  <select id="fut-vol">
+    <option value="">--Select--</option>
+  </select>
+
+    <table id="fut-vol-table" class="sortable" style="display: none;">
+    <thead>
+      <tr>
+        <th>Stock Name</th>
+        <th>FUT OI Change</th>
+        <th>VolumeTimes</th>
+        <th>Spot Price Change</th>
+        <th>FUT OI</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  --->
+
+
+
+
+  <script src="scripts/loadData.js"></script>
+  <script src="scripts/OptionChain.js"></script>
+  <script src="scripts/FutureData.js"></script>
+  <script src="scripts/tableSorting.js"></script>
+  <script>
+    // Periodic update interval (e.g., every 30 sec)
+    const UPDATE_INTERVAL = 30000; // in ms ( milisec )
+
+    // Function to update the entire website with new data
+	  async function updateWebsite() {
+	    const data = await loadJSON("data.json"); // Load the JSON data
+	    if (data) {
+	      OptionChain(data); // Update Option Chain
+	      FutData(data); // Update Future Data
+	    } else {
+	      console.error("Failed to update website: Data could not be loaded.");
+	    }
+	  }
+
+
+    // load the input file
+    let data;
+    (async function() {
+       data = await loadJSON('data.json'); // Load the JSON data
+		    if (data)
+	    {
+		    OptionChain(data);
+		    FutData(data);
+	    }
+    })();
+
+
+
+    // Periodic updates
+    //setInterval(updateWebsite, UPDATE_INTERVAL);
+
+
+
+  </script>
+<!--
+/*
+    //////////////////   For table sorting 
+    document.addEventListener('DOMContentLoaded', () => {
+	  // Attach click listeners to all <th> elements in sortable tables
+	  document.querySelectorAll('table.sortable th').forEach((header) => {
+	    header.addEventListener('click', () => {
+	      const table = header.closest('table'); // Get the parent table
+	      const columnIndex = Array.from(header.parentNode.children).indexOf(header); // Get column index
+	      const ascending = !header.classList.contains('asc'); // Determine sort direction
+
+	      sortTable(table, columnIndex, ascending);
+
+	      // Update class to reflect sorting order
+	      header.classList.toggle('asc', ascending);
+	      header.classList.toggle('desc', !ascending);
+	    });
+	  });
+	});
+*/
+-->
+
+</body>
+</html>
+

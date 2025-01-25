@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: F2EFE7;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Fno Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    select, table {
+      margin-top: 10px;
+    }
+    .main-container {
+	    display : flex;
+	    gap : 50px;
+	    justify-content: center;
+    }
+    .table-container {
+            display: flex;
+            justify-content: space-between;
+	    width : 1000px;
+        }
+    table {
+      width: 1000px;
+      border-collapse: collapse;
+      margin-top: 50px; /* Add space only at the top */
+      /* border: 1px solid #ccc;  Table border */
+    }
+    th, td {
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #f4f4f4;
+      padding : 8px;
+      /* font-size: 6px; */
+    }
+    td{
+      font-size: 14px;
+      padding: 3.3px;
+    }
+    .negative {
+      color: red;
+    }
+    .positive {
+      color: green;
+    }
+    .highlight {
+    background-color: #ffffcc; /* Light yellow for testing */
+   }
+    .bold-row {
+    font-weight: bold;
+    background-color: #f2f2f2; /* Optional: Highlight the row with a background color */
+  }
+   .strikeColumnColor{
+    background-color: #ececf9;
+    }
+
+   .labelContainer {
+      display: flex;
+      position: relative;
+      /*justify-content: space-between;  Space elements evenly */
+      /*align-items: center;  Align vertically */
+      /*margin: 20px;*/
+    }
+    .left-section {
+      /* margin-right: auto; Stick to the left */
+      position: absolute;
+      left: 0; /* Aligns to the left */
+    }
+    .middle-section {
+      /* margin-left: auto; Push to the middle */
+     position: absolute;
+     left: 85%; /* Start from the middle of the page */
+     transform: translateX(-50%); /* Adjust to truly center */
+    }
+
+    .ForHeader {
+      position: relative;
+      height: 50px; /* Set height to avoid overlap if needed */
+    }
+    .left-header {
+      position: absolute;
+      left: 25%; /* Align to the left */
+      margin: 0; /* Reset default margin */
+    }
+    .middle-header {
+      position: absolute;
+      left: 75%; /* Start from the middle */
+      transform: translateX(-50%); /* Adjust to truly center */
+      margin: 0; /* Reset default margin */
+    }
+
+    .chart-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      height : 350px;
+      margin-left : 0.48rem;
+      background-color: aliceblue;
+       
+    }
+    .chart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 200px;
+      width: 100px;
+      border: 2px solid #ccc;
+      margin: 50px 10px;
+      padding: 20px;
+    }
+    .bar-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 100%;
+      width: 100%;
+    }
+    .bar {
+      width: 48%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .bar div {
+      width: 100%;
+      transition: height 0.3s ease, background-color 0.3s ease;
+    }
+    .label {
+      margin-top: 5px;
+      font-size: 14px;
+    }
+    .container-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .pcrdiv{
+      background-color: aliceblue;
+    }
+
+
+
+    
+  </style>
+</head>
+<body>
+
+  <!--------------- This is for Option Chain -------------->
+
+    <div class="ForHeader">
+    <!-- Left Section -->
+    <h1 class="left-header">Option Chain Viewer</h1>
+    <!-- Middle Section -->
+    <!---<h1 class="middle-header">Future Data Viewer</h1>--->
+    <h1 class="middle-header">Sentiment Dashboard</h1>
+  </div>
+
+  <div class="labelContainer">
+
+      <div class="left-section">
+	      <label for="stock-select">Opt Chain:</label>
+	      <select id="stock-select">
+		<option value="">--Select a Stock--</option>
+	      </select>
+		  <!----- add different data at the top of the option chain table ----->
+		  <label id="PCR" style="display: none; padding: 3px;">PCR:</label>
+		  <label id="BullBearFactor" style="display: none; padding: 3px;">BullBearFactor:</label>
+		  <!--<label id="VolTimes" style="display: none; padding: 3px;">VolTimes:</label>-->
+		  <label id="FutOICng" style="display: none; padding: 3px;">FutOICng:</label>
+		  <label id="SpotPriceCng" style="display: none; padding: 3px;">SpotPriceCng:</label>
+      </div>
+
+      <!----
+      <div class="middle-section">
+      <label for="FutDatalabel">Fut Data:</label>
+      <select id="FutDatalabel">
+        <option value="">--Select--</option>
+      </select>
+      </div>
+      --->
+
+  </div>
+
+
+ <!--- 
+  <label id="PCR" style="display: none; padding: 3px;">PCR:</label>
+  <label id="BullBearFactor" style="display: none; padding: 3px;">BullBearFactor:</label>
+  <label id="VolTimes" style="display: none; padding: 3px;">VolTimes:</label>
+  <label id="FutOICng" style="display: none; padding: 3px;">FutOICng:</label>
+  <label id="SpotPriceCng" style="display: none; padding: 3px;">SpotPriceCng:</label>
+ -->
+
+
+ <div class="main-container">
+
+  <div class="table-container">
+
+  <table id="option-chain" style="display: none;">
+    <thead>
+      <tr>
+        <th>CE OI</th>
+        <th>CE OI Cng%</th>
+        <th>LTP</th>
+        <th>LTP Cng%</th>
+        <th>Position Shifting</th>
+        <th>Strike Price</th>
+        <th>Position Shifting</th>
+        <th>LTP Cng%</th>
+        <th>LTP</th>
+        <th>PE OI Cng%</th>
+        <th>PE OI</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  </div>
+
+
+  <!--------- This is for Future data ---------->
+
+  <!---
+    <table class="sortable" id="FutData" style="display: none;">
+    <thead>
+      <tr>
+        <th>STOCK</th>
+        <th>FUT OI</th>
+        <th>Position Shifting</th>
+        <th>FUT OI Cng%</th>
+        <th>VolTimes</th>
+        <th>SpotPrice Cng%</th>
+        <th>PCR</th>
+        <th>BullBearFac</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+    </table> --->
+
+    <div style="text-align: center;">
+      <!-- Four Containers -->
+  <div class="chart-row">
+    <div class="chart-container">
+      <div class="container-title">NIFTY</div>
+      <div class="bar-wrapper">
+        <div class="bar">
+          <div id="NIFTY-1"></div>
+          <span class="label">Bullish</span>
+        </div>
+        <div class="bar">
+          <div id="NIFTY-2"></div>
+          <span class="label">Bearish</span>
+        </div>
+      </div>
+    </div>
+    <div class="chart-container">
+      <div class="container-title">BANKNIFTY</div>
+      <div class="bar-wrapper">
+        <div class="bar">
+          <div id="BANKNIFTY-1"></div>
+          <span class="label">Bullish</span>
+        </div>
+        <div class="bar">
+          <div id="BANKNIFTY-2"></div>
+          <span class="label">Bearish</span>
+        </div>
+      </div>
+    </div>
+    <div class="chart-container">
+      <div class="container-title">SENSEX</div>
+      <div class="bar-wrapper">
+        <div class="bar">
+          <div id="SENSEX-1"></div>
+          <span class="label">Bullish</span>
+        </div>
+        <div class="bar">
+          <div id="SENSEX-2"></div>
+          <span class="label">Bearish</span>
+        </div>
+      </div>
+    </div>
+    <div class="chart-container">
+      <div class="container-title">BANKEX</div>
+      <div class="bar-wrapper">
+        <div class="bar">
+          <div id="BANKEX-1"></div>
+          <span class="label">Bullish</span>
+        </div>
+        <div class="bar">
+          <div id="BANKEX-2"></div>
+          <span class="label">Bearish</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="pcrdiv">
+    <h1>PCR Over Time</h1>
+    <canvas id="PCRPLOT"></canvas>
+  </div>
+
+  </div>
+ </div> <!--- .main-container class ends here -->
+
+
+  
+  <!-- For Fut-Vol combination
+  <h1>Fut-Volume Combination</h1>
+  <label for="fut-vol">Fut-Vol:</label>
+  <select id="fut-vol">
+    <option value="">--Select--</option>
+  </select>
+
+    <table id="fut-vol-table" class="sortable" style="display: none;">
+    <thead>
+      <tr>
+        <th>Stock Name</th>
+        <th>FUT OI Change</th>
+        <th>VolumeTimes</th>
+        <th>Spot Price Change</th>
+        <th>FUT OI</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  --->
+
+
+
+
+  <script src="scripts/loadData.js"></script>
+  <script src="scripts/OptionChain.js"></script>
+  <script src="scripts/FutureData.js"></script>
+  <script src="scripts/tableSorting.js"></script>
+  <script src="scripts/Sentiment.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--for pcr plot-->
+  <script src="scripts/pcr.js"></script>
+
+
+  <script>
+    // Periodic update interval (e.g., every 30 sec)
+    const UPDATE_INTERVAL = 30000; // in ms ( milisec )
+
+    // Function to update the entire website with new data
+	  async function updateWebsite() {
+	    const data = await loadJSON("data.json"); // Load the JSON data
+	    if (data) {
+	      OptionChain(data); // Update Option Chain
+	      //FutData(data); // Update Future Data
+              GetSentiment(data);
+              PCRPlot();
+	    } else {
+	      console.error("Failed to update website: Data could not be loaded.");
+	    }
+	  }
+
+
+    // load the input file
+    let data;
+    (async function() {
+       data = await loadJSON('data.json'); // Load the JSON data
+		    if (data)
+	    {
+		    OptionChain(data);
+		    //FutData(data);
+		    GetSentiment(data);
+        	    PCRPlot();
+	    }
+    })();
+
+
+
+    // Periodic updates
+    //setInterval(updateWebsite, UPDATE_INTERVAL);
+
+
+
+  </script>
+<!--
+/*
+    //////////////////   For table sorting 
+    document.addEventListener('DOMContentLoaded', () => {
+	  // Attach click listeners to all <th> elements in sortable tables
+	  document.querySelectorAll('table.sortable th').forEach((header) => {
+	    header.addEventListener('click', () => {
+	      const table = header.closest('table'); // Get the parent table
+	      const columnIndex = Array.from(header.parentNode.children).indexOf(header); // Get column index
+	      const ascending = !header.classList.contains('asc'); // Determine sort direction
+
+	      sortTable(table, columnIndex, ascending);
+
+	      // Update class to reflect sorting order
+	      header.classList.toggle('asc', ascending);
+	      header.classList.toggle('desc', !ascending);
+	    });
+	  });
+	});
+*/
+-->
+
+</body>
+</html>
+
