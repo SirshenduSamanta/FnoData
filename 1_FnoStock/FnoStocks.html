@@ -292,7 +292,7 @@
 
     // Function to update the entire website with new data
 	  async function updateWebsite() {
-	    const data = await loadJSON("data.json"); // Load the JSON data
+	    const data = await loadJSON("https://raw.githubusercontent.com/sirshendusamanta/DATA/main/data.json"); // Load the JSON data
 	    if (data) {
 	      OptionChain(data); // Update Option Chain
 	      FutData(data); // Update Future Data
@@ -305,7 +305,7 @@
     // load the input file
     let data;
     (async function() {
-       data = await loadJSON('data.json'); // Load the JSON data
+       data = await loadJSON('https://raw.githubusercontent.com/sirshendusamanta/DATA/main/data.json'); // Load the JSON data
 		    if (data)
 	    {
 		    OptionChain(data);
