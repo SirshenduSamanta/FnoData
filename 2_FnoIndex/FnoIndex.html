@@ -81,15 +81,24 @@
       position: relative;
       height: 50px; /* Set height to avoid overlap if needed */
     }
+  
     .left-header {
       position: absolute;
-      left: 25%; /* Align to the left */
+      left: 20%; /* Align to the left */
       margin: 0; /* Reset default margin */
     }
     .middle-header {
       position: absolute;
-      left: 75%; /* Start from the middle */
-      transform: translateX(-50%); /* Adjust to truly center */
+      left: 45%; /* Start from the middle */
+      font-size: 15px;
+      color: #28a745;
+      /*transform: translateX(-50%); /* Adjust to truly center */
+      margin: 0; /* Reset default margin */
+    }
+    .right-header {
+      position: absolute;
+      left: 65%; /* Start from the middle */
+      /*transform: translateX(-50%); /* Adjust to truly center */
       margin: 0; /* Reset default margin */
     }
 
@@ -156,9 +165,11 @@
     <div class="ForHeader">
     <!-- Left Section -->
     <h1 class="left-header">Option Chain Viewer</h1>
-    <!-- Middle Section -->
+    <!-- middle Section -->
+    <h1 class="middle-header" id="last-update">last update : </h1>
+    <!-- tight Section -->
     <!---<h1 class="middle-header">Future Data Viewer</h1>--->
-    <h1 class="middle-header">Sentiment Dashboard</h1>
+    <h1 class="right-header">Sentiment Dashboard</h1>
   </div>
 
   <div class="labelContainer">
@@ -373,6 +384,15 @@
 		    GetSentiment(data);
         	    //PCRPlot();
 	    }
+
+	// for last update time
+      
+      	LastUpdate = await loadJSON('../LastUpdate.json');
+      	if (LastUpdate)
+      	{
+        	const lastupdate = document.getElementById('last-update');
+	      	lastupdate.textContent += LastUpdate['lastupdate']; //"PCR: " + data[selectedStock].OptionData.PCR;
+      	}
     })();
 
     (async function() {

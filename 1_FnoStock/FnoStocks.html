@@ -100,8 +100,16 @@
     }
     .middle-header {
       position: absolute;
-      left: 75%; /* Start from the middle */
-      transform: translateX(-50%); /* Adjust to truly center */
+      left: 45%; /* Start from the middle */
+      font-size: 15px;
+      color: #28a745;
+      /*transform: translateX(-50%); /* Adjust to truly center */
+      margin: 0; /* Reset default margin */
+    }
+    .right-header {
+      position: absolute;
+      left: 65%; /* Start from the middle */
+      /*transform: translateX(-50%); /* Adjust to truly center */
       margin: 0; /* Reset default margin */
     }
 
@@ -166,8 +174,10 @@
     <div class="ForHeader">
     <!-- Left Section -->
     <h1 class="left-header">Option Chain Viewer</h1>
-    <!-- Middle Section -->
-    <h1 class="middle-header">Future Data Viewer</h1>
+    <!-- middle Section -->
+    <h1 class="middle-header" id="last-update">last update : </h1>
+    <!-- Right Section -->
+    <h1 class="right-header">Future Data Viewer</h1>
   </div>
 
   <div class="labelContainer">
@@ -292,7 +302,7 @@
 
     // Function to update the entire website with new data
 	  async function updateWebsite() {
-	    const data = await loadJSON("https://raw.githubusercontent.com/sirshendusamanta/DATA/main/data.json"); // Load the JSON data
+	    const data = await loadJSON("data.json"); // Load the JSON data
 	    if (data) {
 	      OptionChain(data); // Update Option Chain
 	      FutData(data); // Update Future Data
@@ -304,13 +314,24 @@
 
     // load the input file
     let data;
+    let LastUpdate;
     (async function() {
-       data = await loadJSON('https://raw.githubusercontent.com/sirshendusamanta/DATA/main/data.json'); // Load the JSON data
+       data = await loadJSON('data.json'); // Load the JSON data
 		    if (data)
 	    {
 		    OptionChain(data);
 		    FutData(data);
 	    }
+      // for last update time
+      
+      LastUpdate = await loadJSON('../LastUpdate.json');
+      if (LastUpdate)
+      {
+        const lastupdate = document.getElementById('last-update');
+        //lastupdate.style.display = "inline";
+	      lastupdate.textContent += LastUpdate['lastupdate']; //"PCR: " + data[selectedStock].OptionData.PCR;
+      }
+      
     })();
 
 
