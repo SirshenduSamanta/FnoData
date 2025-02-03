@@ -106,6 +106,9 @@ function OptionChain(data) {
 
                 });
 
+                // Maximum Oi
+                let MaxOI = Math.max(maxOiCe, maxOiPe);
+
 
 	   
               strikes.forEach(strike => {
@@ -129,10 +132,16 @@ function OptionChain(data) {
               const PeColorIntensity = Math.min(Math.abs(PositionShiftWeightPE) * 50, 255); // Scale the value to a max of 255
               const PePositionColor = PositionShiftWeightPE > 0 ? `rgba(0, 255, 0, ${PeColorIntensity / 255})` : `rgba(255, 0, 0, ${PeColorIntensity / 255})`;
 
+              const OiLevelWidthCe = (stockData.OptionData.OptChain.oiCe[strike] / MaxOI)*90; // Maximum width would be 85 px
+              const OiLevelWidthPe = (stockData.OptionData.OptChain.oiPe[strike] / MaxOI)*90; // Maximum width would be 85 px
+
 
 		row.innerHTML = `
-
-                <td class="${highlightClassCE} ${boldClassMaxCE}">${stockData.OptionData.OptChain.oiCe[strike]}</td>
+                <td class="${highlightClassCE} ${boldClassMaxCE}" style="text-align: left;">
+                        <div style="margin :0; left: 0; height: 17px; width: ${OiLevelWidthCe}px; background-color: rgba(255, 0, 0, 0.5); border-radius : 0 10px 10px 0">
+                                ${stockData.OptionData.OptChain.oiCe[strike]}
+                        </div>
+                </td>
                 <td class="${highlightClassCE} ${oiCeCngClass} ${boldClassMaxCE}">${stockData.OptionData.OptChain.oichpCe[strike]}</td>
                 <td class="${highlightClassCE} ${boldClassMaxCE}">${stockData.OptionData.OptChain.ltpCe[strike]}</td>
                 <td class="${highlightClassCE} ${ltpcecng} ${boldClassMaxCE}">${stockData.OptionData.OptChain.ltpchpCe[strike]}</td>
@@ -144,7 +153,13 @@ function OptionChain(data) {
 		<td class="${highlightClassPE} ${ltppecng} ${boldClassMaxPE}">${stockData.OptionData.OptChain.ltpchpPe[strike]}</td>
 		<td class="${highlightClassPE} ${boldClassMaxPE}">${stockData.OptionData.OptChain.ltpPe[strike]}</td>
                 <td class="${highlightClassPE} ${oiPeCngClass} ${boldClassMaxPE}">${stockData.OptionData.OptChain.oichpPe[strike]}</td>
-		<td class="${highlightClassPE} ${boldClassMaxPE}">${stockData.OptionData.OptChain.oiPe[strike]}</td>
+		<td class="${highlightClassPE} ${boldClassMaxPE}" style="text-align: left;">
+                        <div style="margin :0; left: 0; height: 17px; width: ${OiLevelWidthPe}px; background-color: rgba(21, 255, 0, 0.62); border-radius : 0 10px 10px 0">
+                                ${stockData.OptionData.OptChain.oiPe[strike]}
+                        </div>
+                        
+                </td>
+
                 
               `;
 

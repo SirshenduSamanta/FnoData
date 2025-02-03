@@ -42,16 +42,36 @@
 
       <div class="middle-section">
         <!--- FutDatalabel -->
-        <label for="FutDatalabel">Fut Data:</label>
-        <select id="FutDatalabel">
-          <option value="">--Select--</option>
-        </select>
+        <!--- <label for="FutDatalabel">Fut Data:</label> --->
 
         <!---  -->
         <label>Filter:</label>
-        <select id="VolTimesFilter">
+        <select id="FutDatalabelFilter" class="filter">
+          <option value="">-- Position --</option>
+        </select>
+
+        <!---  -->
+        <select id="VolTimesFilter" class="filter">
           <option value="">-- VolTimes --</option>
         </select>
+
+        <!---  -->
+        <select id="FutoicngFilter" class="filter">
+          <option value="">-- FutOICng% --</option>
+        </select>
+
+        <!---  --> 
+        <select id="spotcngFilter" class="filter">
+          <option value="">-- SpotCng% --</option>
+        </select>
+
+        <!---  -->
+        <select id="bullbearFilter" class="filter">
+          <option value="">-- BullBear --</option>
+        </select>
+
+        <button class="FutTableReset" onclick="resetFilters()" style="margin-left: 15px; font-size: 20px;"> Reset </button>
+
       </div>
 
   </div>
@@ -63,14 +83,14 @@
   <label id="VolTimes" style="display: none; padding: 3px;">VolTimes:</label>
   <label id="FutOICng" style="display: none; padding: 3px;">FutOICng:</label>
   <label id="SpotPriceCng" style="display: none; padding: 3px;">SpotPriceCng:</label>
- -->
+ --> 
 
   <div class="table-container">
 
   <table id="option-chain" style="display: none;">
     <thead>
       <tr>
-        <th>CE OI</th>
+        <th style="width: 85px; margin: 0;">CE OI</th>
         <th>CE OI Cng%</th>
         <th>LTP</th>
         <th>LTP Cng%</th>
@@ -80,7 +100,7 @@
         <th>LTP Cng%</th>
         <th>LTP</th>
         <th>PE OI Cng%</th>
-        <th>PE OI</th>
+        <th style="width: 85px;">PE OI</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -150,7 +170,7 @@
 	    const data = await loadJSON("data.json"); // Load the JSON data
 	    if (data) {
 	      OptionChain(data); // Update Option Chain
-	      FutData(data); // Update Future Data
+	      FutData(); // Update Future Data
 	    } else {
 	      console.error("Failed to update website: Data could not be loaded.");
 	    }
@@ -165,7 +185,7 @@
 		    if (data)
 	    {
 		    OptionChain(data);
-		    FutData(data);
+		    FutData();
 	    }
       // for last update time
       
