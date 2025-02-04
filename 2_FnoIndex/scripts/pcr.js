@@ -48,6 +48,13 @@ async function loadCSV(filePath) {
       // Load CSV file
       //const csvData = await loadCSV('../pcr.csv'); // Adjust the path if needed
       const chartData = parseCSV(csvData);
+ 
+      // Extract all data values from the chartData
+	const dataValues = chartData.datasets.flatMap(dataset => dataset.data);
+
+	// Calculate the min and max values with 10% margin
+	const minValue = Math.min(...dataValues) * 0.9;
+	const maxValue = Math.max(...dataValues) * 1.1;
 
       // Create the chart
       const ctx = document.getElementById("PCRPLOT").getContext("2d");
@@ -82,8 +89,8 @@ async function loadCSV(filePath) {
                 display: true,
                 text: "Values",
               },
-              min: 0.45,
-              max: 1.1
+              min: minValue,
+              max: maxValue
             }
           }
         }
