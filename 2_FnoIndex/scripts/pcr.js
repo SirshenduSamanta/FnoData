@@ -48,7 +48,7 @@ async function loadCSV(filePath) {
       // Load CSV file
       //const csvData = await loadCSV('../pcr.csv'); // Adjust the path if needed
       const chartData = parseCSV(csvData);
- 
+
       // Extract all data values from the chartData
 	const dataValues = chartData.datasets.flatMap(dataset => dataset.data);
 

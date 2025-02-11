@@ -15,7 +15,7 @@ body {
             display: flex;
             /*justify-content: space-between;*/
             align-items: flex-start; /* Align tables at the top */
-            gap: 70px; /* Space between tables */
+            gap: 50px; /* Space between tables */
             /*width: 1000px;*/
         }
     table {
@@ -24,7 +24,7 @@ body {
       /* border: 1px solid #ccc;  Table border */
     }
     #option-chain {
-      width: 900px;
+      width: 950px;
       height: 300px;/* Fixed height for each table */
       overflow-y: auto; /* Add scroll if content overflows */
     }
@@ -32,6 +32,8 @@ body {
       width: 800px;
       /* height: 300px; Fixed height for each table */
       overflow-y: auto; /* Add scroll if content overflows */
+      position: absolute;
+      left: 1000px;
     }
     th, td {
       border: 1px solid #ddd;
