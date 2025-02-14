@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <title>Reversal Trading</title> 
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+  <div class="main-container">
+    <h1 class="left-header">Reversal Trading</h1>
+
+
+    <div class="labelContainer">
+      <label>Filter:</label>
+      <select id="NearSupportResistanceFilter" class="filter">
+        <option value="">-- Reversal --</option>
+      </select>
+
+      <select id="ResistanceReversal" class="filter" style="display: none;">
+        <option value="">-- ResistanceReversal --</option>
+      </select>
+
+      <select id="SupportReversal" class="filter" style="display: none;">
+        <option value="">-- SupportReversal --</option>
+      </select>
+
+      <!--- <button class="FutTableReset" onclick="resetFilters()" style="margin-left: 15px; font-size: 20px;"> Reset </button> --->
+
+    </div>
+
+
+
+    <table class="sortable" id="ReversalTradingTable" style="display: none;">
+      <thead>
+        <tr>
+          <th>STOCK</th>
+          <th style="width: 85px;">Possible Support</th>
+          <th style="width: 85px;">Possible Resistance</th>
+          <th>LTP</th>
+          <th>Resistance From Ltp%</th>
+          <th>Support From Ltp%</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+      </table>
+  </div>
+
+
+
+  <script src="scripts/loadData.js"></script>
+  <script src="scripts/tableSorting.js"></script>
+  <script src="scripts/ReversalTrading.js"></script>
+  <script>
+
+    let data;
+
+    (async function() {
+      console.log('Coming here');
+        data = await loadJSON("../1_FnoStock/data.json"); // Load the JSON data
+        if (data) {
+          console.log('Data load successfully');
+          Reversaltrading(data);
+          
+        } else {
+          console.error("Failed to update website: Data could not be loaded.");
+        }
+
+    })();
+
+  </script>
+
+
+</body>
+</html>
+

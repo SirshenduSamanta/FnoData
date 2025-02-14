@@ -94,17 +94,45 @@ function PopulateDropDown()
 		option4.value = Values3[i]; option4.textContent = "> "+Values3[i]+"%"; SpotPriceCngFilter.appendChild(option4);
 	}
 
-	// for BullBear Filter
-	const BullBearFilter = document.getElementById('bullbearFilter');
-	BullBearFilter.replaceChildren(); // Removes all exiting options
-	const option5 = document.createElement('option'); option5.value = 0; option5.textContent = '-- BullBear --'; BullBearFilter.appendChild(option5);
-	let Values4 = [0.70,0.80,0.90, 0.95]; 
+	// for PCR Filter
+	const PCRFilter = document.getElementById('PcrFilter');
+	PCRFilter.replaceChildren(); // Removes all exiting options
+	const option5 = document.createElement('option'); option5.value = 0; option5.textContent = '-- PCR --'; PCRFilter.appendChild(option5);
+	let Values4 = [ '< 0.7', '< 1.0', '= 1.0', '> 1.0', '> 1.3']; 
 	for (let i=0; i < Values4.length; i++)
 	{
 		const option5 = document.createElement('option');
-		option5.value = Values4[i]; option5.textContent = "> "+Values4[i]; BullBearFilter.appendChild(option5);
+		option5.value = Values4[i]; option5.textContent = Values4[i]; PCRFilter.appendChild(option5);
 	}
 
+	// for BullBear Filter
+	const BullBearFilter = document.getElementById('bullbearFilter');
+	BullBearFilter.replaceChildren(); // Removes all exiting options
+	const option6 = document.createElement('option'); option6.value = 0; option6.textContent = '-- BullBear --'; BullBearFilter.appendChild(option6);
+	let Values5 = [0.70,0.80,0.90, 0.95]; 
+	for (let i=0; i < Values5.length; i++)
+	{
+		const option6 = document.createElement('option');
+		option6.value = Values4[i]; option6.textContent = "> "+Values5[i]; BullBearFilter.appendChild(option6);
+	}
+
+}
+
+function evaluatePCrCondition(number, conditionStr) {
+	if ( conditionStr == 0)
+	{
+		return true;
+	}
+    let operator = conditionStr.trim().charAt(0);  // Extract operator ('>')
+    let value = parseFloat(conditionStr.substring(1).trim()); // Extract value (0.7)
+
+    switch (operator) {
+        case '>': return number > value;
+        case '<': return number < value;
+        case '=': return number === value; // Strict equality
+        case '!': return number !== value; // Not equal
+        default: throw new Error("Invalid operator");
+    }
 }
 
 
@@ -115,7 +143,9 @@ function applyFilter()
 	const FilterFutOICng = document.getElementById('FutoicngFilter').value;
 	const FilterSpotCng = document.getElementById('spotcngFilter').value;
 	const FilterBullBear = document.getElementById('bullbearFilter').value;
+	const FilterPCR = document.getElementById('PcrFilter').value; // let PCRoperatorString = FilterPCR.trim().charAt(0); let PCRValue = parseFloat(FilterPCR.substring(1).trim());
 
+	//console.log(typeof(PCRValue));
 
 	// load the json data
 	(async function() {
@@ -134,12 +164,15 @@ function applyFilter()
 		const FutOICng = Math.abs(data[key].FutureData.FutOiPer);
 		const SpotCng = Math.abs(data[key].PriceVol.PriceCng);
 		const BullBear = Math.abs((2*(data[key].OptionData.BullishFactor) -1).toFixed(2));
+		const Pcr = data[key].OptionData.PCR;
+
+		//console.log(Pcr);
 
 		const Bullishness = (2*(data[key].OptionData.BullishFactor) -1).toFixed(2);
 
 		if (FilterPosition == '')
 		{
-			if (Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear)
+			if (Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear && evaluatePCrCondition(Pcr, FilterPCR))
 			{
 				const row = document.createElement('tr');
 									row.innerHTML = `
@@ -172,7 +205,7 @@ function applyFilter()
 		}
 		else
 		{
-			if (position == FilterPosition && Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear)
+			if (position == FilterPosition && Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear && evaluatePCrCondition(Pcr, FilterPCR))
 				{
 					const row = document.createElement('tr');
 										row.innerHTML = `

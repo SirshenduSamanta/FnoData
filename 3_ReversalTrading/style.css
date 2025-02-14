@@ -1,0 +1,59 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    select, table {
+      margin-top: 10px;
+    }
+    .main-container {
+      display : flex;
+      
+      justify-content: center;
+      flex-direction: column;
+      width: 600px;
+    }
+
+
+    .left-header {
+      text-align: center;
+    }
+
+    #ReversalTradingTable{
+      width: 600px;
+      /*height: 300px;/* Fixed height for each table */
+      overflow-y: auto; /* Add scroll if content overflows */
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-top: 10px; /* Add space only at the top */
+      /* border: 1px solid #ccc;  Table border */
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f4f4f4;
+      /* font-size: 6px; */
+    }
+    td{
+      font-size: 14px;
+      padding: 3.3px;
+    }
+ 
+    
+
+
+
+   
+
+
+
+
+
+
+
+
