@@ -82,6 +82,8 @@ function Reversaltrading(data) {
                         tbody.innerHTML = ''; // Clear previous rows
 
                         Object.keys(data).forEach(key => {
+                                ///// BullBear Factor
+                                const Bullishness = (2*(data[key].OptionData.BullishFactor) -1).toFixed(2);
                                 ///////////////////////////    Find max OI stike
                                 const strikes = Object.keys(data[key].OptionData.OptChain.oiCe);
                                 let maxOiCe = 0; let maxOiPe = 0;
@@ -140,6 +142,21 @@ function Reversaltrading(data) {
                                         <td>${currentPrice}</td>
                                         <td>${ResistanceFromLtp}</td>
                                         <td>${SupportFromLtp}</td>
+                                        <td>${data[key].FutureData.FutOiPer}</td>
+                                        <td>${Bullishness}</td>
+                                        <td>
+                                                <div class="bar-container">
+                                                <!-- Bullish bar -->
+                                                <div class="bar bullish" style="height:${data[key].OptionData.BullishFactor * 100}%;">
+                                                        <div class="tooltip">Bullish: ${data[key].OptionData.BullishFactor.toFixed(2)}</div>
+                                                </div>
+                                                <!-- Bearish bar -->
+                                                <div class="bar bearish" style="height:${data[key].OptionData.BearishFactor * 100}%;">
+                                                        <div class="tooltip">Bearish: ${data[key].OptionData.BearishFactor.toFixed(2)}</div>
+                                                </div>
+                                                </div>
+                                        </td>
+
                                         `;
                         
                                         tbody.appendChild(row);
