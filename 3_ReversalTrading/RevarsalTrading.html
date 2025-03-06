@@ -16,7 +16,11 @@
 
 
   <div class="main-container">
-    <h1 class="left-header">Reversal Trading</h1>
+
+    <div class="headers">
+      <h1 class="left-header">Reversal Trading</h1>
+      <h1 class="middle-header" id="last-update">last update : </h1>
+    </div>
 
 
     <div class="labelContainer">
@@ -45,6 +49,8 @@
           <th>STOCK</th>
           <th style="width: 85px;">Possible Support</th>
           <th style="width: 85px;">Possible Resistance</th>
+          <th>Position Shifting Support</th>
+          <th>Position Shifting Resistance</th>
           <th>LTP</th> 
           <th>Resistance From Ltp%</th>
           <th>Support From Ltp%</th>
@@ -65,7 +71,7 @@
   <script>
 
     let data;
-
+    let LastUpdate;
     (async function() {
       console.log('Coming here');
         data = await loadJSON("../1_FnoStock/data.json"); // Load the JSON data
@@ -76,6 +82,16 @@
         } else {
           console.error("Failed to update website: Data could not be loaded.");
         }
+
+
+      // for last update time
+      LastUpdate = await loadJSON('../LastUpdate.json');
+      if (LastUpdate)
+      {
+        const lastupdate = document.getElementById('last-update');
+        //lastupdate.style.display = "inline";
+              lastupdate.textContent += LastUpdate['lastupdate']; //"PCR: " + data[selectedStock].OptionData.PCR;
+      }
 
     })();
 

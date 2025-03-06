@@ -34,7 +34,7 @@ body {
       text-align: center;
     }
 
-    #ReversalTradingTable{
+    #FutOiHistory{
       width: 800px;
       /*height: 300px;/* Fixed height for each table */
       overflow-y: auto; /* Add scroll if content overflows */
@@ -53,6 +53,7 @@ body {
     }
     th {
       background-color: #f4f4f4;
+      font-size: 20px;
       /* font-size: 6px; */
     }
     td{
@@ -60,7 +61,7 @@ body {
       padding: 3.3px;
     }
 
-    .bar-container {
+    /*.bar-container {
       display: flex;
       justify-content: space-between;
       width: 100%;
@@ -77,13 +78,12 @@ body {
     }
     
     .bar.bullish {
-      background-color: #28a745; /* Green for Bullish */
-      width: 48%; /* Adjust width to fit both bars */
-    }
+      background-color: #28a745; 
+      width: 48%;
     
     .bar.bearish {
-      background-color: #dc3545; /* Red for Bearish */
-      width: 48%; /* Adjust width to fit both bars */
+      background-color: #dc3545; 
+      width: 48%;
     }
     .tooltip {
       position: absolute;
@@ -107,10 +107,90 @@ body {
     .bar:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
- 
-    
+    }*/
 
+    .TableOiHistory {
+      display: flex;
+      flex-direction: row;
+      gap : 10px; /* Space between bars */
+      width: 100%;
+      height: 110px; /* Ensure enough space for both directions */
+      /*position: absolute;*/
+      align-items: center;
+      justify-content: center;
+      /*border-top: 2px solid black; /* Zero line */
+      padding: 0px;
+      background-color: #4447441f;
+      position: relative;
+  }
+
+  .TableOiHistory::before {
+    content: "";
+    position: absolute;
+    top: 49%;
+    left: 10%;
+    width: 80%; /* Covers from 20% to 80% */
+    height: 2px;
+    background-color: rgba(27, 27, 27, 0.5); /* Adjust color as needed */
+    z-index: -1;
+}
+
+
+  
+  .TableOiHistoryDiv {
+      width: 30px; /* Adjust width */
+      /*position: absolute;*/
+      bottom: 50%; /* Align zero to the center */
+      transform-origin: bottom;
+      border-radius: 5px;
+      cursor: pointer;
+      
+  }
+/*
+  .TableOiHistoryDiv {
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+*/
+
+  .TableOiHistoryDiv:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  /* Tooltip styling */
+  .tooltip {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 5px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      display: none;
+      pointer-events: none;
+      z-index: 10;
+      transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .TableOiHistoryDiv:hover .tooltip {
+    opacity: 1;
+    transform: translate(-50%, -20px);
+  }
+  
+ 
+
+  
+
+
+/*
+
+.TableOiHistoryDiv:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+*/
 
 
    

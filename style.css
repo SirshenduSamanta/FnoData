@@ -1,16 +1,85 @@
 body {
     background-color: aliceblue;
 }
+
+/* Container Styling */
+header {
+    background-color: #1f2937; /* Dark background for professional look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+/* Logo Styling */
+.logo h1 {
+    color: #06b6d4;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.logo h1::before {
+    content: "📊";
+    margin-right: 8px;
+}
+
+
 .fnodata {
-    background-color: bisque;
+    /*background-color: bisque;
+    text-align: center;*/
+    background-color: #06b6d4; /* Yellow background for buttons */
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.fnodata a {
+    /*color: #1f2937; /* Dark text for readability */
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
     text-align: center;
+    font-size: medium;
+}
+.fnodata:hover {
+    background-color: #f59e0b; /* Darker yellow on hover */
+    transform: translateY(-2px);
+}
+
+.fnodata:active {
+    transform: translateY(0);
 }
 .auth-buttons{
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 .auth-buttons > .fnodata {
     height: 30px;
     font-size: 15px;
     font-weight: bold;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .auth-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
 }

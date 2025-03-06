@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <title>Reversal Trading</title> 
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+ 
+
+  <div class="main-container">
+
+    
+    <div class="headers">
+      <h1 class="left-header">Future OI History</h1>
+      <h1 class="middle-header" id="last-update">last update : </h1>
+    </div>
+
+    <!---
+    <div class="labelContainer">
+      <label>Filter:</label>
+      <select id="NearSupportResistanceFilter" class="filter">
+        <option value="">-- Reversal --</option>
+      </select>
+
+      <select id="ResistanceReversal" class="filter" style="display: none;">
+        <option value="">-- ResistanceReversal --</option>
+      </select>
+
+      <select id="SupportReversal" class="filter" style="display: none;">
+        <option value="">-- SupportReversal --</option>
+      </select>
+    </div>
+    --->
+
+
+    <table class="sortable" id="FutOiHistory" style="display: none;">
+        <thead>
+          <tr>
+            <th>STOCK</th>
+            <th>Historical OI Shifting</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div>
+
+
+
+
+    <script src="scripts/loadData.js"></script>
+    <script src="scripts/tableSorting.js"></script>
+    <script src="scripts/FutOiHistory.js"></script>
+
+    <script>
+
+        let data;
+        let LastUpdate;
+        (async function() {
+          console.log('Coming here');
+            data = await loadJSON("./FutOiHistory.json"); // Load the JSON data
+            if (data) {
+              console.log('Data load successfully');
+              MakeTable(data)
+              
+            } else {
+              console.error("Failed to update website: Data could not be loaded.");
+            }
+    
+    
+          // for last update time
+          LastUpdate = await loadJSON('../LastUpdate.json');
+          if (LastUpdate)
+          {
+            const lastupdate = document.getElementById('last-update');
+            //lastupdate.style.display = "inline";
+                  lastupdate.textContent += LastUpdate['lastupdate']; //"PCR: " + data[selectedStock].OptionData.PCR;
+          }
+    
+        })();
+    
+      </script>
+
+
+
+
+    </body>
+    </html>
+  

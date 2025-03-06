@@ -13,34 +13,29 @@
 
 </head>
 <body>
-
+ 
   <!--------------- This is for Option Chain -------------->
 
-    <div class="ForHeader">
-    <!-- Left Section -->
-    <h1 class="left-header">Option Chain Viewer</h1>
-    <!-- middle Section -->
-    <h1 class="middle-header" id="last-update">last update : </h1>
-    <!-- Right Section -->
-    <h1 class="right-header">Future Data Viewer</h1>
+  <div class="ForHeader">
+      <h1 class="right-header">Live Fno Data</h1>
+      <h1 class="middle-header" id="last-update">last update : </h1>
+      <h1 class="left-header ShowStock" style="display: none;"> </h1>
   </div>
 
   <div class="labelContainer">
 
-      <div class="left-section">
-	      <label for="stock-select">Opt Chain:</label>
-	      <select id="stock-select">
-		<option value="">--Select a Stock--</option>
-	      </select>
-		  <!----- add different data at the top of the option chain table ----->
-		  <label id="PCR" style="display: none; padding: 3px;">PCR:</label>
-		  <label id="BullBearFactor" style="display: none; padding: 3px;">BullBearFactor:</label>
-		  <label id="VolTimes" style="display: none; padding: 3px;">VolTimes:</label>
-		  <label id="FutOICng" style="display: none; padding: 3px;">FutOICng:</label>
-		  <label id="SpotPriceCng" style="display: none; padding: 3px;">SpotPriceCng:</label>
+      <div class="middle-section" style="display: none;">
+	      <!--<label id="stock-select" style="display: none; padding: 3px;"></label>-->
+	      <!---<select id="stock-select"><option value="">--Select a Stock--</option></select>-->
+        <!----- add different data at the top of the option chain table ----->
+        <label id="PCR" style="display: none; padding: 3px;">PCR:</label>
+        <label id="BullBearFactor" style="display: none; padding: 3px;">BullBearFactor:</label>
+        <label id="VolTimes" style="display: none; padding: 3px;">VolTimes:</label>
+        <label id="FutOICng" style="display: none; padding: 3px;">FutOICng:</label>
+        <label id="SpotPriceCng" style="display: none; padding: 3px;">SpotPriceCng:</label>
       </div>
 
-      <div class="middle-section">
+      <div class="left-section">
         <!--- FutDatalabel -->
         <!--- <label for="FutDatalabel">Fut Data:</label> --->
 
@@ -92,24 +87,7 @@
 
   <div class="table-container">
 
-  <table id="option-chain" style="display: none;">
-    <thead>
-      <tr>
-        <th style="width: 85px; margin: 0; background-color: rgb(245, 234, 234);">CE OI</th>
-        <th style="background-color: rgb(245, 234, 234);">CE OI Cng%</th>
-        <th style="background-color: rgb(245, 234, 234);">LTP</th>
-        <th style="background-color: rgb(245, 234, 234);">LTP Cng%</th>
-        <th style="background-color: rgb(245, 234, 234);">Position Shifting</th>
-        <th>Strike Price</th>
-        <th style="background-color: rgb(235, 245, 235);">Position Shifting</th>
-        <th style="background-color: rgb(235, 245, 235);">LTP Cng%</th>
-        <th style="background-color: rgb(235, 245, 235);">LTP</th>
-        <th style="background-color: rgb(235, 245, 235);">PE OI Cng%</th>
-        <th style="width: 85px; background-color: rgb(235, 245, 235);">PE OI</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  
 
 
 
@@ -119,17 +97,44 @@
     <thead>
       <tr>
         <th>STOCK</th>
+        <th>LTP</th>
         <th>FUT OI</th>
-        <th>Position Shifting</th>
+        <th>Fut Position Shifting</th>
         <th>FUT OI Cng%</th>
-        <th>VolTimes</th>
-        <th>SpotPrice Cng%</th>
+        <th style="width: 70px;">Possible Support</th>
+        <th style="width: 70px;">Possible Resistance</th>
+        <th>Position Shifting At Support</th>
+        <th>Position Shifting At Resistance</th>
+        <th>Vol. Times</th>
+        <th>Spot Price Cng%</th>
         <th>PCR</th>
-        <th>BullBearFac</th>
+        <th>Bull Bear Factor</th>
         <th>Sentiment</th>
 	<!---<th>FreeFloatMktShare%</th>--->
 	<!---<th>Avg. Daily Cng%</th>--->
 	<!---<th>Std Dev</th>--->
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+
+
+
+  <table id="option-chain" style="display: none;">
+    <thead>
+      <tr>
+        <th style="width: 85px; margin: 0; background-color: rgb(243, 195, 195);">CE OI</th>
+        <!---<th style="background-color: rgb(245, 234, 234);">CE OI Cng%</th>
+        <th style="background-color: rgb(245, 234, 234);">LTP</th>
+        <th style="background-color: rgb(245, 234, 234);">LTP Cng%</th> -->
+        <th style="background-color: rgb(243, 195, 195);">Position Shifting</th>
+        <th>Strike Price</th>
+        <th style="background-color: rgb(193, 243, 193);">Position Shifting</th>
+        <!--<th style="background-color: rgb(235, 245, 235);">LTP Cng%</th>
+        <th style="background-color: rgb(235, 245, 235);">LTP</th>
+        <th style="background-color: rgb(235, 245, 235);">PE OI Cng%</th>-->
+        <th style="width: 85px; background-color: rgb(193, 243, 193);">PE OI</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -163,8 +168,7 @@
 
 
   <script src="scripts/loadData.js"></script>
-  <script src="scripts/OptionChain.js"></script>
-  <script src="scripts/FutureData.js"></script>
+  <script src="scripts/FutOpt.js"></script>
   <script src="scripts/tableSorting.js"></script>
   <script>
     // Periodic update interval (e.g., every 30 sec)
@@ -174,26 +178,46 @@
 	  async function updateWebsite() {
 	    const data = await loadJSON("data.json"); // Load the JSON data
 	    if (data) {
-	      OptionChain(data); // Update Option Chain
+        
+        FindStockName();
+	      //OptionChain(data); // Update Option Chain
 	      FutData(); // Update Future Data
+        //FindStockName();
 	    } else {
 	      console.error("Failed to update website: Data could not be loaded.");
 	    }
 	  }
 
+/*
+    function FindStockName()
+{
+        let selectedStock = '';
+        document.querySelectorAll(".stockName").forEach(element => {
+                element.addEventListener("click", function(evt) {
+                        selectedStock = evt.target.innerText;
+                            console.log(selectedStock);
+                });
+        });
+}
 
+*/
     // load the input file
     let data;
     let LastUpdate;
     (async function() {
        data = await loadJSON('data.json'); // Load the JSON data
 		    if (data)
-	    {
-		    OptionChain(data);
-		    FutData();
-	    }
+        {
+          console.log("Coming HREEEEE");
+          
+          FutData();
+          //FindStockName();
+          //OptionChain(data);
+          //FindStockName();
+          
+        }
+
       // for last update time
-      
       LastUpdate = await loadJSON('../LastUpdate.json');
       if (LastUpdate)
       {

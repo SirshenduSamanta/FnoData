@@ -1,0 +1,119 @@
+function MakeTable(data)
+{
+
+    ////////////////// Find Unique stocks length  //////////////////////////
+    let uniqueStockList = [];
+    Object.keys(data).forEach(date => {
+        //console.log(Object.keys(data[date]));
+
+        Object.keys(data[date]).forEach(stock => {
+            uniqueStockList = [...new Set([...uniqueStockList, stock])];
+        });
+        
+    });
+
+
+    /// Prepare the table
+    const table = document.getElementById('FutOiHistory');
+    const tbody = table.querySelector('tbody');
+    tbody.innerHTML = ''; // Clear previous rows
+
+    uniqueStockList.forEach(stock => {
+
+        ////// make the table
+        const row = document.createElement('tr');
+        let rowContent = `
+                        <td><div style="font-size:18px; font-weight: 300; background-color : #e8eaed">${stock}</div></td>
+                        <td>
+                            <div class="TableOiHistory">
+                        `;
+
+        Object.keys(data).forEach(date => {
+            
+
+            Object.keys(data[date]).forEach(s => {
+                if (s === stock)
+                {
+                    ////////// Calculate total Div Height (Fut OI Cng)
+                    let FutOiCngList = [];
+                    Object.keys(data).forEach(DATE => { Object.keys(data[DATE]).forEach(STOCK => { if (STOCK == stock) {FutOiCngList.push(Math.abs(data[DATE][STOCK].FutOiPer));}; });  });
+                    //console.log(TotalDivHeight);
+
+                    
+
+                    let colo = "red";
+                    let DivHeight = data[date][stock].FutOiPer; 
+                    
+                    //if (DivHeight < 0) { colo = "red";  } else { colo = "green"; }
+
+                    let AbsDivHeight = (Math.abs(DivHeight)/Math.max(...FutOiCngList))*50; // Maximum width would be 50 px
+                    //let translateY = DivHeight < 0 ? `0px` : `-${AbsDivHeight}px`; // Move green bars up
+                    
+                    let positionType = data[date][stock].Fut_category;
+                    let pricecng = data[date][stock].PriceCng;
+
+                    if (positionType ==="Long Buildup" || positionType === "Short Covering")
+                    {
+                        colo = "green";
+                    }
+                    else
+                    {
+                        colo = "red";
+                    }
+                    let translateY = colo === "green" ? -AbsDivHeight/2 : AbsDivHeight/2;
+
+                    rowContent += `
+                                <div class="TableOiHistoryDiv" 
+                                    style="
+                                        background-color: ${colo}; 
+                                        height: ${AbsDivHeight}px;
+                                        bottom: 50%; 
+                                        transform: translateY(${translateY}px);
+                                    "
+                                    onmouseover="showTooltip(event, '${date}', '${pricecng.toFixed(2)}%', '${positionType}', '${DivHeight.toFixed(2)}%')"
+                                    onmouseout="hideTooltip()
+                                    ">
+                                </div>
+                    `;
+                }
+            });
+ 
+            
+
+        });
+
+        rowContent += `</div>
+                        </td>`;
+
+        row.innerHTML = rowContent;
+        tbody.appendChild(row);
+
+    });
+    table.style.display = 'table';
+    
+}
+
+
+
+// Create tooltip div
+const tooltip = document.createElement("div");
+tooltip.className = "tooltip";
+document.body.appendChild(tooltip);
+
+// Show tooltip on hover
+function showTooltip(event, date, pricecng, position, FutOiCng) {
+    tooltip.innerHTML = `Date: ${date}<br>
+                        PriceCng: ${pricecng}<br>
+                        FutOiCng: ${FutOiCng}<br>
+                        PositionShifting: ${position}
+                        `;
+
+    tooltip.style.display = "block";
+    tooltip.style.left = `${event.pageX + 10}px`;
+    tooltip.style.top = `${event.pageY + 10}px`;
+}
+
+// Hide tooltip when mouse leaves
+function hideTooltip() {
+    tooltip.style.display = "none";
+}

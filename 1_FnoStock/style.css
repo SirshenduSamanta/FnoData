@@ -23,18 +23,16 @@ body {
       margin-top: 50px; /* Add space only at the top */
       /* border: 1px solid #ccc;  Table border */
     }
-    #option-chain {
-      width: 950px;
-      height: 300px;/* Fixed height for each table */
-      overflow-y: auto; /* Add scroll if content overflows */
-    }
     #FutData {
       width: 800px;
-      /* height: 300px; Fixed height for each table */
+      height: 100px;/* Fixed height for each table */
       overflow-y: auto; /* Add scroll if content overflows */
-      position: absolute;
-      left: 1000px;
+      margin-top: 110px;
     }
+    #FutData thead th {
+      position: sticky;
+    }
+
     th, td {
       border: 1px solid #ddd;
       padding: 8px;
@@ -78,18 +76,117 @@ body {
       position: absolute;
       left: 0; /* Aligns to the left */
     }
-    .middle-section {
+    /*
+    .middle-section {*/
       /* margin-left: auto; Push to the middle */
-     position: absolute;
-     left: 55%; /* Start from the middle of the page */
+     /*position: absolute;*/
+     /*left: 55%; /* Start from the middle of the page */
      /*transform: translateX(-50%);  Adjust to truly center */
-    }
+    /*}
+    */
+    /*.ForHeader {*/
+      /*
+       /* Set height to avoid overlap if needed */
+    /*}*/
 
-    .ForHeader {
-      position: relative;
-      height: 50px; /* Set height to avoid overlap if needed */
-    }
-    .left-header {
+
+/* Container Styling */
+.ForHeader {
+  position: relative;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c3c9db; /* Midnight Blue background */
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Right Header Styling */
+.right-header {
+  font-size: 30px;
+  font-weight: 600;
+  color: #076b7c; /* Cyan for main title */
+  margin: 0;
+  transition: color 0.3s;
+  background-color: #ececf9;
+  padding: 10px 100px;
+  border-radius: 15px;
+}
+
+.right-header:hover {
+  color: #0891b2; /* Darker cyan on hover */
+}
+
+/* Middle Header Styling */
+.middle-header {
+  font-size: 18px;
+  color: #065e06; /* Lighter cyan for update text */
+  margin: 0;
+  font-style: italic;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ddd;
+}
+
+/* Left Header Styling (ShowStock) */
+.left-header {
+  font-size: 18px;
+  background-color: #06b6d4; /* Cyan background */
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 0;
+  display: none; /* Hidden by default */
+}
+
+.left-header:hover {
+  background-color: #0891b2; /* Darker cyan on hover */
+  transform: translateY(-2px);
+}
+
+/* Show the Left Header if Needed */
+.left-header.ShowStock {
+  display: block; /* Make visible if ShowStock class is added */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ForHeader {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+      text-align: center;
+  }
+
+  .right-header, .middle-header, .left-header {
+      margin-bottom: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .right-header {
       position: absolute;
       left: 20%; /* Align to the left */
       margin: 0; /* Reset default margin */
@@ -102,9 +199,9 @@ body {
       /*transform: translateX(-50%); /* Adjust to truly center */
       margin: 0; /* Reset default margin */
     }
-    .right-header {
+    .left-header {
       position: absolute;
-      left: 65%; /* Start from the middle */
+      left: 69%; /* Start from the middle */
       /*transform: translateX(-50%); /* Adjust to truly center */
       margin: 0; /* Reset default margin */
     }
@@ -159,5 +256,364 @@ body {
 .bar:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+#FutData > thead > tr >  th {
+  background-color: rgb(85, 119, 221);
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  position: sticky;
+}
+
+.stockName {
+  /*display: inline-block;*/
+  padding: 5px 8px;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+.stockName:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #ff6b6b, #ffcc5c);
+}
+
+.stockName::after {
+  content: "";  /* Initially empty */
+  display: block;
+  font-size: 14px;
+  color: yellow;
+  font-weight: normal;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.stockName:hover::after {
+  content: "Click to show option chain";
+  opacity: 1;
+}
+
+.ShowStock {
+  /*display: inline-block;*/
+  padding: 8px 12px;
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+
+.middle-section {
+  position: absolute;
+  left: 60%;
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient blue theme */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.middle-section:hover {
+  transform: scale(1.02); /* Slight lift on hover */
+}
+
+.middle-section label {
+  background: rgba(255, 255, 255, 0.801); /* Semi-transparent label background */
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background 0.3s ease-in-out;
+}
+
+.middle-section label:hover {
+  background: rgba(255, 255, 255, 0.4); /* Brighter hover effect */
+  color: #ffeb3b; /* Highlight text */
+}
+
+
+
+
+
+
+
+
+#option-chain {
+  /*width: 100%;*/
+  
+  border-collapse: collapse;
+  /*background: white;*/
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  font-family: 'Arial', sans-serif;
+  margin-top: 100px;
+  width: 900px;
+  /* height: 300px; Fixed height for each table */
+  overflow-y: auto; /* Add scroll if content overflows */
+  /*position: absolute;*/
+  left: 900px;
+  margin-top: 110px;
+}
+
+/* Table Header */
+#option-chain thead {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  font-weight: bold;
+}
+
+#option-chain thead th {
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 2px solid #ddd;
+}
+
+
+
+/* Table Body */
+#option-chain tbody tr {
+  transition: background 0.3s ease-in-out;
+}
+
+#option-chain tbody tr:nth-child(odd) {
+  background: #f8f9fa; /* Light grey for alternating rows */
+}
+
+#option-chain tbody tr:hover {
+  background: rgba(0, 123, 255, 0.2); /* Highlight on hover */
+  cursor: pointer;
+}
+
+/* Table Cells */
+#option-chain td {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Sticky Header */
+#option-chain thead th {
+  position: sticky;
+  top: 0;
+  /*background: linear-gradient(135deg, #007bff, #00c6ff);*/
+  background-color: rgb(85, 119, 221);
+  color: black;
+  font-size: 16px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #option-chain {
+      font-size: 12px;
+  }
+
+  #option-chain thead th, #option-chain td {
+      padding: 8px;
+  }
+}
+
+
+
+
+
+
+
+body {
+  background-color: rgb(243, 243, 243);
+}
+
+/* Container Styling for Horizontal Alignment */
+.left-section {
+  background-color: #1e3a8a; /* Midnight Blue background */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between elements */
+  flex-wrap: wrap; /* Wrap elements if screen is small */
+  color: #ffffff;
+  margin: 20px;
+}
+
+/* Label Styling */
+.left-section label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #06b6d4; /* Cyan for labels */
+  margin-right: 10px;
+}
+
+/* Select Dropdown Styling */
+.filter {
+  padding: 6px 10px;
+  border: 2px solid #06b6d4; /* Cyan border */
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #1e3a8a; /* Dark text for readability */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filter:focus {
+  border-color: #0891b2; /* Darker cyan on focus */
+  box-shadow: 0 0 5px rgba(6, 182, 212, 0.5);
+  outline: none;
+}
+
+/* Reset Button Styling */
+.FutTableReset {
+  background-color: #06b6d4; /* Cyan background */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-left: 15px;
+}
+
+.FutTableReset:hover {
+  background-color: #0891b2; /* Darker cyan on hover */
+  transform: translateY(-2px);
+}
+
+.FutTableReset:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .left-section {
+      flex-wrap: wrap; /* Wrap filters to next line on small screens */
+      justify-content: center;
+  }
+  .filter, .FutTableReset {
+      margin-bottom: 10px;
+  }
+}
+
+
+
+/* For table */
+/* General Table Styling */
+table {
+  /*width: 100%;*/
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Header Styling */
+table thead {
+  background-color: #1e3a8a; /* Midnight Blue for header */
+  color: #ffffff;
+}
+
+table thead th {
+  position: sticky;
+  padding: 12px 3px;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 2px solid #06b6d4; /* Cyan border for header */
+}
+
+/* Table Body Styling */
+table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Zebra stripe effect */
+}
+
+table tbody tr:hover {
+  background-color: #f1f5f9; /* Light hover effect */
+}
+
+table tbody td {
+  padding: 10px 15px;
+  color: #333333;
+}
+
+/* Border for First and Last Columns */
+table tbody td:first-child {
+  border-left: 2px solid #06b6d4; /* Cyan border on first column */
+}
+
+table tbody td:last-child {
+  border-right: 2px solid #06b6d4; /* Cyan border on last column */
+}
+
+/* Scroll for Overflow in Small Screens */
+table-container {
+  overflow-x: auto;
+}
+
+table-container table {
+  width: 100%;
+  min-width: 600px; /* Ensure table doesn't collapse in small screens */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  table thead {
+      display: none; /* Hide table headers on small screens */
+  }
+
+  table, table tbody, table tr, table td {
+      display: block;
+      width: 100%;
+  }
+
+  table tbody tr {
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  table tbody td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+  }
+
+  table tbody td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 15px;
+      font-weight: bold;
+      color: #1e3a8a; /* Midnight Blue for labels */
+      text-align: left;
+  }
 }
 

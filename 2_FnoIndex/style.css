@@ -70,6 +70,92 @@ body {
      transform: translateX(-50%); /* Adjust to truly center */
     }
 
+
+
+
+
+
+    /* Container Styling */
+.ForHeader {
+  position: relative;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c3c9db; /* Midnight Blue background */
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Right Header Styling */
+.right-header {
+  font-size: 30px;
+  font-weight: 600;
+  color: #076b7c; /* Cyan for main title */
+  margin: 0;
+  transition: color 0.3s;
+  background-color: #ececf9;
+  padding: 10px 100px;
+  border-radius: 15px;
+}
+
+.right-header:hover {
+  color: #0891b2; /* Darker cyan on hover */
+}
+
+/* Middle Header Styling */
+.middle-header {
+  font-size: 18px;
+  color: #065e06; /* Lighter cyan for update text */
+  margin-left: 20px;
+  font-style: italic;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ddd;
+}
+
+/* Left Header Styling (ShowStock) */
+.left-header {
+  font-size: 30px;
+  background-color: #ececf9; /* Cyan background */
+  color: #076b7c;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 0;
+  padding: 10px 100px;
+  border-radius: 15px;
+  /*display: none; /* Hidden by default */
+}
+
+.left-header:hover {
+  background-color: #0891b2; /* Darker cyan on hover */
+  transform: translateY(-2px);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ForHeader {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+      text-align: center;
+  }
+
+  .right-header, .middle-header, .left-header {
+      margin-bottom: 10px;
+  }
+}
+
+
+
+
     .ForHeader {
       position: relative;
       height: 50px; /* Set height to avoid overlap if needed */
@@ -82,7 +168,7 @@ body {
     }
     .middle-header {
       position: absolute;
-      left: 45%; /* Start from the middle */
+      left: 52%; /* Start from the middle */
       font-size: 15px;
       color: #28a745;
       /*transform: translateX(-50%); /* Adjust to truly center */
@@ -146,3 +232,61 @@ body {
       background-color: aliceblue;
     }
 
+
+
+
+
+
+/* Table Body Styling */
+table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+
+table tbody tr:hover {
+  background-color: #f1f5f9; /* Light hover effect */
+}
+
+
+/* Scroll for Overflow in Small Screens */
+table-container {
+  overflow-x: auto;
+}
+
+table-container table {
+  width: 100%;
+  min-width: 600px; /* Ensure table doesn't collapse in small screens */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  table thead {
+      display: none; /* Hide table headers on small screens */
+  }
+
+  table, table tbody, table tr, table td {
+      display: block;
+      width: 100%;
+  }
+
+  table tbody tr {
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  table tbody td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+  }
+
+  table tbody td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 15px;
+      font-weight: bold;
+      color: #1e3a8a; /* Midnight Blue for labels */
+      text-align: left;
+  }
+}
