@@ -130,6 +130,28 @@ function PopulateDropDown()
 		option6.value = Values5[i]; option6.textContent = "> "+Values5[i]; BullBearFilter.appendChild(option6);
 	}
 
+	// for 5-20Ema Filter
+	const EmaFilter5_20 = document.getElementById('5_20EmaFilter');
+	EmaFilter5_20.replaceChildren(); // Removes all exiting options
+	const option7 = document.createElement('option'); option7.value = 0; option7.textContent = '-- 5-20Ema --'; EmaFilter5_20.appendChild(option7);
+	let Values6 = ['Price > 5-20','5 > Price > 20', 'Price < 5-20', '5 < Price < 20'];
+	for (let i=0; i < Values6.length; i++)
+	{
+		const option7 = document.createElement('option');
+		option7.value = Values6[i]; option7.textContent = Values6[i]; EmaFilter5_20.appendChild(option7);
+	}
+
+	// for 5-30Ema Filter
+	const EmaFilter5_30 = document.getElementById('5_30EmaFilter');
+	EmaFilter5_30.replaceChildren(); // Removes all exiting options
+	const option8 = document.createElement('option'); option8.value = 0; option8.textContent = '-- 5-30Ema --'; EmaFilter5_30.appendChild(option8);
+	let Values7 = ['Price > 5-30','5 > Price > 30', 'Price < 5-30', '5 < Price < 30'];
+	for (let i=0; i < Values7.length; i++)
+	{
+		const option8 = document.createElement('option');
+		option8.value = Values7[i]; option8.textContent = Values7[i]; EmaFilter5_30.appendChild(option8);
+	}
+
 }
 
 function evaluatePCrCondition(number, conditionStr) {
@@ -149,6 +171,28 @@ function evaluatePCrCondition(number, conditionStr) {
     }
 }
 
+function evaluate5_20EmaCondition(value, MktPrice, Ema5, Ema20) {
+	switch (value) {
+		case 'Price > 5-20': return MktPrice > Ema5 && MktPrice > Ema20;
+		case '5 > Price > 20': return Ema5 > MktPrice && MktPrice > Ema20;
+		case 'Price < 5-20': return MktPrice < Ema5 && MktPrice < Ema20;
+		case '5 < Price < 20': return Ema5 < MktPrice && MktPrice < Ema20;
+		case '0': return true;
+		default: throw new Error("Invalid value Ema5-20");
+	}
+}
+
+function evaluate5_30EmaCondition(value, MktPrice, Ema5, Ema30) {
+	switch (value) {
+		case 'Price > 5-30': return MktPrice > Ema5 && MktPrice > Ema30;
+		case '5 > Price > 30': return Ema5 > MktPrice && MktPrice > Ema30;
+		case 'Price < 5-30': return MktPrice < Ema5 && MktPrice < Ema30;
+		case '5 < Price < 30': return Ema5 < MktPrice && MktPrice < Ema30;
+		case '0': return true;
+		default: throw new Error("Invalid value Ema5-30");
+	}
+}
+
 
 function applyFilter()
 {
@@ -158,6 +202,9 @@ function applyFilter()
 	const FilterSpotCng = document.getElementById('spotcngFilter').value;
 	const FilterBullBear = document.getElementById('bullbearFilter').value;
 	const FilterPCR = document.getElementById('PcrFilter').value; // let PCRoperatorString = FilterPCR.trim().charAt(0); let PCRValue = parseFloat(FilterPCR.substring(1).trim());
+	const Filter5_20Ema = document.getElementById('5_20EmaFilter').value;
+	const Filter5_30Ema = document.getElementById('5_30EmaFilter').value;
+	//console.log("value : ", typeof Filter5_20Ema);
 
 	//console.log(typeof(PCRValue));
 
@@ -179,6 +226,10 @@ function applyFilter()
 		const SpotCng = Math.abs(data[key].PriceVol.PriceCng);
 		const BullBear = Math.abs((2*(data[key].OptionData.BullishFactor) -1).toFixed(2));
 		const Pcr = data[key].OptionData.PCR;
+		const MktPrice = data[key].PriceVol.CurrentPrice;
+		const Ema5 = data[key].PriceVol.ema_5;
+		const Ema20 = data[key].PriceVol.ema_20;
+		const Ema30 = data[key].PriceVol.ema_30;
 
 		//console.log(Pcr);
 
@@ -222,7 +273,7 @@ function applyFilter()
 
 		if (FilterPosition == '')
 		{
-			if (Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear && evaluatePCrCondition(Pcr, FilterPCR))
+			if (Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear && evaluatePCrCondition(Pcr, FilterPCR) && evaluate5_20EmaCondition(Filter5_20Ema, MktPrice, Ema5, Ema20) && evaluate5_30EmaCondition(Filter5_30Ema, MktPrice, Ema5, Ema30))
 			{
 				const row = document.createElement('tr');
 									row.innerHTML = `
@@ -268,7 +319,7 @@ function applyFilter()
 		}
 		else
 		{
-			if (position == FilterPosition && Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear && evaluatePCrCondition(Pcr, FilterPCR))
+			if (position == FilterPosition && Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear && evaluatePCrCondition(Pcr, FilterPCR) && evaluate5_20EmaCondition(Filter5_20Ema, MktPrice, Ema5, Ema20) && evaluate5_30EmaCondition(Filter5_30Ema, MktPrice, Ema5, Ema30))
 				{
 					const row = document.createElement('tr');
 										row.innerHTML = `
@@ -430,24 +481,26 @@ function OptionChain(data, selectedStock) {
 
   ///////////////////////// Show Volume times
 	  const VolTimes = document.getElementById('VolTimes');
-	  VolTimes.style.display = "inline";
-	  VolTimes.textContent = "VolTimes: " + data[selectedStock].PriceVol.VolTimes;
+	//   VolTimes.style.display = "inline";
+	//   VolTimes.textContent = "VolTimes: " + data[selectedStock].PriceVol.VolTimes;
 
   ///////////////// FutOICng show
 	  const FutOICng = document.getElementById('FutOICng');
-	  FutOICng.style.display = "inline";
-	  FutOICng.textContent = "FutOICng: " + data[selectedStock].FutureData.FutOiPer + "%";
+	//   FutOICng.style.display = "inline";
+	//   FutOICng.textContent = "FutOICng: " + data[selectedStock].FutureData.FutOiPer + "%";
 
 	 /////////////// SpotPriceCng show
 	 const SpotPriceCng = document.getElementById('SpotPriceCng');
-	 SpotPriceCng.style.display = "inline";
-	 SpotPriceCng.textContent = "SpotPriceCng: " + data[selectedStock].PriceVol.PriceCng + "%";
+	//  SpotPriceCng.style.display = "inline";
+	//  SpotPriceCng.textContent = "SpotPriceCng: " + data[selectedStock].PriceVol.PriceCng + "%";
 
  //////////// BullBearFactor show
 	const BullBearFactor = document.getElementById('BullBearFactor');
-const Bullishness = (2*(data[selectedStock].OptionData.BullishFactor) -1).toFixed(2);
-	BullBearFactor.style.display = "inline";
-	BullBearFactor.textContent = "BullBearFactor: " + Bullishness ;
+	const Bullishness = (2*(data[selectedStock].OptionData.BullishFactor) -1).toFixed(2);
+	// BullBearFactor.style.display = "inline";
+	// BullBearFactor.textContent = "BullBearFactor: " + Bullishness ;
+
+
 if ( Bullishness > 0 )
 			{       
 					BullBearFactor.className = "positive";
