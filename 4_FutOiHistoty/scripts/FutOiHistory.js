@@ -1,4 +1,4 @@
-function MakeTable(data)
+function MakeTable(data, Nifty500IndustryJson)
 {
 
     ////////////////// Find Unique stocks length  //////////////////////////
@@ -20,10 +20,17 @@ function MakeTable(data)
 
     uniqueStockList.forEach(stock => {
 
+	 let StockIndustry = "";
+	 try {
+		 StockIndustry = Nifty500IndustryJson[stock];
+	 } catch (err) {
+		 console.log(`Industry error for : ${stock}`);
+	 }
         ////// make the table
         const row = document.createElement('tr');
         let rowContent = `
                         <td><div style="font-size:18px; font-weight: 300; background-color : #e8eaed">${stock}</div></td>
+                        <td style="width: 50px;">${StockIndustry}</td>
                         <td>
                             <div class="TableOiHistory">
                         `;

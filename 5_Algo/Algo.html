@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Algo</title> 
+  <style>
+    table, th, td { border: 1px solid black; border-collapse: collapse; padding: 5px; }
+    th { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+
+<h2>Sensex Algo Records</h2>
+<select id="csvSelector" onchange="loadCSV('./data/'+this.value)">
+  <option value="">--Select Date--</option>
+</select>
+
+<div id="csvTable"></div>
+
+<script src="./scripts/script.js"></script>
+<script>
+	populateDropdown('./data/csvFilesList.json');
+</script>
+
+</body>
+</html>
+
