@@ -144,7 +144,7 @@ function PopulateDropDown()
 	// for 5-30Ema Filter
 	const EmaFilter5_30 = document.getElementById('5_30EmaFilter');
 	EmaFilter5_30.replaceChildren(); // Removes all exiting options
-	const option8 = document.createElement('option'); option8.value = 0; option8.textContent = '-- 5-30Ema --'; EmaFilter5_30.appendChild(option8);
+	const option8 = document.createElement('option'); option8.value = 0; option8.textContent = '--5-30Ema(Price within Ema±3%)--'; EmaFilter5_30.appendChild(option8);
 	let Values7 = ['Price > 5-30','5 > Price > 30', 'Price < 5-30', '5 < Price < 30'];
 	for (let i=0; i < Values7.length; i++)
 	{
@@ -184,10 +184,10 @@ function evaluate5_20EmaCondition(value, MktPrice, Ema5, Ema20) {
 
 function evaluate5_30EmaCondition(value, MktPrice, Ema5, Ema30) {
 	switch (value) {
-		case 'Price > 5-30': return MktPrice > Ema5 && MktPrice > Ema30;
-		case '5 > Price > 30': return Ema5 > MktPrice && MktPrice > Ema30;
-		case 'Price < 5-30': return MktPrice < Ema5 && MktPrice < Ema30;
-		case '5 < Price < 30': return Ema5 < MktPrice && MktPrice < Ema30;
+		case 'Price > 5-30': return MktPrice > Ema5 && MktPrice > Ema30 && (Math.abs((MktPrice - Ema30) / Ema30) <= 0.03);
+		case '5 > Price > 30': return Ema5 > MktPrice && MktPrice > Ema30 && (Math.abs((MktPrice - Ema30) / Ema30) <= 0.03);
+		case 'Price < 5-30': return MktPrice < Ema5 && MktPrice < Ema30 && (Math.abs((MktPrice - Ema30) / Ema30) <= 0.03);
+		case '5 < Price < 30': return Ema5 < MktPrice && MktPrice < Ema30 && (Math.abs((MktPrice - Ema30) / Ema30) <= 0.03);
 		case '0': return true;
 		default: throw new Error("Invalid value Ema5-30");
 	}
