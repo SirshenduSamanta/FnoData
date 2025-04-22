@@ -141,15 +141,15 @@ function PopulateDropDown()
 		option7.value = Values6[i]; option7.textContent = Values6[i]; EmaFilter5_20.appendChild(option7);
 	}
 
-	// for 5-30Ema Filter
-	const EmaFilter5_30 = document.getElementById('5_30EmaFilter');
-	EmaFilter5_30.replaceChildren(); // Removes all exiting options
-	const option8 = document.createElement('option'); option8.value = 0; option8.textContent = '--5-30Ema(Price within Ema±3%)--'; EmaFilter5_30.appendChild(option8);
-	let Values7 = ['Price > 5-30','5 > Price > 30', 'Price < 5-30', '5 < Price < 30'];
+	// for 20-30Ema Filter
+	const EmaFilter20_30 = document.getElementById('20_30EmaFilter');
+	EmaFilter20_30.replaceChildren(); // Removes all exiting options
+	const option8 = document.createElement('option'); option8.value = 0; option8.textContent = '--20-30Ema(Price within Ema±3%)--'; EmaFilter20_30.appendChild(option8);
+	let Values7 = ['20 > 30','20 < 30'];
 	for (let i=0; i < Values7.length; i++)
 	{
 		const option8 = document.createElement('option');
-		option8.value = Values7[i]; option8.textContent = Values7[i]; EmaFilter5_30.appendChild(option8);
+		option8.value = Values7[i]; option8.textContent = Values7[i]; EmaFilter20_30.appendChild(option8);
 	}
 
 }
@@ -182,14 +182,12 @@ function evaluate5_20EmaCondition(value, MktPrice, Ema5, Ema20) {
 	}
 }
 
-function evaluate5_30EmaCondition(value, MktPrice, Ema5, Ema30) {
+function evaluate20_30EmaCondition(value, MktPrice, Ema20, Ema30) {
 	switch (value) {
-		case 'Price > 5-30': return MktPrice > Ema5 && MktPrice > Ema30 && (Math.abs((MktPrice - Ema30) / Ema30) <= 0.03);
-		case '5 > Price > 30': return Ema5 > MktPrice && MktPrice > Ema30 && (Math.abs((MktPrice - Ema30) / Ema30) <= 0.03);
-		case 'Price < 5-30': return MktPrice < Ema5 && MktPrice < Ema30 && (Math.abs((MktPrice - Ema30) / Ema30) <= 0.03);
-		case '5 < Price < 30': return Ema5 < MktPrice && MktPrice < Ema30 && (Math.abs((MktPrice - Ema30) / Ema30) <= 0.03);
+		case '20 > 30': return Ema20 > Ema30 && (Math.abs((MktPrice - Ema30) / Ema30) <= 0.03);
+		case '20 < 30': return Ema20 < Ema30 && (Math.abs((MktPrice - Ema30) / Ema30) <= 0.03);
 		case '0': return true;
-		default: throw new Error("Invalid value Ema5-30");
+		default: throw new Error("Invalid value Ema20-30");
 	}
 }
 
@@ -203,7 +201,7 @@ function applyFilter()
 	const FilterBullBear = document.getElementById('bullbearFilter').value;
 	const FilterPCR = document.getElementById('PcrFilter').value; // let PCRoperatorString = FilterPCR.trim().charAt(0); let PCRValue = parseFloat(FilterPCR.substring(1).trim());
 	const Filter5_20Ema = document.getElementById('5_20EmaFilter').value;
-	const Filter5_30Ema = document.getElementById('5_30EmaFilter').value;
+	const Filter20_30Ema = document.getElementById('20_30EmaFilter').value;
 	//console.log("value : ", typeof Filter5_20Ema);
 
 	//console.log(typeof(PCRValue));
@@ -273,7 +271,7 @@ function applyFilter()
 
 		if (FilterPosition == '')
 		{
-			if (Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear && evaluatePCrCondition(Pcr, FilterPCR) && evaluate5_20EmaCondition(Filter5_20Ema, MktPrice, Ema5, Ema20) && evaluate5_30EmaCondition(Filter5_30Ema, MktPrice, Ema5, Ema30))
+			if (Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear && evaluatePCrCondition(Pcr, FilterPCR) && evaluate5_20EmaCondition(Filter5_20Ema, MktPrice, Ema5, Ema20) && evaluate20_30EmaCondition(Filter20_30Ema, MktPrice, Ema20, Ema30))
 			{
 				const row = document.createElement('tr');
 									row.innerHTML = `
@@ -319,7 +317,7 @@ function applyFilter()
 		}
 		else
 		{
-			if (position == FilterPosition && Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear && evaluatePCrCondition(Pcr, FilterPCR) && evaluate5_20EmaCondition(Filter5_20Ema, MktPrice, Ema5, Ema20) && evaluate5_30EmaCondition(Filter5_30Ema, MktPrice, Ema5, Ema30))
+			if (position == FilterPosition && Voltimes >= FilterVolTimes && FutOICng >= FilterFutOICng && SpotCng >= FilterSpotCng && BullBear >= FilterBullBear && evaluatePCrCondition(Pcr, FilterPCR) && evaluate5_20EmaCondition(Filter5_20Ema, MktPrice, Ema5, Ema20) && evaluate20_30EmaCondition(Filter20_30Ema, MktPrice, Ema20, Ema30))
 				{
 					const row = document.createElement('tr');
 										row.innerHTML = `
