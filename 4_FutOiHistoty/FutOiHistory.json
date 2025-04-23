@@ -6398,1068 +6398,2135 @@
     },
     "22-04-2025": {
         "ABB": {
-            "PriceCng": 0.91,
-            "FutOiPer": 1.3,
+            "PriceCng": 0.87,
+            "FutOiPer": 1.63,
             "Fut_category": "Long Buildup"
         },
         "ACC": {
-            "PriceCng": -0.35,
-            "FutOiPer": -7.38,
+            "PriceCng": -0.4,
+            "FutOiPer": -7.34,
             "Fut_category": "Long Unwinding"
         },
         "APLAPOLLO": {
-            "PriceCng": 1.26,
-            "FutOiPer": -10.66,
+            "PriceCng": 1.46,
+            "FutOiPer": -10.72,
             "Fut_category": "Short Covering"
         },
         "AUBANK": {
-            "PriceCng": -1.64,
-            "FutOiPer": -7.25,
+            "PriceCng": -1.46,
+            "FutOiPer": -6.9,
             "Fut_category": "Long Unwinding"
         },
         "AARTIIND": {
-            "PriceCng": 2.91,
-            "FutOiPer": -11.0,
+            "PriceCng": 2.95,
+            "FutOiPer": -10.81,
             "Fut_category": "Short Covering"
         },
         "ADANIENSOL": {
-            "PriceCng": -0.99,
-            "FutOiPer": -11.48,
+            "PriceCng": -0.84,
+            "FutOiPer": -11.44,
             "Fut_category": "Long Unwinding"
         },
         "ADANIENT": {
-            "PriceCng": 0.08,
-            "FutOiPer": -4.65,
+            "PriceCng": 0.01,
+            "FutOiPer": -4.67,
             "Fut_category": "Short Covering"
         },
         "ADANIGREEN": {
-            "PriceCng": -1.28,
-            "FutOiPer": -2.11,
+            "PriceCng": -1.23,
+            "FutOiPer": -2.09,
             "Fut_category": "Long Unwinding"
         },
         "ADANIPORTS": {
-            "PriceCng": -1.18,
-            "FutOiPer": 4.31,
+            "PriceCng": -1.09,
+            "FutOiPer": 4.5,
             "Fut_category": "Short Buildup"
         },
         "ATGL": {
-            "PriceCng": -0.82,
-            "FutOiPer": -13.87,
+            "PriceCng": -0.84,
+            "FutOiPer": -13.99,
             "Fut_category": "Long Unwinding"
         },
         "ABCAPITAL": {
-            "PriceCng": 0.64,
-            "FutOiPer": 11.56,
+            "PriceCng": 0.74,
+            "FutOiPer": 11.65,
             "Fut_category": "Long Buildup"
         },
         "ABFRL": {
-            "PriceCng": 0.99,
-            "FutOiPer": -7.9,
+            "PriceCng": 0.86,
+            "FutOiPer": -7.88,
             "Fut_category": "Short Covering"
         },
         "ALKEM": {
-            "PriceCng": 0.18,
-            "FutOiPer": 10.69,
+            "PriceCng": 0.69,
+            "FutOiPer": 10.78,
             "Fut_category": "Long Buildup"
         },
         "AMBUJACEM": {
-            "PriceCng": 0.01,
-            "FutOiPer": 8.04,
+            "PriceCng": 0.33,
+            "FutOiPer": 8.09,
             "Fut_category": "Long Buildup"
         },
         "ANGELONE": {
-            "PriceCng": 2.68,
-            "FutOiPer": -3.23,
+            "PriceCng": 2.59,
+            "FutOiPer": -3.04,
             "Fut_category": "Short Covering"
         },
         "APOLLOHOSP": {
-            "PriceCng": -0.78,
-            "FutOiPer": -0.09,
-            "Fut_category": "Long Unwinding"
+            "PriceCng": -0.88,
+            "FutOiPer": 0.03,
+            "Fut_category": "Short Buildup"
         },
         "APOLLOTYRE": {
-            "PriceCng": 0.28,
-            "FutOiPer": -15.45,
+            "PriceCng": 0.07,
+            "FutOiPer": -15.73,
             "Fut_category": "Short Covering"
         },
         "ASHOKLEY": {
-            "PriceCng": 0.03,
-            "FutOiPer": -11.31,
+            "PriceCng": 0.02,
+            "FutOiPer": -11.02,
             "Fut_category": "Short Covering"
         },
         "ASIANPAINT": {
-            "PriceCng": -0.53,
-            "FutOiPer": -13.24,
+            "PriceCng": -0.7,
+            "FutOiPer": -13.27,
             "Fut_category": "Long Unwinding"
         },
         "ASTRAL": {
-            "PriceCng": 2.48,
-            "FutOiPer": -14.69,
+            "PriceCng": 2.42,
+            "FutOiPer": -14.75,
             "Fut_category": "Short Covering"
         },
         "AUROPHARMA": {
-            "PriceCng": -1.11,
-            "FutOiPer": 22.1,
+            "PriceCng": -0.97,
+            "FutOiPer": 22.0,
             "Fut_category": "Short Buildup"
         },
         "DMART": {
-            "PriceCng": 2.17,
-            "FutOiPer": -0.68,
+            "PriceCng": 2.07,
+            "FutOiPer": -0.58,
             "Fut_category": "Short Covering"
         },
         "AXISBANK": {
-            "PriceCng": -0.57,
-            "FutOiPer": 16.71,
+            "PriceCng": -0.63,
+            "FutOiPer": 17.04,
             "Fut_category": "Short Buildup"
         },
         "BSOFT": {
-            "PriceCng": -1.34,
-            "FutOiPer": -8.67,
+            "PriceCng": -1.22,
+            "FutOiPer": -8.72,
             "Fut_category": "Long Unwinding"
         },
         "BSE": {
             "PriceCng": -0.72,
-            "FutOiPer": -12.55,
+            "FutOiPer": -12.7,
             "Fut_category": "Long Unwinding"
         },
         "BAJAJ-AUTO": {
-            "PriceCng": -1.33,
-            "FutOiPer": -13.54,
+            "PriceCng": -1.36,
+            "FutOiPer": -13.52,
             "Fut_category": "Long Unwinding"
         },
         "BAJFINANCE": {
-            "PriceCng": -0.34,
-            "FutOiPer": 4.08,
+            "PriceCng": -0.42,
+            "FutOiPer": 3.95,
             "Fut_category": "Short Buildup"
         },
         "BAJAJFINSV": {
-            "PriceCng": -1.36,
-            "FutOiPer": 13.62,
+            "PriceCng": -1.4,
+            "FutOiPer": 14.68,
             "Fut_category": "Short Buildup"
         },
         "BALKRISIND": {
-            "PriceCng": 0.32,
-            "FutOiPer": -19.58,
+            "PriceCng": 0.17,
+            "FutOiPer": -19.73,
             "Fut_category": "Short Covering"
         },
         "BANDHANBNK": {
-            "PriceCng": 0.23,
-            "FutOiPer": -2.85,
+            "PriceCng": 0.21,
+            "FutOiPer": -2.8,
             "Fut_category": "Short Covering"
         },
         "BANKBARODA": {
             "PriceCng": 0.99,
-            "FutOiPer": 13.75,
+            "FutOiPer": 13.88,
             "Fut_category": "Long Buildup"
         },
         "BANKINDIA": {
-            "PriceCng": -0.89,
-            "FutOiPer": -5.22,
+            "PriceCng": -0.88,
+            "FutOiPer": -5.16,
             "Fut_category": "Long Unwinding"
         },
         "BERGEPAINT": {
-            "PriceCng": 4.73,
-            "FutOiPer": 17.38,
+            "PriceCng": 4.53,
+            "FutOiPer": 17.44,
             "Fut_category": "Long Buildup"
         },
         "BEL": {
-            "PriceCng": 1.13,
-            "FutOiPer": -12.82,
+            "PriceCng": 1.18,
+            "FutOiPer": -13.04,
             "Fut_category": "Short Covering"
         },
         "BHARATFORG": {
-            "PriceCng": 0.79,
-            "FutOiPer": -7.65,
+            "PriceCng": 0.69,
+            "FutOiPer": -7.84,
             "Fut_category": "Short Covering"
         },
         "BHEL": {
             "PriceCng": 0.44,
-            "FutOiPer": -10.85,
+            "FutOiPer": -10.95,
             "Fut_category": "Short Covering"
         },
         "BPCL": {
-            "PriceCng": 0.67,
-            "FutOiPer": 2.41,
+            "PriceCng": 0.72,
+            "FutOiPer": 2.59,
             "Fut_category": "Long Buildup"
         },
         "BHARTIARTL": {
-            "PriceCng": -1.61,
-            "FutOiPer": -0.04,
-            "Fut_category": "Long Unwinding"
+            "PriceCng": -1.87,
+            "FutOiPer": 0.56,
+            "Fut_category": "Short Buildup"
         },
         "BIOCON": {
-            "PriceCng": 0.47,
-            "FutOiPer": -15.93,
+            "PriceCng": 0.57,
+            "FutOiPer": -16.04,
             "Fut_category": "Short Covering"
         },
         "BOSCHLTD": {
-            "PriceCng": 0.85,
-            "FutOiPer": 5.16,
+            "PriceCng": 0.58,
+            "FutOiPer": 5.17,
             "Fut_category": "Long Buildup"
         },
         "BRITANNIA": {
-            "PriceCng": 0.93,
-            "FutOiPer": 8.75,
+            "PriceCng": 1.13,
+            "FutOiPer": 8.82,
             "Fut_category": "Long Buildup"
         },
         "CESC": {
-            "PriceCng": -1.75,
-            "FutOiPer": -2.08,
+            "PriceCng": -1.71,
+            "FutOiPer": -1.99,
             "Fut_category": "Long Unwinding"
         },
         "CGPOWER": {
-            "PriceCng": -0.61,
-            "FutOiPer": -8.67,
+            "PriceCng": -0.71,
+            "FutOiPer": -8.72,
             "Fut_category": "Long Unwinding"
         },
         "CANBK": {
-            "PriceCng": 1.56,
-            "FutOiPer": -7.49,
+            "PriceCng": 1.71,
+            "FutOiPer": -7.42,
             "Fut_category": "Short Covering"
         },
         "CDSL": {
             "PriceCng": 0.28,
-            "FutOiPer": -26.71,
+            "FutOiPer": -26.73,
             "Fut_category": "Short Covering"
         },
         "CHAMBLFERT": {
-            "PriceCng": -1.05,
-            "FutOiPer": -21.48,
+            "PriceCng": -1.03,
+            "FutOiPer": -22.0,
             "Fut_category": "Long Unwinding"
         },
         "CHOLAFIN": {
-            "PriceCng": -5.9,
-            "FutOiPer": -16.11,
+            "PriceCng": -5.95,
+            "FutOiPer": -16.17,
             "Fut_category": "Long Unwinding"
         },
         "CIPLA": {
-            "PriceCng": 1.12,
-            "FutOiPer": 15.94,
+            "PriceCng": 0.79,
+            "FutOiPer": 16.13,
             "Fut_category": "Long Buildup"
         },
         "COALINDIA": {
-            "PriceCng": -0.22,
-            "FutOiPer": 7.14,
+            "PriceCng": -0.27,
+            "FutOiPer": 7.11,
             "Fut_category": "Short Buildup"
         },
         "COFORGE": {
-            "PriceCng": 0.09,
-            "FutOiPer": -0.4,
-            "Fut_category": "Short Covering"
+            "PriceCng": -0.19,
+            "FutOiPer": -0.36,
+            "Fut_category": "Long Unwinding"
         },
         "COLPAL": {
-            "PriceCng": 4.69,
-            "FutOiPer": -3.7,
+            "PriceCng": 4.6,
+            "FutOiPer": -3.79,
             "Fut_category": "Short Covering"
         },
         "CAMS": {
-            "PriceCng": 0.1,
+            "PriceCng": 0.13,
             "FutOiPer": -23.02,
             "Fut_category": "Short Covering"
         },
         "CONCOR": {
-            "PriceCng": -0.2,
-            "FutOiPer": -9.15,
+            "PriceCng": -0.32,
+            "FutOiPer": -9.11,
             "Fut_category": "Long Unwinding"
         },
         "CROMPTON": {
-            "PriceCng": 4.11,
-            "FutOiPer": 29.07,
+            "PriceCng": 3.96,
+            "FutOiPer": 29.11,
             "Fut_category": "Long Buildup"
         },
         "CUMMINSIND": {
-            "PriceCng": -0.68,
-            "FutOiPer": 16.16,
+            "PriceCng": -0.71,
+            "FutOiPer": 16.82,
             "Fut_category": "Short Buildup"
         },
         "CYIENT": {
-            "PriceCng": -2.98,
-            "FutOiPer": 0.16,
+            "PriceCng": -2.88,
+            "FutOiPer": 0.48,
             "Fut_category": "Short Buildup"
         },
         "DLF": {
-            "PriceCng": 1.38,
-            "FutOiPer": 3.73,
+            "PriceCng": 1.35,
+            "FutOiPer": 3.75,
             "Fut_category": "Long Buildup"
         },
         "DABUR": {
-            "PriceCng": 1.85,
-            "FutOiPer": -9.22,
+            "PriceCng": 1.99,
+            "FutOiPer": -9.26,
             "Fut_category": "Short Covering"
         },
         "DALBHARAT": {
-            "PriceCng": -0.86,
+            "PriceCng": -0.88,
             "FutOiPer": -14.79,
             "Fut_category": "Long Unwinding"
         },
         "DEEPAKNTR": {
-            "PriceCng": 0.11,
-            "FutOiPer": -28.34,
-            "Fut_category": "Short Covering"
+            "PriceCng": -0.24,
+            "FutOiPer": -29.21,
+            "Fut_category": "Long Unwinding"
         },
         "DELHIVERY": {
-            "PriceCng": 1.03,
-            "FutOiPer": -8.16,
+            "PriceCng": 0.82,
+            "FutOiPer": -8.21,
             "Fut_category": "Short Covering"
         },
         "DIVISLAB": {
-            "PriceCng": 0.2,
-            "FutOiPer": 8.67,
+            "PriceCng": 0.31,
+            "FutOiPer": 8.65,
             "Fut_category": "Long Buildup"
         },
         "DIXON": {
-            "PriceCng": 5.4,
-            "FutOiPer": 20.07,
+            "PriceCng": 5.34,
+            "FutOiPer": 19.53,
             "Fut_category": "Long Buildup"
         },
         "DRREDDY": {
-            "PriceCng": -0.19,
-            "FutOiPer": -11.97,
+            "PriceCng": -0.2,
+            "FutOiPer": -11.55,
             "Fut_category": "Long Unwinding"
         },
         "EICHERMOT": {
-            "PriceCng": -0.52,
-            "FutOiPer": -3.17,
+            "PriceCng": -0.37,
+            "FutOiPer": -3.15,
             "Fut_category": "Long Unwinding"
         },
         "ESCORTS": {
-            "PriceCng": -0.21,
-            "FutOiPer": 0.73,
+            "PriceCng": -0.07,
+            "FutOiPer": 0.72,
             "Fut_category": "Short Buildup"
         },
         "EXIDEIND": {
-            "PriceCng": -0.82,
-            "FutOiPer": -12.06,
+            "PriceCng": -0.86,
+            "FutOiPer": -12.34,
             "Fut_category": "Long Unwinding"
         },
         "NYKAA": {
-            "PriceCng": -2.32,
-            "FutOiPer": -4.29,
+            "PriceCng": -2.21,
+            "FutOiPer": -4.39,
             "Fut_category": "Long Unwinding"
         },
         "GAIL": {
-            "PriceCng": -1.04,
-            "FutOiPer": 0.65,
+            "PriceCng": -0.98,
+            "FutOiPer": 0.69,
             "Fut_category": "Short Buildup"
         },
         "GMRAIRPORT": {
-            "PriceCng": -0.13,
-            "FutOiPer": -1.85,
+            "PriceCng": -0.12,
+            "FutOiPer": -1.86,
             "Fut_category": "Long Unwinding"
         },
         "GLENMARK": {
-            "PriceCng": 1.63,
-            "FutOiPer": -10.51,
+            "PriceCng": 1.67,
+            "FutOiPer": -10.47,
             "Fut_category": "Short Covering"
         },
         "GODREJCP": {
-            "PriceCng": 1.67,
-            "FutOiPer": 4.96,
+            "PriceCng": 1.66,
+            "FutOiPer": 5.03,
             "Fut_category": "Long Buildup"
         },
         "GODREJPROP": {
-            "PriceCng": 2.49,
-            "FutOiPer": 1.45,
-            "Fut_category": "Long Buildup"
-        },
-        "GRANULES": {
-            "PriceCng": -0.5,
-            "FutOiPer": -11.21,
-            "Fut_category": "Long Unwinding"
-        },
-        "GRASIM": {
-            "PriceCng": -0.35,
-            "FutOiPer": 15.48,
-            "Fut_category": "Short Buildup"
-        },
-        "HCLTECH": {
-            "PriceCng": -0.13,
-            "FutOiPer": -10.97,
-            "Fut_category": "Long Unwinding"
-        },
-        "HDFCAMC": {
-            "PriceCng": 0.97,
-            "FutOiPer": 4.89,
-            "Fut_category": "Long Buildup"
-        },
-        "HDFCBANK": {
-            "PriceCng": 1.74,
-            "FutOiPer": -1.71,
-            "Fut_category": "Short Covering"
-        },
-        "HDFCLIFE": {
-            "PriceCng": -0.27,
-            "FutOiPer": 7.2,
-            "Fut_category": "Short Buildup"
-        },
-        "HFCL": {
-            "PriceCng": -0.41,
-            "FutOiPer": -14.43,
-            "Fut_category": "Long Unwinding"
-        },
-        "HAVELLS": {
-            "PriceCng": 1.2,
+            "PriceCng": 2.46,
             "FutOiPer": 1.39,
             "Fut_category": "Long Buildup"
         },
+        "GRANULES": {
+            "PriceCng": -0.46,
+            "FutOiPer": -11.25,
+            "Fut_category": "Long Unwinding"
+        },
+        "GRASIM": {
+            "PriceCng": -0.7,
+            "FutOiPer": 15.52,
+            "Fut_category": "Short Buildup"
+        },
+        "HCLTECH": {
+            "PriceCng": 0.26,
+            "FutOiPer": -11.22,
+            "Fut_category": "Short Covering"
+        },
+        "HDFCAMC": {
+            "PriceCng": 1.01,
+            "FutOiPer": 4.93,
+            "Fut_category": "Long Buildup"
+        },
+        "HDFCBANK": {
+            "PriceCng": 1.71,
+            "FutOiPer": -1.49,
+            "Fut_category": "Short Covering"
+        },
+        "HDFCLIFE": {
+            "PriceCng": -0.51,
+            "FutOiPer": 7.36,
+            "Fut_category": "Short Buildup"
+        },
+        "HFCL": {
+            "PriceCng": -0.31,
+            "FutOiPer": -14.45,
+            "Fut_category": "Long Unwinding"
+        },
+        "HAVELLS": {
+            "PriceCng": 1.38,
+            "FutOiPer": 1.41,
+            "Fut_category": "Long Buildup"
+        },
         "HEROMOTOCO": {
-            "PriceCng": -2.17,
-            "FutOiPer": -6.32,
+            "PriceCng": -2.02,
+            "FutOiPer": -6.21,
             "Fut_category": "Long Unwinding"
         },
         "HINDALCO": {
-            "PriceCng": -0.43,
-            "FutOiPer": -8.85,
+            "PriceCng": -0.46,
+            "FutOiPer": -8.91,
             "Fut_category": "Long Unwinding"
         },
         "HAL": {
-            "PriceCng": -0.7,
-            "FutOiPer": -7.43,
+            "PriceCng": -0.68,
+            "FutOiPer": -7.45,
             "Fut_category": "Long Unwinding"
         },
         "HINDCOPPER": {
-            "PriceCng": 1.82,
-            "FutOiPer": -5.21,
+            "PriceCng": 1.86,
+            "FutOiPer": -5.25,
             "Fut_category": "Short Covering"
         },
         "HINDPETRO": {
-            "PriceCng": 0.6,
-            "FutOiPer": 9.52,
+            "PriceCng": 0.73,
+            "FutOiPer": 9.72,
             "Fut_category": "Long Buildup"
         },
         "HINDUNILVR": {
-            "PriceCng": 2.16,
-            "FutOiPer": -5.87,
+            "PriceCng": 2.21,
+            "FutOiPer": -5.68,
             "Fut_category": "Short Covering"
         },
         "HUDCO": {
-            "PriceCng": -0.64,
-            "FutOiPer": -2.78,
+            "PriceCng": -0.6,
+            "FutOiPer": -3.1,
             "Fut_category": "Long Unwinding"
         },
         "ICICIBANK": {
-            "PriceCng": 0.42,
-            "FutOiPer": 8.66,
+            "PriceCng": 0.3,
+            "FutOiPer": 10.08,
             "Fut_category": "Long Buildup"
         },
         "ICICIGI": {
-            "PriceCng": 0.21,
-            "FutOiPer": 18.2,
+            "PriceCng": 0.48,
+            "FutOiPer": 18.24,
             "Fut_category": "Long Buildup"
         },
         "ICICIPRULI": {
-            "PriceCng": -0.52,
-            "FutOiPer": 23.79,
+            "PriceCng": -0.51,
+            "FutOiPer": 23.86,
             "Fut_category": "Short Buildup"
         },
         "IDFCFIRSTB": {
-            "PriceCng": 0.83,
-            "FutOiPer": -3.71,
+            "PriceCng": 0.86,
+            "FutOiPer": -3.73,
             "Fut_category": "Short Covering"
         },
         "IIFL": {
-            "PriceCng": 5.61,
+            "PriceCng": 5.71,
             "FutOiPer": 0.27,
             "Fut_category": "Long Buildup"
         },
         "IRB": {
-            "PriceCng": 0.94,
+            "PriceCng": 1.02,
             "FutOiPer": -11.37,
             "Fut_category": "Short Covering"
         },
         "ITC": {
-            "PriceCng": 2.76,
+            "PriceCng": 2.54,
             "FutOiPer": 7.75,
             "Fut_category": "Long Buildup"
         },
         "INDIANB": {
-            "PriceCng": 0.77,
+            "PriceCng": 0.95,
             "FutOiPer": -16.93,
             "Fut_category": "Short Covering"
         },
         "IEX": {
-            "PriceCng": -0.13,
-            "FutOiPer": -5.79,
+            "PriceCng": -0.14,
+            "FutOiPer": -5.98,
             "Fut_category": "Long Unwinding"
         },
         "IOC": {
-            "PriceCng": -0.26,
-            "FutOiPer": -2.07,
+            "PriceCng": -0.27,
+            "FutOiPer": -2.0,
             "Fut_category": "Long Unwinding"
         },
         "IRCTC": {
-            "PriceCng": -0.03,
+            "PriceCng": 0.03,
             "FutOiPer": 4.36,
-            "Fut_category": "Short Buildup"
+            "Fut_category": "Long Buildup"
         },
         "IRFC": {
-            "PriceCng": 0.64,
-            "FutOiPer": -23.18,
+            "PriceCng": 0.67,
+            "FutOiPer": -23.14,
             "Fut_category": "Short Covering"
         },
         "IREDA": {
-            "PriceCng": 1.83,
+            "PriceCng": 1.69,
             "FutOiPer": -5.67,
             "Fut_category": "Short Covering"
         },
         "IGL": {
-            "PriceCng": 2.92,
+            "PriceCng": 3.06,
             "FutOiPer": -18.25,
             "Fut_category": "Short Covering"
         },
         "INDUSTOWER": {
-            "PriceCng": -1.45,
+            "PriceCng": -1.63,
             "FutOiPer": 13.4,
             "Fut_category": "Short Buildup"
         },
         "INDUSINDBK": {
-            "PriceCng": -4.7,
+            "PriceCng": -4.91,
             "FutOiPer": 2.15,
             "Fut_category": "Short Buildup"
         },
         "NAUKRI": {
-            "PriceCng": 0.05,
+            "PriceCng": 0.21,
             "FutOiPer": -1.68,
             "Fut_category": "Short Covering"
         },
         "INFY": {
-            "PriceCng": -1.85,
+            "PriceCng": -1.94,
             "FutOiPer": 10.91,
             "Fut_category": "Short Buildup"
         },
         "INDIGO": {
-            "PriceCng": 0.63,
+            "PriceCng": 0.68,
             "FutOiPer": 1.6,
             "Fut_category": "Long Buildup"
         },
         "JSWENERGY": {
             "PriceCng": -2.46,
-            "FutOiPer": -3.45,
+            "FutOiPer": -3.38,
             "Fut_category": "Long Unwinding"
         },
         "JSWSTEEL": {
-            "PriceCng": 0.99,
-            "FutOiPer": -21.44,
+            "PriceCng": 0.87,
+            "FutOiPer": -21.52,
             "Fut_category": "Short Covering"
         },
         "JSL": {
-            "PriceCng": 1.99,
-            "FutOiPer": -30.62,
+            "PriceCng": 1.97,
+            "FutOiPer": -30.72,
             "Fut_category": "Short Covering"
         },
         "JINDALSTEL": {
-            "PriceCng": 0.86,
-            "FutOiPer": -9.98,
+            "PriceCng": 0.92,
+            "FutOiPer": -9.77,
             "Fut_category": "Short Covering"
         },
         "JIOFIN": {
-            "PriceCng": 1.69,
-            "FutOiPer": 6.19,
+            "PriceCng": 1.67,
+            "FutOiPer": 6.29,
             "Fut_category": "Long Buildup"
         },
         "JUBLFOOD": {
-            "PriceCng": 0.88,
-            "FutOiPer": -8.57,
+            "PriceCng": 0.91,
+            "FutOiPer": -8.62,
             "Fut_category": "Short Covering"
         },
         "KEI": {
-            "PriceCng": 2.14,
-            "FutOiPer": -7.59,
+            "PriceCng": 2.19,
+            "FutOiPer": -7.61,
             "Fut_category": "Short Covering"
         },
         "KPITTECH": {
-            "PriceCng": -0.3,
-            "FutOiPer": 3.33,
+            "PriceCng": -0.15,
+            "FutOiPer": 3.25,
             "Fut_category": "Short Buildup"
         },
         "KALYANKJIL": {
-            "PriceCng": -1.17,
-            "FutOiPer": -1.19,
+            "PriceCng": -0.97,
+            "FutOiPer": -1.13,
             "Fut_category": "Long Unwinding"
         },
         "KOTAKBANK": {
-            "PriceCng": 0.94,
-            "FutOiPer": 1.59,
+            "PriceCng": 1.03,
+            "FutOiPer": 1.65,
             "Fut_category": "Long Buildup"
         },
         "LTF": {
-            "PriceCng": 1.34,
-            "FutOiPer": -36.14,
+            "PriceCng": 1.13,
+            "FutOiPer": -36.11,
             "Fut_category": "Short Covering"
         },
         "LICHSGFIN": {
-            "PriceCng": 0.26,
-            "FutOiPer": -4.12,
+            "PriceCng": 0.49,
+            "FutOiPer": -4.24,
             "Fut_category": "Short Covering"
         },
         "LTIM": {
-            "PriceCng": 0.52,
-            "FutOiPer": -13.09,
+            "PriceCng": 0.41,
+            "FutOiPer": -12.12,
             "Fut_category": "Short Covering"
         },
         "LT": {
-            "PriceCng": -0.7,
-            "FutOiPer": 1.19,
+            "PriceCng": -0.84,
+            "FutOiPer": 1.31,
             "Fut_category": "Short Buildup"
         },
         "LAURUSLABS": {
-            "PriceCng": 1.76,
-            "FutOiPer": -12.35,
+            "PriceCng": 1.81,
+            "FutOiPer": -12.31,
             "Fut_category": "Short Covering"
         },
         "LICI": {
-            "PriceCng": 0.35,
-            "FutOiPer": -25.82,
+            "PriceCng": 0.43,
+            "FutOiPer": -25.74,
             "Fut_category": "Short Covering"
         },
         "LUPIN": {
-            "PriceCng": 2.01,
-            "FutOiPer": 8.03,
+            "PriceCng": 1.57,
+            "FutOiPer": 8.41,
             "Fut_category": "Long Buildup"
         },
         "MRF": {
             "PriceCng": 0.75,
-            "FutOiPer": -4.25,
+            "FutOiPer": -4.13,
             "Fut_category": "Short Covering"
         },
         "LODHA": {
-            "PriceCng": 1.7,
-            "FutOiPer": -10.32,
+            "PriceCng": 1.89,
+            "FutOiPer": -10.15,
             "Fut_category": "Short Covering"
         },
         "MGL": {
-            "PriceCng": 3.74,
-            "FutOiPer": 13.54,
+            "PriceCng": 4.17,
+            "FutOiPer": 13.74,
             "Fut_category": "Long Buildup"
         },
         "M&MFIN": {
-            "PriceCng": 0.24,
-            "FutOiPer": -28.08,
+            "PriceCng": 0.16,
+            "FutOiPer": -27.96,
             "Fut_category": "Short Covering"
         },
         "M&M": {
-            "PriceCng": 1.88,
-            "FutOiPer": 15.48,
+            "PriceCng": 1.7,
+            "FutOiPer": 16.23,
             "Fut_category": "Long Buildup"
         },
         "MANAPPURAM": {
-            "PriceCng": -0.58,
-            "FutOiPer": -4.0,
+            "PriceCng": -0.51,
+            "FutOiPer": -3.99,
             "Fut_category": "Long Unwinding"
         },
         "MARICO": {
-            "PriceCng": 2.03,
-            "FutOiPer": -0.92,
+            "PriceCng": 2.12,
+            "FutOiPer": -0.93,
             "Fut_category": "Short Covering"
         },
         "MARUTI": {
-            "PriceCng": -0.12,
-            "FutOiPer": 3.58,
+            "PriceCng": -0.01,
+            "FutOiPer": 4.78,
             "Fut_category": "Short Buildup"
         },
         "MFSL": {
-            "PriceCng": -0.41,
-            "FutOiPer": 26.68,
+            "PriceCng": -0.36,
+            "FutOiPer": 26.66,
             "Fut_category": "Short Buildup"
         },
         "MAXHEALTH": {
             "PriceCng": 5.27,
-            "FutOiPer": 16.53,
+            "FutOiPer": 17.41,
             "Fut_category": "Long Buildup"
         },
         "MPHASIS": {
-            "PriceCng": 0.81,
-            "FutOiPer": 9.14,
+            "PriceCng": 0.85,
+            "FutOiPer": 9.25,
             "Fut_category": "Long Buildup"
         },
         "MCX": {
-            "PriceCng": 0.2,
-            "FutOiPer": -8.01,
+            "PriceCng": 0.01,
+            "FutOiPer": -8.05,
             "Fut_category": "Short Covering"
         },
         "MUTHOOTFIN": {
-            "PriceCng": 2.99,
-            "FutOiPer": 6.86,
+            "PriceCng": 2.79,
+            "FutOiPer": 6.6,
             "Fut_category": "Long Buildup"
         },
         "NBCC": {
-            "PriceCng": 0.24,
-            "FutOiPer": -20.07,
+            "PriceCng": 0.17,
+            "FutOiPer": -19.93,
             "Fut_category": "Short Covering"
         },
         "NCC": {
-            "PriceCng": -2.78,
-            "FutOiPer": -30.37,
+            "PriceCng": -2.66,
+            "FutOiPer": -30.36,
             "Fut_category": "Long Unwinding"
         },
         "NHPC": {
-            "PriceCng": 2.5,
-            "FutOiPer": -1.99,
+            "PriceCng": 2.41,
+            "FutOiPer": -1.94,
             "Fut_category": "Short Covering"
         },
         "NMDC": {
             "PriceCng": 0.25,
-            "FutOiPer": -17.38,
+            "FutOiPer": -17.53,
             "Fut_category": "Short Covering"
         },
         "NTPC": {
-            "PriceCng": -1.17,
-            "FutOiPer": 6.4,
+            "PriceCng": -1.12,
+            "FutOiPer": 6.44,
             "Fut_category": "Short Buildup"
         },
         "NATIONALUM": {
-            "PriceCng": -1.61,
-            "FutOiPer": -27.27,
+            "PriceCng": -1.54,
+            "FutOiPer": -27.44,
             "Fut_category": "Long Unwinding"
         },
         "NESTLEIND": {
-            "PriceCng": 0.27,
-            "FutOiPer": -4.84,
+            "PriceCng": 0.42,
+            "FutOiPer": -4.8,
             "Fut_category": "Short Covering"
         },
         "OBEROIRLTY": {
-            "PriceCng": 2.58,
-            "FutOiPer": -19.29,
+            "PriceCng": 2.52,
+            "FutOiPer": -19.41,
             "Fut_category": "Short Covering"
         },
         "ONGC": {
-            "PriceCng": -0.77,
-            "FutOiPer": -2.73,
+            "PriceCng": -0.71,
+            "FutOiPer": -2.75,
             "Fut_category": "Long Unwinding"
         },
         "OIL": {
-            "PriceCng": 2.08,
-            "FutOiPer": -3.99,
+            "PriceCng": 2.06,
+            "FutOiPer": -3.92,
             "Fut_category": "Short Covering"
         },
         "PAYTM": {
             "PriceCng": 0.16,
-            "FutOiPer": -1.66,
+            "FutOiPer": -1.73,
             "Fut_category": "Short Covering"
         },
         "OFSS": {
             "PriceCng": 0.71,
-            "FutOiPer": -1.96,
+            "FutOiPer": -1.97,
             "Fut_category": "Short Covering"
         },
         "POLICYBZR": {
-            "PriceCng": 0.74,
-            "FutOiPer": 2.8,
+            "PriceCng": 0.27,
+            "FutOiPer": 2.68,
             "Fut_category": "Long Buildup"
         },
         "PIIND": {
-            "PriceCng": 0.78,
-            "FutOiPer": 3.3,
+            "PriceCng": 0.82,
+            "FutOiPer": 3.4,
             "Fut_category": "Long Buildup"
         },
         "PAGEIND": {
-            "PriceCng": -0.31,
-            "FutOiPer": -13.13,
+            "PriceCng": -0.21,
+            "FutOiPer": -12.96,
             "Fut_category": "Long Unwinding"
         },
         "PATANJALI": {
-            "PriceCng": -0.48,
-            "FutOiPer": -7.79,
+            "PriceCng": -0.33,
+            "FutOiPer": -7.82,
             "Fut_category": "Long Unwinding"
         },
         "PERSISTENT": {
-            "PriceCng": 1.33,
-            "FutOiPer": -4.38,
+            "PriceCng": 1.34,
+            "FutOiPer": -4.39,
             "Fut_category": "Short Covering"
         },
         "PETRONET": {
-            "PriceCng": 0.03,
+            "PriceCng": 0.13,
             "FutOiPer": 12.84,
             "Fut_category": "Long Buildup"
         },
         "PIDILITIND": {
-            "PriceCng": 0.4,
-            "FutOiPer": 13.57,
+            "PriceCng": 0.16,
+            "FutOiPer": 13.61,
             "Fut_category": "Long Buildup"
         },
         "PEL": {
-            "PriceCng": -1.04,
-            "FutOiPer": -5.62,
+            "PriceCng": -1.14,
+            "FutOiPer": -5.59,
             "Fut_category": "Long Unwinding"
         },
         "POLYCAB": {
-            "PriceCng": 1.99,
-            "FutOiPer": -18.41,
+            "PriceCng": 1.62,
+            "FutOiPer": -18.07,
             "Fut_category": "Short Covering"
         },
         "POONAWALLA": {
-            "PriceCng": 2.86,
+            "PriceCng": 2.96,
             "FutOiPer": -6.98,
             "Fut_category": "Short Covering"
         },
         "PFC": {
-            "PriceCng": 0.49,
-            "FutOiPer": 8.04,
+            "PriceCng": 0.46,
+            "FutOiPer": 8.16,
             "Fut_category": "Long Buildup"
         },
         "POWERGRID": {
-            "PriceCng": -2.3,
-            "FutOiPer": 3.43,
+            "PriceCng": -2.11,
+            "FutOiPer": 3.53,
             "Fut_category": "Short Buildup"
         },
         "PRESTIGE": {
             "PriceCng": 3.26,
-            "FutOiPer": 5.3,
+            "FutOiPer": 5.49,
             "Fut_category": "Long Buildup"
         },
         "PNB": {
-            "PriceCng": 0.98,
-            "FutOiPer": -13.09,
+            "PriceCng": 1.1,
+            "FutOiPer": -13.1,
             "Fut_category": "Short Covering"
         },
         "RBLBANK": {
-            "PriceCng": -1.47,
-            "FutOiPer": -10.24,
+            "PriceCng": -1.33,
+            "FutOiPer": -10.49,
             "Fut_category": "Long Unwinding"
         },
         "RECLTD": {
-            "PriceCng": -0.61,
-            "FutOiPer": 6.81,
+            "PriceCng": -0.59,
+            "FutOiPer": 6.84,
             "Fut_category": "Short Buildup"
         },
         "RELIANCE": {
-            "PriceCng": -0.39,
-            "FutOiPer": 14.8,
+            "PriceCng": -0.5,
+            "FutOiPer": 14.88,
             "Fut_category": "Short Buildup"
         },
         "SBICARD": {
-            "PriceCng": 0.75,
-            "FutOiPer": -6.54,
+            "PriceCng": 0.64,
+            "FutOiPer": -6.51,
             "Fut_category": "Short Covering"
         },
         "SBILIFE": {
-            "PriceCng": -0.69,
-            "FutOiPer": 13.2,
+            "PriceCng": -0.55,
+            "FutOiPer": 13.44,
             "Fut_category": "Short Buildup"
         },
         "SHREECEM": {
-            "PriceCng": -0.9,
-            "FutOiPer": -7.74,
+            "PriceCng": -0.98,
+            "FutOiPer": -7.36,
             "Fut_category": "Long Unwinding"
         },
         "SJVN": {
-            "PriceCng": 3.66,
-            "FutOiPer": -23.98,
+            "PriceCng": 3.69,
+            "FutOiPer": -23.72,
             "Fut_category": "Short Covering"
         },
         "SRF": {
             "PriceCng": -0.57,
-            "FutOiPer": -1.53,
+            "FutOiPer": -1.8,
             "Fut_category": "Long Unwinding"
         },
         "MOTHERSON": {
-            "PriceCng": 0.41,
-            "FutOiPer": 9.38,
+            "PriceCng": 0.54,
+            "FutOiPer": 9.33,
             "Fut_category": "Long Buildup"
         },
         "SHRIRAMFIN": {
-            "PriceCng": -0.27,
-            "FutOiPer": 13.4,
+            "PriceCng": -0.42,
+            "FutOiPer": 13.48,
             "Fut_category": "Short Buildup"
         },
         "SIEMENS": {
-            "PriceCng": 1.1,
-            "FutOiPer": -9.28,
+            "PriceCng": 1.15,
+            "FutOiPer": -9.21,
             "Fut_category": "Short Covering"
         },
         "SOLARINDS": {
-            "PriceCng": 2.93,
-            "FutOiPer": -12.5,
+            "PriceCng": 3.01,
+            "FutOiPer": -12.44,
             "Fut_category": "Short Covering"
         },
         "SONACOMS": {
-            "PriceCng": -0.83,
-            "FutOiPer": -14.09,
+            "PriceCng": -0.74,
+            "FutOiPer": -13.78,
             "Fut_category": "Long Unwinding"
         },
         "SBIN": {
-            "PriceCng": 0.45,
-            "FutOiPer": 4.99,
+            "PriceCng": 0.56,
+            "FutOiPer": 4.98,
             "Fut_category": "Long Buildup"
         },
         "SAIL": {
-            "PriceCng": 0.02,
-            "FutOiPer": -4.95,
-            "Fut_category": "Short Covering"
+            "PriceCng": -0.15,
+            "FutOiPer": -5.0,
+            "Fut_category": "Long Unwinding"
         },
         "SUNPHARMA": {
-            "PriceCng": 0.53,
-            "FutOiPer": 14.16,
+            "PriceCng": 0.2,
+            "FutOiPer": 14.37,
             "Fut_category": "Long Buildup"
         },
         "SUPREMEIND": {
-            "PriceCng": 0.38,
-            "FutOiPer": -10.58,
+            "PriceCng": 0.43,
+            "FutOiPer": -10.51,
             "Fut_category": "Short Covering"
         },
         "SYNGENE": {
-            "PriceCng": 1.57,
-            "FutOiPer": 38.82,
+            "PriceCng": 1.97,
+            "FutOiPer": 38.76,
             "Fut_category": "Long Buildup"
         },
         "TATACONSUM": {
-            "PriceCng": 1.41,
-            "FutOiPer": 0.26,
+            "PriceCng": 1.57,
+            "FutOiPer": 0.29,
             "Fut_category": "Long Buildup"
         },
         "TITAGARH": {
-            "PriceCng": 0.46,
-            "FutOiPer": -2.84,
+            "PriceCng": 0.52,
+            "FutOiPer": -3.1,
             "Fut_category": "Short Covering"
         },
         "TVSMOTOR": {
-            "PriceCng": -0.18,
-            "FutOiPer": 7.51,
+            "PriceCng": -0.1,
+            "FutOiPer": 7.99,
             "Fut_category": "Short Buildup"
         },
         "TATACHEM": {
-            "PriceCng": -0.37,
-            "FutOiPer": -6.55,
+            "PriceCng": -0.31,
+            "FutOiPer": -6.69,
             "Fut_category": "Long Unwinding"
         },
         "TATACOMM": {
-            "PriceCng": 1.52,
-            "FutOiPer": 3.93,
+            "PriceCng": 1.54,
+            "FutOiPer": 4.05,
             "Fut_category": "Long Buildup"
         },
         "TCS": {
-            "PriceCng": -0.17,
-            "FutOiPer": 14.53,
+            "PriceCng": -0.27,
+            "FutOiPer": 14.62,
             "Fut_category": "Short Buildup"
         },
         "TATAELXSI": {
-            "PriceCng": 2.54,
-            "FutOiPer": -11.27,
+            "PriceCng": 2.51,
+            "FutOiPer": -11.29,
             "Fut_category": "Short Covering"
         },
         "TATAMOTORS": {
-            "PriceCng": 0.11,
-            "FutOiPer": -2.51,
+            "PriceCng": 0.07,
+            "FutOiPer": -2.58,
             "Fut_category": "Short Covering"
         },
         "TATAPOWER": {
-            "PriceCng": -0.59,
-            "FutOiPer": 11.45,
+            "PriceCng": -0.6,
+            "FutOiPer": 11.42,
             "Fut_category": "Short Buildup"
         },
         "TATASTEEL": {
-            "PriceCng": -0.85,
-            "FutOiPer": -0.1,
-            "Fut_category": "Long Unwinding"
+            "PriceCng": -0.73,
+            "FutOiPer": 0.44,
+            "Fut_category": "Short Buildup"
         },
         "TATATECH": {
-            "PriceCng": 3.15,
-            "FutOiPer": -41.73,
+            "PriceCng": 3.22,
+            "FutOiPer": -41.95,
             "Fut_category": "Short Covering"
         },
         "TECHM": {
-            "PriceCng": 0.16,
+            "PriceCng": 0.22,
             "FutOiPer": -3.97,
             "Fut_category": "Short Covering"
         },
         "FEDERALBNK": {
-            "PriceCng": -0.43,
-            "FutOiPer": 0.72,
+            "PriceCng": -0.32,
+            "FutOiPer": 1.14,
             "Fut_category": "Short Buildup"
         },
         "INDHOTEL": {
-            "PriceCng": 0.11,
+            "PriceCng": -0.26,
             "FutOiPer": -5.98,
-            "Fut_category": "Short Covering"
+            "Fut_category": "Long Unwinding"
         },
         "PHOENIXLTD": {
-            "PriceCng": 5.01,
+            "PriceCng": 4.53,
             "FutOiPer": -19.42,
             "Fut_category": "Short Covering"
         },
         "RAMCOCEM": {
-            "PriceCng": -0.61,
-            "FutOiPer": -9.72,
+            "PriceCng": -0.35,
+            "FutOiPer": -10.0,
             "Fut_category": "Long Unwinding"
         },
         "TITAN": {
-            "PriceCng": 0.2,
+            "PriceCng": 0.04,
             "FutOiPer": 1.52,
             "Fut_category": "Long Buildup"
         },
         "TORNTPHARM": {
-            "PriceCng": 0.01,
+            "PriceCng": -0.25,
             "FutOiPer": 3.84,
-            "Fut_category": "Long Buildup"
+            "Fut_category": "Short Buildup"
         },
         "TORNTPOWER": {
-            "PriceCng": -0.16,
+            "PriceCng": -0.19,
             "FutOiPer": -12.6,
             "Fut_category": "Long Unwinding"
         },
         "TRENT": {
-            "PriceCng": -0.84,
+            "PriceCng": -0.69,
             "FutOiPer": -3.87,
             "Fut_category": "Long Unwinding"
         },
         "TIINDIA": {
-            "PriceCng": 2.46,
+            "PriceCng": 2.34,
             "FutOiPer": 5.62,
             "Fut_category": "Long Buildup"
         },
         "UPL": {
-            "PriceCng": -0.57,
+            "PriceCng": 0.23,
             "FutOiPer": -6.9,
-            "Fut_category": "Long Unwinding"
+            "Fut_category": "Short Covering"
         },
         "ULTRACEMCO": {
-            "PriceCng": 0.27,
+            "PriceCng": 0.21,
             "FutOiPer": 10.61,
             "Fut_category": "Long Buildup"
         },
         "UNIONBANK": {
-            "PriceCng": -0.81,
-            "FutOiPer": -14.28,
+            "PriceCng": -0.54,
+            "FutOiPer": -14.44,
             "Fut_category": "Long Unwinding"
         },
         "UNITDSPR": {
-            "PriceCng": 2.85,
+            "PriceCng": 2.7,
             "FutOiPer": 5.56,
             "Fut_category": "Long Buildup"
         },
         "VBL": {
-            "PriceCng": 0.56,
+            "PriceCng": 0.49,
             "FutOiPer": -4.0,
             "Fut_category": "Short Covering"
         },
         "VEDL": {
-            "PriceCng": 0.21,
+            "PriceCng": 0.27,
             "FutOiPer": -0.31,
             "Fut_category": "Short Covering"
         },
         "IDEA": {
-            "PriceCng": -1.12,
+            "PriceCng": -1.24,
             "FutOiPer": -37.38,
             "Fut_category": "Long Unwinding"
         },
         "VOLTAS": {
-            "PriceCng": 2.35,
+            "PriceCng": 2.02,
             "FutOiPer": -9.07,
             "Fut_category": "Short Covering"
         },
         "WIPRO": {
-            "PriceCng": -1.89,
+            "PriceCng": -1.8,
             "FutOiPer": -17.2,
             "Fut_category": "Long Unwinding"
         },
         "YESBANK": {
-            "PriceCng": -0.74,
+            "PriceCng": -0.69,
             "FutOiPer": 0.27,
             "Fut_category": "Short Buildup"
         },
         "ZYDUSLIFE": {
-            "PriceCng": 0.67,
+            "PriceCng": 0.87,
             "FutOiPer": -13.19,
+            "Fut_category": "Short Covering"
+        }
+    },
+    "23-04-2025": {
+        "ABB": {
+            "PriceCng": 0.86,
+            "FutOiPer": 0.15,
+            "Fut_category": "Long Buildup"
+        },
+        "ACC": {
+            "PriceCng": 0.08,
+            "FutOiPer": 0.02,
+            "Fut_category": "Long Buildup"
+        },
+        "APLAPOLLO": {
+            "PriceCng": 1.21,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "AUBANK": {
+            "PriceCng": 2.21,
+            "FutOiPer": -0.02,
+            "Fut_category": "Short Covering"
+        },
+        "AARTIIND": {
+            "PriceCng": 1.65,
+            "FutOiPer": -0.13,
+            "Fut_category": "Short Covering"
+        },
+        "ADANIENSOL": {
+            "PriceCng": 0.96,
+            "FutOiPer": 0.16,
+            "Fut_category": "Long Buildup"
+        },
+        "ADANIENT": {
+            "PriceCng": 0.73,
+            "FutOiPer": 0.04,
+            "Fut_category": "Long Buildup"
+        },
+        "ADANIGREEN": {
+            "PriceCng": 0.84,
+            "FutOiPer": 0.08,
+            "Fut_category": "Long Buildup"
+        },
+        "ADANIPORTS": {
+            "PriceCng": -0.06,
+            "FutOiPer": 0.21,
+            "Fut_category": "Short Buildup"
+        },
+        "ATGL": {
+            "PriceCng": 0.85,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "ABCAPITAL": {
+            "PriceCng": 0.54,
+            "FutOiPer": 0.02,
+            "Fut_category": "Long Buildup"
+        },
+        "ABFRL": {
+            "PriceCng": 0.83,
+            "FutOiPer": -0.03,
+            "Fut_category": "Short Covering"
+        },
+        "ALKEM": {
+            "PriceCng": 0.64,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "AMBUJACEM": {
+            "PriceCng": 0.32,
+            "FutOiPer": 0.15,
+            "Fut_category": "Long Buildup"
+        },
+        "ANGELONE": {
+            "PriceCng": 0.09,
+            "FutOiPer": -0.06,
+            "Fut_category": "Short Covering"
+        },
+        "APOLLOHOSP": {
+            "PriceCng": -0.06,
+            "FutOiPer": 0.07,
+            "Fut_category": "Short Buildup"
+        },
+        "APOLLOTYRE": {
+            "PriceCng": 0.52,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "ASHOKLEY": {
+            "PriceCng": 0.51,
+            "FutOiPer": -0.05,
+            "Fut_category": "Short Covering"
+        },
+        "ASIANPAINT": {
+            "PriceCng": 0.16,
+            "FutOiPer": 0.07,
+            "Fut_category": "Long Buildup"
+        },
+        "ASTRAL": {
+            "PriceCng": 0.81,
+            "FutOiPer": 0.11,
+            "Fut_category": "Long Buildup"
+        },
+        "AUROPHARMA": {
+            "PriceCng": 0.05,
+            "FutOiPer": 0.08,
+            "Fut_category": "Long Buildup"
+        },
+        "DMART": {
+            "PriceCng": 0.54,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "AXISBANK": {
+            "PriceCng": 0.71,
+            "FutOiPer": 0.02,
+            "Fut_category": "Long Buildup"
+        },
+        "BSOFT": {
+            "PriceCng": 2.43,
+            "FutOiPer": 0.1,
+            "Fut_category": "Long Buildup"
+        },
+        "BSE": {
+            "PriceCng": 1.32,
+            "FutOiPer": 0.01,
+            "Fut_category": "Long Buildup"
+        },
+        "BAJAJ-AUTO": {
+            "PriceCng": -0.75,
+            "FutOiPer": 0.04,
+            "Fut_category": "Short Buildup"
+        },
+        "BAJFINANCE": {
+            "PriceCng": 0.33,
+            "FutOiPer": 0.03,
+            "Fut_category": "Long Buildup"
+        },
+        "BAJAJFINSV": {
+            "PriceCng": 0.41,
+            "FutOiPer": 0.08,
+            "Fut_category": "Long Buildup"
+        },
+        "BALKRISIND": {
+            "PriceCng": 0.62,
+            "FutOiPer": 0.13,
+            "Fut_category": "Long Buildup"
+        },
+        "BANDHANBNK": {
+            "PriceCng": 0.4,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "BANKBARODA": {
+            "PriceCng": 0.14,
+            "FutOiPer": 0.07,
+            "Fut_category": "Long Buildup"
+        },
+        "BANKINDIA": {
+            "PriceCng": 0.44,
+            "FutOiPer": 0.03,
+            "Fut_category": "Long Buildup"
+        },
+        "BERGEPAINT": {
+            "PriceCng": 0.28,
+            "FutOiPer": 0.1,
+            "Fut_category": "Long Buildup"
+        },
+        "BEL": {
+            "PriceCng": 0.91,
+            "FutOiPer": -0.02,
+            "Fut_category": "Short Covering"
+        },
+        "BHARATFORG": {
+            "PriceCng": 0.51,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "BHEL": {
+            "PriceCng": 0.71,
+            "FutOiPer": -0.04,
+            "Fut_category": "Short Covering"
+        },
+        "BPCL": {
+            "PriceCng": 0.15,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "BHARTIARTL": {
+            "PriceCng": 0.36,
+            "FutOiPer": 0.11,
+            "Fut_category": "Long Buildup"
+        },
+        "BIOCON": {
+            "PriceCng": 0.52,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "BOSCHLTD": {
+            "PriceCng": 0.52,
+            "FutOiPer": 0.19,
+            "Fut_category": "Long Buildup"
+        },
+        "BRITANNIA": {
+            "PriceCng": -0.07,
+            "FutOiPer": 0.06,
+            "Fut_category": "Short Buildup"
+        },
+        "CESC": {
+            "PriceCng": 0.91,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "CGPOWER": {
+            "PriceCng": 0.75,
+            "FutOiPer": 0.02,
+            "Fut_category": "Long Buildup"
+        },
+        "CANBK": {
+            "PriceCng": 0.41,
+            "FutOiPer": 0.15,
+            "Fut_category": "Long Buildup"
+        },
+        "CDSL": {
+            "PriceCng": 1.33,
+            "FutOiPer": 0.12,
+            "Fut_category": "Long Buildup"
+        },
+        "CHAMBLFERT": {
+            "PriceCng": 0.78,
+            "FutOiPer": -0.11,
+            "Fut_category": "Short Covering"
+        },
+        "CHOLAFIN": {
+            "PriceCng": 2.54,
+            "FutOiPer": 1.5,
+            "Fut_category": "Long Buildup"
+        },
+        "CIPLA": {
+            "PriceCng": -0.37,
+            "FutOiPer": 0.09,
+            "Fut_category": "Short Buildup"
+        },
+        "COALINDIA": {
+            "PriceCng": 0.31,
+            "FutOiPer": 0.01,
+            "Fut_category": "Long Buildup"
+        },
+        "COFORGE": {
+            "PriceCng": 3.16,
+            "FutOiPer": 0.36,
+            "Fut_category": "Long Buildup"
+        },
+        "COLPAL": {
+            "PriceCng": -0.2,
+            "FutOiPer": 0.04,
+            "Fut_category": "Short Buildup"
+        },
+        "CAMS": {
+            "PriceCng": 0.93,
+            "FutOiPer": 0.19,
+            "Fut_category": "Long Buildup"
+        },
+        "CONCOR": {
+            "PriceCng": 0.66,
+            "FutOiPer": 0.01,
+            "Fut_category": "Long Buildup"
+        },
+        "CROMPTON": {
+            "PriceCng": -3.28,
+            "FutOiPer": 0.21,
+            "Fut_category": "Short Buildup"
+        },
+        "CUMMINSIND": {
+            "PriceCng": -0.19,
+            "FutOiPer": -0.06,
+            "Fut_category": "Long Unwinding"
+        },
+        "CYIENT": {
+            "PriceCng": 2.03,
+            "FutOiPer": 0.98,
+            "Fut_category": "Long Buildup"
+        },
+        "DLF": {
+            "PriceCng": 0.37,
+            "FutOiPer": 0.13,
+            "Fut_category": "Long Buildup"
+        },
+        "DABUR": {
+            "PriceCng": 0.31,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "DALBHARAT": {
+            "PriceCng": -0.02,
+            "FutOiPer": 0.09,
+            "Fut_category": "Short Buildup"
+        },
+        "DEEPAKNTR": {
+            "PriceCng": 0.25,
+            "FutOiPer": 0.12,
+            "Fut_category": "Long Buildup"
+        },
+        "DELHIVERY": {
+            "PriceCng": 1.89,
+            "FutOiPer": 0.72,
+            "Fut_category": "Long Buildup"
+        },
+        "DIVISLAB": {
+            "PriceCng": 0.18,
+            "FutOiPer": 0.01,
+            "Fut_category": "Long Buildup"
+        },
+        "DIXON": {
+            "PriceCng": 1.36,
+            "FutOiPer": 0.32,
+            "Fut_category": "Long Buildup"
+        },
+        "DRREDDY": {
+            "PriceCng": 0.35,
+            "FutOiPer": 0.09,
+            "Fut_category": "Long Buildup"
+        },
+        "EICHERMOT": {
+            "PriceCng": -0.16,
+            "FutOiPer": 0.03,
+            "Fut_category": "Short Buildup"
+        },
+        "ESCORTS": {
+            "PriceCng": 1.23,
+            "FutOiPer": 0.14,
+            "Fut_category": "Long Buildup"
+        },
+        "EXIDEIND": {
+            "PriceCng": 0.89,
+            "FutOiPer": -0.04,
+            "Fut_category": "Short Covering"
+        },
+        "NYKAA": {
+            "PriceCng": 1.06,
+            "FutOiPer": -0.01,
+            "Fut_category": "Short Covering"
+        },
+        "GAIL": {
+            "PriceCng": 0.54,
+            "FutOiPer": 0.01,
+            "Fut_category": "Long Buildup"
+        },
+        "GMRAIRPORT": {
+            "PriceCng": 0.62,
+            "FutOiPer": 0.03,
+            "Fut_category": "Long Buildup"
+        },
+        "GLENMARK": {
+            "PriceCng": 0.07,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "GODREJCP": {
+            "PriceCng": 0.19,
+            "FutOiPer": 0.01,
+            "Fut_category": "Long Buildup"
+        },
+        "GODREJPROP": {
+            "PriceCng": 1.04,
+            "FutOiPer": 0.21,
+            "Fut_category": "Long Buildup"
+        },
+        "GRANULES": {
+            "PriceCng": 0.03,
+            "FutOiPer": 0.1,
+            "Fut_category": "Long Buildup"
+        },
+        "GRASIM": {
+            "PriceCng": -0.59,
+            "FutOiPer": 0.02,
+            "Fut_category": "Short Buildup"
+        },
+        "HCLTECH": {
+            "PriceCng": 5.95,
+            "FutOiPer": 2.0,
+            "Fut_category": "Long Buildup"
+        },
+        "HDFCAMC": {
+            "PriceCng": 0.75,
+            "FutOiPer": 0.08,
+            "Fut_category": "Long Buildup"
+        },
+        "HDFCBANK": {
+            "PriceCng": 0.21,
+            "FutOiPer": 0.22,
+            "Fut_category": "Long Buildup"
+        },
+        "HDFCLIFE": {
+            "PriceCng": 0.26,
+            "FutOiPer": 0.01,
+            "Fut_category": "Long Buildup"
+        },
+        "HFCL": {
+            "PriceCng": 1.09,
+            "FutOiPer": 0.02,
+            "Fut_category": "Long Buildup"
+        },
+        "HAVELLS": {
+            "PriceCng": -3.45,
+            "FutOiPer": 2.75,
+            "Fut_category": "Short Buildup"
+        },
+        "HEROMOTOCO": {
+            "PriceCng": 0.59,
+            "FutOiPer": 0.05,
+            "Fut_category": "Long Buildup"
+        },
+        "HINDALCO": {
+            "PriceCng": 1.19,
+            "FutOiPer": 0.2,
+            "Fut_category": "Long Buildup"
+        },
+        "HAL": {
+            "PriceCng": 1,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "HINDCOPPER": {
+            "PriceCng": 2.01,
+            "FutOiPer": 1.21,
+            "Fut_category": "Long Buildup"
+        },
+        "HINDPETRO": {
+            "PriceCng": -0.2,
+            "FutOiPer": 0.02,
+            "Fut_category": "Short Buildup"
+        },
+        "HINDUNILVR": {
+            "PriceCng": 0.13,
+            "FutOiPer": 0.07,
+            "Fut_category": "Long Buildup"
+        },
+        "HUDCO": {
+            "PriceCng": 2.16,
+            "FutOiPer": 0.04,
+            "Fut_category": "Long Buildup"
+        },
+        "ICICIBANK": {
+            "PriceCng": 0.38,
+            "FutOiPer": 0.33,
+            "Fut_category": "Long Buildup"
+        },
+        "ICICIGI": {
+            "PriceCng": 0.6,
+            "FutOiPer": 0.04,
+            "Fut_category": "Long Buildup"
+        },
+        "ICICIPRULI": {
+            "PriceCng": -0.26,
+            "FutOiPer": 0.05,
+            "Fut_category": "Short Buildup"
+        },
+        "IDFCFIRSTB": {
+            "PriceCng": 0.28,
+            "FutOiPer": 0.07,
+            "Fut_category": "Long Buildup"
+        },
+        "IIFL": {
+            "PriceCng": 0.84,
+            "FutOiPer": 0.15,
+            "Fut_category": "Long Buildup"
+        },
+        "IRB": {
+            "PriceCng": 0.76,
+            "FutOiPer": 0.04,
+            "Fut_category": "Long Buildup"
+        },
+        "ITC": {
+            "PriceCng": 0.32,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "INDIANB": {
+            "PriceCng": 0.36,
+            "FutOiPer": 0.07,
+            "Fut_category": "Long Buildup"
+        },
+        "IEX": {
+            "PriceCng": 0.45,
+            "FutOiPer": 0.08,
+            "Fut_category": "Long Buildup"
+        },
+        "IOC": {
+            "PriceCng": 0.02,
+            "FutOiPer": 0.21,
+            "Fut_category": "Long Buildup"
+        },
+        "IRCTC": {
+            "PriceCng": 0.16,
+            "FutOiPer": 0.12,
+            "Fut_category": "Long Buildup"
+        },
+        "IRFC": {
+            "PriceCng": 0.79,
+            "FutOiPer": 0.13,
+            "Fut_category": "Long Buildup"
+        },
+        "IREDA": {
+            "PriceCng": 1.97,
+            "FutOiPer": 0.35,
+            "Fut_category": "Long Buildup"
+        },
+        "IGL": {
+            "PriceCng": -0.56,
+            "FutOiPer": -0.02,
+            "Fut_category": "Long Unwinding"
+        },
+        "INDUSTOWER": {
+            "PriceCng": -0.45,
+            "FutOiPer": -0.01,
+            "Fut_category": "Long Unwinding"
+        },
+        "INDUSINDBK": {
+            "PriceCng": 1.81,
+            "FutOiPer": 0.02,
+            "Fut_category": "Long Buildup"
+        },
+        "NAUKRI": {
+            "PriceCng": 0.73,
+            "FutOiPer": 0.18,
+            "Fut_category": "Long Buildup"
+        },
+        "INFY": {
+            "PriceCng": 2.36,
+            "FutOiPer": 0.24,
+            "Fut_category": "Long Buildup"
+        },
+        "INDIGO": {
+            "PriceCng": -0.34,
+            "FutOiPer": -0.02,
+            "Fut_category": "Long Unwinding"
+        },
+        "JSWENERGY": {
+            "PriceCng": 0.45,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "JSWSTEEL": {
+            "PriceCng": 0.62,
+            "FutOiPer": 0.63,
+            "Fut_category": "Long Buildup"
+        },
+        "JSL": {
+            "PriceCng": 0.84,
+            "FutOiPer": 0.07,
+            "Fut_category": "Long Buildup"
+        },
+        "JINDALSTEL": {
+            "PriceCng": 0.59,
+            "FutOiPer": 0.01,
+            "Fut_category": "Long Buildup"
+        },
+        "JIOFIN": {
+            "PriceCng": 0.98,
+            "FutOiPer": 0.19,
+            "Fut_category": "Long Buildup"
+        },
+        "JUBLFOOD": {
+            "PriceCng": -0.23,
+            "FutOiPer": 0.17,
+            "Fut_category": "Short Buildup"
+        },
+        "KEI": {
+            "PriceCng": 1.42,
+            "FutOiPer": 0.18,
+            "Fut_category": "Long Buildup"
+        },
+        "KPITTECH": {
+            "PriceCng": 2.44,
+            "FutOiPer": 0.1,
+            "Fut_category": "Long Buildup"
+        },
+        "KALYANKJIL": {
+            "PriceCng": 0.89,
+            "FutOiPer": 0.02,
+            "Fut_category": "Long Buildup"
+        },
+        "KOTAKBANK": {
+            "PriceCng": -0.62,
+            "FutOiPer": 0.05,
+            "Fut_category": "Short Buildup"
+        },
+        "LTF": {
+            "PriceCng": 0.28,
+            "FutOiPer": -0.09,
+            "Fut_category": "Short Covering"
+        },
+        "LICHSGFIN": {
+            "PriceCng": 0.45,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "LTIM": {
+            "PriceCng": 3,
+            "FutOiPer": 0.28,
+            "Fut_category": "Long Buildup"
+        },
+        "LT": {
+            "PriceCng": 0.46,
+            "FutOiPer": 0.07,
+            "Fut_category": "Long Buildup"
+        },
+        "LAURUSLABS": {
+            "PriceCng": 0.55,
+            "FutOiPer": 0.04,
+            "Fut_category": "Long Buildup"
+        },
+        "LICI": {
+            "PriceCng": 0.44,
+            "FutOiPer": 0.26,
+            "Fut_category": "Long Buildup"
+        },
+        "LUPIN": {
+            "PriceCng": -0.59,
+            "FutOiPer": 0.12,
+            "Fut_category": "Short Buildup"
+        },
+        "MRF": {
+            "PriceCng": 0.69,
+            "FutOiPer": 0.18,
+            "Fut_category": "Long Buildup"
+        },
+        "LODHA": {
+            "PriceCng": 2.5,
+            "FutOiPer": 0.23,
+            "Fut_category": "Long Buildup"
+        },
+        "MGL": {
+            "PriceCng": 0.56,
+            "FutOiPer": 0.31,
+            "Fut_category": "Long Buildup"
+        },
+        "M&MFIN": {
+            "PriceCng": -0.61,
+            "FutOiPer": 0.91,
+            "Fut_category": "Short Buildup"
+        },
+        "M&M": {
+            "PriceCng": 0.83,
+            "FutOiPer": 0.12,
+            "Fut_category": "Long Buildup"
+        },
+        "MANAPPURAM": {
+            "PriceCng": 0,
+            "FutOiPer": -0.03,
+            "Fut_category": "No Change"
+        },
+        "MARICO": {
+            "PriceCng": 0.35,
+            "FutOiPer": 0.15,
+            "Fut_category": "Long Buildup"
+        },
+        "MARUTI": {
+            "PriceCng": 0.57,
+            "FutOiPer": 0.09,
+            "Fut_category": "Long Buildup"
+        },
+        "MFSL": {
+            "PriceCng": 0.23,
+            "FutOiPer": 0.27,
+            "Fut_category": "Long Buildup"
+        },
+        "MAXHEALTH": {
+            "PriceCng": 1.1,
+            "FutOiPer": -0.1,
+            "Fut_category": "Short Covering"
+        },
+        "MPHASIS": {
+            "PriceCng": 3.31,
+            "FutOiPer": 0.81,
+            "Fut_category": "Long Buildup"
+        },
+        "MCX": {
+            "PriceCng": 0.51,
+            "FutOiPer": 0.07,
+            "Fut_category": "Long Buildup"
+        },
+        "MUTHOOTFIN": {
+            "PriceCng": 0.23,
+            "FutOiPer": 0.19,
+            "Fut_category": "Long Buildup"
+        },
+        "NBCC": {
+            "PriceCng": 1.22,
+            "FutOiPer": 0.1,
+            "Fut_category": "Long Buildup"
+        },
+        "NCC": {
+            "PriceCng": 1.51,
+            "FutOiPer": 0.18,
+            "Fut_category": "Long Buildup"
+        },
+        "NHPC": {
+            "PriceCng": 1.41,
+            "FutOiPer": 0.07,
+            "Fut_category": "Long Buildup"
+        },
+        "NMDC": {
+            "PriceCng": 0.68,
+            "FutOiPer": 0.03,
+            "Fut_category": "Long Buildup"
+        },
+        "NTPC": {
+            "PriceCng": 0.75,
+            "FutOiPer": 0.04,
+            "Fut_category": "Long Buildup"
+        },
+        "NATIONALUM": {
+            "PriceCng": 1.91,
+            "FutOiPer": 0.07,
+            "Fut_category": "Long Buildup"
+        },
+        "NESTLEIND": {
+            "PriceCng": 0.84,
+            "FutOiPer": 0.04,
+            "Fut_category": "Long Buildup"
+        },
+        "OBEROIRLTY": {
+            "PriceCng": 0.91,
+            "FutOiPer": 0.84,
+            "Fut_category": "Long Buildup"
+        },
+        "ONGC": {
+            "PriceCng": 0.98,
+            "FutOiPer": 0.03,
+            "Fut_category": "Long Buildup"
+        },
+        "OIL": {
+            "PriceCng": 1.3,
+            "FutOiPer": 0.03,
+            "Fut_category": "Long Buildup"
+        },
+        "PAYTM": {
+            "PriceCng": 0.57,
+            "FutOiPer": 0.1,
+            "Fut_category": "Long Buildup"
+        },
+        "OFSS": {
+            "PriceCng": 1.82,
+            "FutOiPer": 0.11,
+            "Fut_category": "Long Buildup"
+        },
+        "POLICYBZR": {
+            "PriceCng": 0.22,
+            "FutOiPer": 0.02,
+            "Fut_category": "Long Buildup"
+        },
+        "PIIND": {
+            "PriceCng": 0,
+            "FutOiPer": 0.06,
+            "Fut_category": "No Change"
+        },
+        "PAGEIND": {
+            "PriceCng": 0.21,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "PATANJALI": {
+            "PriceCng": 0.91,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "PERSISTENT": {
+            "PriceCng": 3,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "PETRONET": {
+            "PriceCng": 0.16,
+            "FutOiPer": 0.1,
+            "Fut_category": "Long Buildup"
+        },
+        "PIDILITIND": {
+            "PriceCng": -0.13,
+            "FutOiPer": 0.17,
+            "Fut_category": "Short Buildup"
+        },
+        "PEL": {
+            "PriceCng": 0.07,
+            "FutOiPer": 0.03,
+            "Fut_category": "Long Buildup"
+        },
+        "POLYCAB": {
+            "PriceCng": 1.08,
+            "FutOiPer": 0.09,
+            "Fut_category": "Long Buildup"
+        },
+        "POONAWALLA": {
+            "PriceCng": 0.67,
+            "FutOiPer": 0.35,
+            "Fut_category": "Long Buildup"
+        },
+        "PFC": {
+            "PriceCng": 0.41,
+            "FutOiPer": 0.11,
+            "Fut_category": "Long Buildup"
+        },
+        "POWERGRID": {
+            "PriceCng": 0.42,
+            "FutOiPer": 0.09,
+            "Fut_category": "Long Buildup"
+        },
+        "PRESTIGE": {
+            "PriceCng": 1.39,
+            "FutOiPer": 0.2,
+            "Fut_category": "Long Buildup"
+        },
+        "PNB": {
+            "PriceCng": 0.64,
+            "FutOiPer": 0.13,
+            "Fut_category": "Long Buildup"
+        },
+        "RBLBANK": {
+            "PriceCng": 0.9,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "RECLTD": {
+            "PriceCng": 1.37,
+            "FutOiPer": 0.04,
+            "Fut_category": "Long Buildup"
+        },
+        "RELIANCE": {
+            "PriceCng": 0.29,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "SBICARD": {
+            "PriceCng": 0.2,
+            "FutOiPer": 0.02,
+            "Fut_category": "Long Buildup"
+        },
+        "SBILIFE": {
+            "PriceCng": 0.33,
+            "FutOiPer": 0.1,
+            "Fut_category": "Long Buildup"
+        },
+        "SHREECEM": {
+            "PriceCng": -0.81,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "SJVN": {
+            "PriceCng": 1.41,
+            "FutOiPer": -0.05,
+            "Fut_category": "Short Covering"
+        },
+        "SRF": {
+            "PriceCng": -0.2,
+            "FutOiPer": -0.23,
+            "Fut_category": "Long Unwinding"
+        },
+        "MOTHERSON": {
+            "PriceCng": 1.62,
+            "FutOiPer": 0.53,
+            "Fut_category": "Long Buildup"
+        },
+        "SHRIRAMFIN": {
+            "PriceCng": 0.31,
+            "FutOiPer": 0.02,
+            "Fut_category": "Long Buildup"
+        },
+        "SIEMENS": {
+            "PriceCng": 1.16,
+            "FutOiPer": 0.03,
+            "Fut_category": "Long Buildup"
+        },
+        "SOLARINDS": {
+            "PriceCng": 1.43,
+            "FutOiPer": 0.19,
+            "Fut_category": "Long Buildup"
+        },
+        "SONACOMS": {
+            "PriceCng": 2.78,
+            "FutOiPer": 0.31,
+            "Fut_category": "Long Buildup"
+        },
+        "SBIN": {
+            "PriceCng": 0.74,
+            "FutOiPer": 0.05,
+            "Fut_category": "Long Buildup"
+        },
+        "SAIL": {
+            "PriceCng": 1,
+            "FutOiPer": 0.1,
+            "Fut_category": "Long Buildup"
+        },
+        "SUNPHARMA": {
+            "PriceCng": -0.11,
+            "FutOiPer": 0.03,
+            "Fut_category": "Short Buildup"
+        },
+        "SUPREMEIND": {
+            "PriceCng": -0.26,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "SYNGENE": {
+            "PriceCng": 0.95,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "TATACONSUM": {
+            "PriceCng": 0.36,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "TITAGARH": {
+            "PriceCng": 1.37,
+            "FutOiPer": 0.0,
+            "Fut_category": "No Change"
+        },
+        "TVSMOTOR": {
+            "PriceCng": 0.23,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "TATACHEM": {
+            "PriceCng": 0.7,
+            "FutOiPer": 0.02,
+            "Fut_category": "Long Buildup"
+        },
+        "TATACOMM": {
+            "PriceCng": 0.89,
+            "FutOiPer": 1.96,
+            "Fut_category": "Long Buildup"
+        },
+        "TCS": {
+            "PriceCng": 1.4,
+            "FutOiPer": 0.32,
+            "Fut_category": "Long Buildup"
+        },
+        "TATAELXSI": {
+            "PriceCng": 1.02,
+            "FutOiPer": 0.43,
+            "Fut_category": "Long Buildup"
+        },
+        "TATAMOTORS": {
+            "PriceCng": 1.24,
+            "FutOiPer": 0.04,
+            "Fut_category": "Long Buildup"
+        },
+        "TATAPOWER": {
+            "PriceCng": 0.57,
+            "FutOiPer": 0.07,
+            "Fut_category": "Long Buildup"
+        },
+        "TATASTEEL": {
+            "PriceCng": 0.58,
+            "FutOiPer": 0.14,
+            "Fut_category": "Long Buildup"
+        },
+        "TATATECH": {
+            "PriceCng": 2.21,
+            "FutOiPer": 0.09,
+            "Fut_category": "Long Buildup"
+        },
+        "TECHM": {
+            "PriceCng": 2.64,
+            "FutOiPer": 0.51,
+            "Fut_category": "Long Buildup"
+        },
+        "FEDERALBNK": {
+            "PriceCng": 0.11,
+            "FutOiPer": -0.01,
+            "Fut_category": "Short Covering"
+        },
+        "INDHOTEL": {
+            "PriceCng": -0.35,
+            "FutOiPer": 0.01,
+            "Fut_category": "Short Buildup"
+        },
+        "PHOENIXLTD": {
+            "PriceCng": 2.44,
+            "FutOiPer": 0.12,
+            "Fut_category": "Long Buildup"
+        },
+        "RAMCOCEM": {
+            "PriceCng": 0.39,
+            "FutOiPer": 0.1,
+            "Fut_category": "Long Buildup"
+        },
+        "TITAN": {
+            "PriceCng": 0.42,
+            "FutOiPer": 0.06,
+            "Fut_category": "Long Buildup"
+        },
+        "TORNTPHARM": {
+            "PriceCng": -0.25,
+            "FutOiPer": 0.05,
+            "Fut_category": "Short Buildup"
+        },
+        "TORNTPOWER": {
+            "PriceCng": 0.87,
+            "FutOiPer": 0.15,
+            "Fut_category": "Long Buildup"
+        },
+        "TRENT": {
+            "PriceCng": 0.27,
+            "FutOiPer": 0.03,
+            "Fut_category": "Long Buildup"
+        },
+        "TIINDIA": {
+            "PriceCng": 0.57,
+            "FutOiPer": 0.12,
+            "Fut_category": "Long Buildup"
+        },
+        "UPL": {
+            "PriceCng": -1.14,
+            "FutOiPer": 0.03,
+            "Fut_category": "Short Buildup"
+        },
+        "ULTRACEMCO": {
+            "PriceCng": 0.28,
+            "FutOiPer": 0.04,
+            "Fut_category": "Long Buildup"
+        },
+        "UNIONBANK": {
+            "PriceCng": 0.08,
+            "FutOiPer": 0.09,
+            "Fut_category": "Long Buildup"
+        },
+        "UNITDSPR": {
+            "PriceCng": 0.17,
+            "FutOiPer": 0.18,
+            "Fut_category": "Long Buildup"
+        },
+        "VBL": {
+            "PriceCng": 1.1,
+            "FutOiPer": 0.08,
+            "Fut_category": "Long Buildup"
+        },
+        "VEDL": {
+            "PriceCng": 1.02,
+            "FutOiPer": 0.17,
+            "Fut_category": "Long Buildup"
+        },
+        "IDEA": {
+            "PriceCng": 0.63,
+            "FutOiPer": -0.13,
+            "Fut_category": "Short Covering"
+        },
+        "VOLTAS": {
+            "PriceCng": -1.37,
+            "FutOiPer": 0.67,
+            "Fut_category": "Short Buildup"
+        },
+        "WIPRO": {
+            "PriceCng": 1.71,
+            "FutOiPer": 0.37,
+            "Fut_category": "Long Buildup"
+        },
+        "YESBANK": {
+            "PriceCng": 0.27,
+            "FutOiPer": 0.01,
+            "Fut_category": "Long Buildup"
+        },
+        "ZYDUSLIFE": {
+            "PriceCng": 0.65,
+            "FutOiPer": -0.01,
             "Fut_category": "Short Covering"
         }
     }
