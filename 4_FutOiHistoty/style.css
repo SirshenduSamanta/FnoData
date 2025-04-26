@@ -138,7 +138,7 @@ body {
 
   
   .TableOiHistoryDiv {
-      width: 20px; /* Adjust width */
+      width: 18px; /* Adjust width */
       /*position: absolute;*/
       bottom: 50%; /* Align zero to the center */
       transform-origin: bottom;
