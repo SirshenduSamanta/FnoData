@@ -112,7 +112,7 @@ body {
     .TableOiHistory {
       display: flex;
       flex-direction: row;
-      gap : 2.5px; /* Space between bars */
+      gap : 3px; /* Space between bars */
       width: 100%;
       height: 110px; /* Ensure enough space for both directions */
       /*position: absolute;*/
