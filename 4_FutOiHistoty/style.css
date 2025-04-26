@@ -142,7 +142,7 @@ body {
       /*position: absolute;*/
       bottom: 50%; /* Align zero to the center */
       transform-origin: bottom;
-      border-radius: 5px;
+      border-radius: 2px;
       cursor: pointer;
       
   }
