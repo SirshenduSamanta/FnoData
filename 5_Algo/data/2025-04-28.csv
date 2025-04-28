@@ -1,2 +1,2 @@
 contract,entryTime,entryPrice,SlPrice,exitPrice1Lot,exitedlLotTrueFalse,ExitTime1Lot,allexit,allExitTime,allExitPrice,Reason
-BSE:SENSEX25APR80000CE,2025-04-28 10:05:00,297.35,263.85,397.8,0,0,0,0,0,0
+BSE:SENSEX25APR80000CE,2025-04-28 10:05:00,297.35,263.85,397.8,0,0,1,2025-04-28 10:20:00,322.25,2Lot15Min
