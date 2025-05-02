@@ -1,2 +1,2 @@
 contract,entryTime,entryPrice,SlPrice,exitPrice1Lot,exitedlLotTrueFalse,ExitTime1Lot,allexit,allExitTime,allExitPrice,Reason
-BSE:SENSEX2550681000CE,2025-05-02 09:39:00,580.7,533.0,723.85,0,0,0,0,0,0
+BSE:SENSEX2550681000CE,2025-05-02 09:39:00,580.7,533.0,723.85,0,0,1,2025-05-02 09:43:00,533,2SlHit
