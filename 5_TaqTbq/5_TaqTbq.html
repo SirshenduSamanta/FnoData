@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <title>Bid Ask Qty.</title> 
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            vertical-align: top;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        canvas {
+            max-width: 100%;
+            height: 300px;
+        }
+    </style>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+</head>
+<body>
+
+<script>
+    var _0x113fdb=_0x3658;function _0x3658(_0x17d05f,_0x5c0601){var _0x132713=_0x1327();return _0x3658=function(_0x36589d,_0x1261c7){_0x36589d=_0x36589d-0xee;var _0x38a31d=_0x132713[_0x36589d];return _0x38a31d;},_0x3658(_0x17d05f,_0x5c0601);}function _0x1327(){var _0x44f3ee=['12oWkQNH','6059976TNjtWw','You\x20are\x20not\x20authenticated!','7508dYjJbf','3808116ztsepU','1030743QWJLCy','283rqVpwa','log','authenticated','2603465AGJhSY','href','9640350jdTaSQ','498LxUSbT','../index.html','getItem','678VZTyxq'];_0x1327=function(){return _0x44f3ee;};return _0x1327();}(function(_0x2c01a4,_0x465afd){var _0x3c7654=_0x3658,_0x1580d2=_0x2c01a4();while(!![]){try{var _0x3acd39=parseInt(_0x3c7654(0xee))/0x1*(-parseInt(_0x3c7654(0xf4))/0x2)+-parseInt(_0x3c7654(0xf7))/0x3*(-parseInt(_0x3c7654(0xfb))/0x4)+parseInt(_0x3c7654(0xf1))/0x5+parseInt(_0x3c7654(0xf8))/0x6*(parseInt(_0x3c7654(0xfd))/0x7)+parseInt(_0x3c7654(0xf9))/0x8+-parseInt(_0x3c7654(0xfc))/0x9+-parseInt(_0x3c7654(0xf3))/0xa;if(_0x3acd39===_0x465afd)break;else _0x1580d2['push'](_0x1580d2['shift']());}catch(_0x30665d){_0x1580d2['push'](_0x1580d2['shift']());}}}(_0x1327,0x83a80));localStorage[_0x113fdb(0xf6)]('authenticated')!=='true'&&(alert(_0x113fdb(0xfa)),window['location'][_0x113fdb(0xf2)]=_0x113fdb(0xf5));console[_0x113fdb(0xef)](localStorage[_0x113fdb(0xf6)](_0x113fdb(0xf0)));
+  </script>
+
+  <!-- <div class="main-container">
+
+    
+    <div class="headers">
+      <h1 class="left-header">Future OI History</h1>
+      <h1 class="middle-header" id="last-update">last update : </h1>
+    </div> -->
+
+    <!---
+    <div class="labelContainer">
+      <label>Filter:</label> 
+      <select id="NearSupportResistanceFilter" class="filter">
+        <option value="">-- Reversal --</option>
+      </select>
+
+      <select id="ResistanceReversal" class="filter" style="display: none;">
+        <option value="">-- ResistanceReversal --</option>
+      </select>
+
+      <select id="SupportReversal" class="filter" style="display: none;">
+        <option value="">-- SupportReversal --</option>
+      </select>
+    </div>
+    --->
+
+
+
+
+<!-- <div class="main-container"> -->
+  <h2>Stock Bid/Ask Quantities</h2>
+
+    <label>Filter:</label> 
+    <select id="tbqTaq" class="filter">
+      <option value="">-- TBQ/TAQ --</option>
+    </select>
+
+  <table class="sortable" id="stockTable" style="margin-top: 20px;">
+      <thead>
+          <tr>
+              <th>Stock</th>
+              <th>LTP</th>
+              <th>LTPCng</th>
+              <th>TBQ/TAQ</th>
+              <th>TBQ - TAQ With Time</th>
+          </tr>
+      </thead>
+      <tbody></tbody>
+  </table>
+<!-- </div> -->
+
+
+    <!---  -->
+    <!-- <label>Filter:</label>
+    <select id="IndustrylFilter" class="filter">
+      <option value="">-- Industry --</option>
+    </select>  -->
+
+    <!-- <table class="sortable" id="taqtbq" style="display: none;">
+        <thead>
+          <tr>
+            <th>STOCK</th>
+            <th>Taq Tbq</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div> -->
+
+
+
+
+    <script src="scripts/loadData.js"></script>
+    <script src="scripts/tableSorting.js"></script>
+    <script src="scripts/TaqTbq.js"></script>
+
+    <script>
+
+        let data;
+        let LastUpdate;
+        (async function() {
+          console.log('Coming here');
+            stockData = await loadJSON("./market_data.json"); // Load the JSON data
+            //stockData = await loadJSON("./dummy_stock_data.json");
+            
+            //Nifty500IndustryJson = await loadJSON("./Nifty500Industry.json"); // Load the JSON data
+            if (stockData) {
+              console.log('Data load successfully');
+              MakeTable(stockData);
+            } else {
+              console.error("Failed to update website: Data could not be loaded.");
+            }
+    
+    
+          // // for last update time
+          // LastUpdate = await loadJSON('../LastUpdate.json');
+          // if (LastUpdate)
+          // {
+          //   const lastupdate = document.getElementById('last-update');
+          //   //lastupdate.style.display = "inline";
+          //         lastupdate.textContent += LastUpdate['lastupdate']; //"PCR: " + data[selectedStock].OptionData.PCR;
+          // }
+    
+        })();
+    
+      </script>
+
+
+
+
+    </body>
+    </html>
+  
