@@ -94,7 +94,7 @@ function MakeTable(data, Nifty500IndustryJson)
                             }
                             else if (positionType === "Short Covering")
                             {
-                                colo = "#e6e600"; // yellow
+                                colo = "#ffff66"; // yellow
                             }
 				else if (positionType === "Short Buildup")
 			    {
@@ -104,7 +104,7 @@ function MakeTable(data, Nifty500IndustryJson)
 			    {
 				colo = "#3366ff"; // blue
 			    }
-                            let translateY = colo === "green" || colo === '#e6e600' ? -AbsDivHeight/2 : AbsDivHeight/2;
+                            let translateY = colo === "green" || colo === '#ffff66' ? -AbsDivHeight/2 : AbsDivHeight/2;
 
                             rowContent += `
                                         <div class="TableOiHistoryDiv" 
