@@ -88,15 +88,23 @@ function MakeTable(data, Nifty500IndustryJson)
                             let positionType = data[date][stock].Fut_category;
                             let pricecng = data[date][stock].PriceCng;
 
-                            if (positionType ==="Long Buildup" || positionType === "Short Covering")
+                            if (positionType ==="Long Buildup")
                             {
                                 colo = "green";
                             }
-                            else
+                            else if (positionType === "Short Covering")
                             {
-                                colo = "red";
+                                colo = "yellow";
                             }
-                            let translateY = colo === "green" ? -AbsDivHeight/2 : AbsDivHeight/2;
+				else if (positionType === "Short Buildup")
+			    {
+				colo = "red";
+			    }
+				else 
+			    {
+				colo = "blue";
+			    }
+                            let translateY = colo === "green" || colo === 'yellow' ? -AbsDivHeight/2 : AbsDivHeight/2;
 
                             rowContent += `
                                         <div class="TableOiHistoryDiv" 
