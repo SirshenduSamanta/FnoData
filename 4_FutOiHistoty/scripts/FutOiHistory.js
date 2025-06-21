@@ -81,7 +81,7 @@ function MakeTable(data, Nifty500IndustryJson)
                             //if (DivHeight < 0) { colo = "red";  } else { colo = "green"; }
 
 			    //let AbsDivHeight = (Math.abs(DivHeight)/Math.max(...FutOiCngList))*50; // Maximum width would be 50 px
-                            let AbsDivHeight = ( Math.abs(Math.log10(Math.abs(DivHeight))) / Math.log10(Math.max(...FutOiCngList))) * 50;
+                            let AbsDivHeight = ( Math.abs(Math.log10(Math.abs(DivHeight)*100)) / Math.log10(Math.max(...FutOiCngList)*100)) * 50;
 
 			    //let translateY = DivHeight < 0 ? `0px` : `-${AbsDivHeight}px`; // Move green bars up
                             
