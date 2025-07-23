@@ -123,18 +123,20 @@
 
     <script>
 
-        let data;
-        let LastUpdate;
+        //let data;
+        //let LastUpdate;
+	//let stockData;
+	//let volData;
         (async function() {
           console.log('Coming here');
-            stockData = await loadJSON("./market_data.json"); // Load the JSON data
-            volData = await loadJSON("./VolDetailLast3d.json");
+            window.stockData = await loadJSON("./market_data.json"); // Load the JSON data
+            window.volData = await loadJSON("./VolDetailLast3d.json");
             //stockData = await loadJSON("./dummy_stock_data.json");
             
             //Nifty500IndustryJson = await loadJSON("./Nifty500Industry.json"); // Load the JSON data
             if (stockData && volData) {
               console.log('Data load successfully');
-              MakeTable(stockData, volData);
+             MakeTable();
             } else {
               console.error("Failed to update website: Data could not be loaded.");
             }

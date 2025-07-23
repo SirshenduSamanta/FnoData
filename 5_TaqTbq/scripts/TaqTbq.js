@@ -1,4 +1,20 @@
-function MakeTable(stockData, volData)
+async function loadJSON(url) {
+        try {
+          //console.log("This is properly linked.")
+          const response = await fetch(url); // Fetch the JSON file from the provided URL
+          //if (!response.ok) {
+          //  throw new Error(`Failed to load JSON data from ${url}`);
+          //}
+          const data = await response.json(); // Parse the JSON
+          //console.log(Object.keys(data));
+          return data; // Return the JSON object
+        } catch (error) {
+          console.error('Error loading JSON:', error);
+          return null; // Return null if an error occurs
+        }       
+  }
+
+function MakeTable()
 {
     // Object.keys(data).forEach(stock => {
     //     Object.keys(data[stock]).forEach(time => {
@@ -64,10 +80,6 @@ function MakeTable(stockData, volData)
     // Add Events Lisntener to the filter
     //filterTbqTaq.addEventListener('change', function () {
 
-
-
-        
-
         //tableBody.style.display = 'table';
     //});
 
@@ -80,10 +92,12 @@ function applyFilter()
     const filterVolAvg3dVol = document.getElementById('vol_Avg3dVol');
 
     // load the data
-    (async function() {
-        stockData = await loadJSON("../market_data.json");
-        volData = await loadJSON("../VolDetailLast3d.json");
-    })();
+    //(async function() {
+    //    stockData = await loadJSON("../market_data.json");
+     //   volData = await loadJSON("../VolDetailLast3d.json");
+
+    //console.log("COme to herrrrrrrrrrrr");
+    //console.log(Object.keys(volData));
 
     //const table = document.getElementById('stockTable');
     const tableBody = document.querySelector("#stockTable tbody");
@@ -125,7 +139,7 @@ function applyFilter()
             });
 
             const volRatio = (vol_traded_today[vol_traded_today.length - 1] / volData[symbol].Last3dAvgVol || 0).toFixed(2);
-            console.log(volData[symbol]);
+            //console.log(volData[symbol]);
             //console.log(typeof selectedValue);
             // Filter based on selected TBQ/TAQ ratio
             const lastRatio = ratio[ratio.length - 1];
@@ -276,6 +290,7 @@ function applyFilter()
 
         });
 
+    //});
 }
 
 
