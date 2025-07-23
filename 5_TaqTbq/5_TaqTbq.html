@@ -17,7 +17,7 @@
         }
         th, td {
             vertical-align: top;
-            border: 1px solid #ccc;
+            border: 1px solid #ccc; 
             padding: 10px;
         }
         canvas {
@@ -65,19 +65,31 @@
 <!-- <div class="main-container"> -->
   <h2>Stock Bid/Ask Quantities</h2>
 
-    <label>Filter:</label> 
+
+    <label for="vol_Avg3dVol">Vol / Avg3dVol Filter:</label>
+    <select id="vol_Avg3dVol" class="filter">
+      <option value="">-- Vol / Avg3dVol --</option>
+    </select>
+
+    <label for="tbqTaq">TBQ/TAQ Filter:</label>
     <select id="tbqTaq" class="filter">
       <option value="">-- TBQ/TAQ --</option>
     </select>
+    
+    
 
   <table class="sortable" id="stockTable" style="margin-top: 20px;">
       <thead>
           <tr>
-              <th>Stock</th>
-              <th>LTP</th>
-              <th>LTPCng</th>
-              <th>TBQ/TAQ</th>
-              <th>TBQ - TAQ With Time</th>
+              <th width="60px">Stock</th>
+              <!--<th>LTP</th>-->
+              <th width="60px">Previous Vol</th>
+              <th width="60px">Previous 30m Vol</th>
+              <th width="60px">Today's Vol</th>
+              <th width="60px">Today's Vol / Last3dAvgVol</th>
+              <th width="60px">TBQ/TAQ</th>
+              <th width="60px">LTPCng</th>
+              <th width="1200px">TBQ - TAQ With Time</th>
           </tr>
       </thead>
       <tbody></tbody>
@@ -116,12 +128,13 @@
         (async function() {
           console.log('Coming here');
             stockData = await loadJSON("./market_data.json"); // Load the JSON data
+            volData = await loadJSON("./VolDetailLast3d.json");
             //stockData = await loadJSON("./dummy_stock_data.json");
             
             //Nifty500IndustryJson = await loadJSON("./Nifty500Industry.json"); // Load the JSON data
-            if (stockData) {
+            if (stockData && volData) {
               console.log('Data load successfully');
-              MakeTable(stockData);
+              MakeTable(stockData, volData);
             } else {
               console.error("Failed to update website: Data could not be loaded.");
             }

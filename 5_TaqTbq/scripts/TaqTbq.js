@@ -1,4 +1,4 @@
-function MakeTable(stockData)
+function MakeTable(stockData, volData)
 {
     // Object.keys(data).forEach(stock => {
     //     Object.keys(data[stock]).forEach(time => {
@@ -51,40 +51,56 @@ function MakeTable(stockData)
     // };
 
 
-    const TbqTaqFliter = document.getElementById('tbqTaq');
-    TbqTaqFliter.replaceChildren(); // Removes all exiting options
-    const option1 = document.createElement('option'); option1.value = '';  option1.textContent = '-- TBQ/TAQ --'; TbqTaqFliter.appendChild(option1);
-    let TbqTaqStr = ["> 2", " > 4", "> 6", "< 0.5", "< 0.25", "< 0.16"];
-    let TbqTaqValues = [2, 4, 6, 0.5, 0.25, 0.16];
-    for (let i=0; i < TbqTaqStr.length; i++)
-    {
-            const option1 = document.createElement('option');
-            option1.value = TbqTaqValues[i]; option1.textContent = TbqTaqStr[i]; TbqTaqFliter.appendChild(option1);
-    }
+    PopulateDropDown();
+    applyFilter(); // Initial call to populate the table with all data
+    const filters = document.querySelectorAll('.filter');
+    // Attach event listener to each filter
+    filters.forEach(filter => {
+        filter.addEventListener('change', applyFilter);
+    });
 
 
-    const filterTbqTaq = document.getElementById('tbqTaq');
 
     // Add Events Lisntener to the filter
-    filterTbqTaq.addEventListener('change', function () {
+    //filterTbqTaq.addEventListener('change', function () {
 
 
-        //const table = document.getElementById('stockTable');
-        const tableBody = document.querySelector("#stockTable tbody");
-        //const tbody = table.querySelector('tbody');
-        tableBody.innerHTML = ''; // Clear previous rows
-
-        if (filterTbqTaq.value === '') {
-            // If no filter is selected, return
-            //tableBody.innerHTML = '<tr><td colspan="3">Please select a TBQ/TAQ ratio to filter.</td></tr>';
-            return;
-
-        }
-        const selectedValue = parseFloat(filterTbqTaq.value);
 
         
 
-        Object.entries(stockData).forEach(([symbol, timeData], index) => {
+        //tableBody.style.display = 'table';
+    //});
+
+}
+
+
+function applyFilter()
+{
+    const filterTbqTaq = document.getElementById('tbqTaq');
+    const filterVolAvg3dVol = document.getElementById('vol_Avg3dVol');
+
+    // load the data
+    (async function() {
+        stockData = await loadJSON("../market_data.json");
+        volData = await loadJSON("../VolDetailLast3d.json");
+    })();
+
+    //const table = document.getElementById('stockTable');
+    const tableBody = document.querySelector("#stockTable tbody");
+    //const tbody = table.querySelector('tbody');
+    tableBody.innerHTML = ''; // Clear previous rows
+
+    if (filterTbqTaq.value === '' && filterVolAvg3dVol.value === '') {
+        // If no filter is selected, return
+        //tableBody.innerHTML = '<tr><td colspan="3">Please select a TBQ/TAQ ratio to filter.</td></tr>';
+        return;
+    }
+
+    const TbqTaqValue = parseFloat(filterTbqTaq.value);
+    const volAvg3dVolValue = parseFloat(filterVolAvg3dVol.value);
+
+
+    Object.entries(stockData).forEach(([symbol, timeData], index) => {
 
             // Prepare data for plotting
             const times = Object.keys(timeData);
@@ -104,14 +120,21 @@ function MakeTable(stockData)
                 return (timeData[t].chp).toFixed(2);
             });
 
+            const vol_traded_today = times.map(t => {
+                return (timeData[t].vol_traded_today);
+            });
 
+            const volRatio = (vol_traded_today[vol_traded_today.length - 1] / volData[symbol].Last3dAvgVol || 0).toFixed(2);
+            console.log(volData[symbol]);
             //console.log(typeof selectedValue);
             // Filter based on selected TBQ/TAQ ratio
             const lastRatio = ratio[ratio.length - 1];
             //console.log(`Symbol: ${symbol}, lastRatio: ${lastRatio}`);
-            if (selectedValue > 1 && lastRatio <= selectedValue) {
+            if (TbqTaqValue > 1 && lastRatio <= TbqTaqValue) {
                 return;
-            } else if (selectedValue < 1 && lastRatio >= selectedValue) {
+            } else if (TbqTaqValue < 1 && lastRatio >= Math.abs(TbqTaqValue)) {
+                return;
+            } else if (volAvg3dVolValue > 0 && volRatio <= volAvg3dVolValue) {
                 return;
             }
 
@@ -124,17 +147,37 @@ function MakeTable(stockData)
             symbolCell.textContent = symbol;
             row.appendChild(symbolCell);
 
-            const ltpCell = document.createElement("td");
-            ltpCell.textContent = ltp[ltp.length - 1]; // Last ltp value
-            row.appendChild(ltpCell);
+            const PreDayVolCell = document.createElement("td");
+            PreDayVolCell.textContent = volData[symbol] ? volData[symbol].LastDayVol : 'N/A'; // Pre Day Vol
+            row.appendChild(PreDayVolCell);
+
+            const Pre30mVolCell = document.createElement("td");
+            Pre30mVolCell.textContent = volData[symbol] ? volData[symbol].LastDaylast30minVol : 'N/A'; // Pre 30m Vol
+            row.appendChild(Pre30mVolCell);
+
+            const VolTodayCell = document.createElement("td");
+            VolTodayCell.textContent = vol_traded_today[vol_traded_today.length - 1]; // Last Vol Today value
+            row.appendChild(VolTodayCell);
+
+            const VolTodaypreCell = document.createElement("td");
+            VolTodaypreCell.textContent = volRatio; // Last Vol Today value
+            row.appendChild(VolTodaypreCell);
+
+            //const ltpCell = document.createElement("td");
+            //ltpCell.textContent = ltp[ltp.length - 1]; // Last ltp value
+            //row.appendChild(ltpCell);
+
+            const ratioCell = document.createElement("td");
+            ratioCell.textContent = ratio[ratio.length - 1]; // Last ratio value
+            row.appendChild(ratioCell);
 
             const ltpCngCell = document.createElement("td");
             ltpCngCell.textContent = ltpCng[ltpCng.length - 1]; // Last ltp Cng value
             row.appendChild(ltpCngCell);
 
-            const ratioCell = document.createElement("td");
-            ratioCell.textContent = ratio[ratio.length - 1]; // Last ratio value
-            row.appendChild(ratioCell);
+            
+
+            
 
             const chartCell = document.createElement("td");
             const canvas = document.createElement("canvas");
@@ -144,8 +187,8 @@ function MakeTable(stockData)
 
             tableBody.appendChild(row);
 
-            
-            canvas.width = 1500;   // 100% of td width
+
+            canvas.width = 1070;   // 100% of td width
             canvas.height = 300;
 
             const formattedTimes = times.map(t => t.split(' ')[1].slice(0, 5)); // to show only HH:MM
@@ -233,12 +276,89 @@ function MakeTable(stockData)
 
         });
 
-        //tableBody.style.display = 'table';
-    });
+}
 
 
 
+function PopulateDropDown()
+{
+    // Tbq/TAQ Filter
+    const TbqTaqFliter = document.getElementById('tbqTaq');
+    TbqTaqFliter.replaceChildren(); // Removes all exiting options
+    //const option1 = document.createElement('option'); option1.value = '';  option1.textContent = '-- TBQ/TAQ --'; TbqTaqFliter.appendChild(option1);
+    let TbqTaqStr = ["> 1", " < 1"];
+    let TbqTaqValues = [1, -1];
+    for (let i=0; i < TbqTaqStr.length; i++)
+    {
+            const option1 = document.createElement('option');
+            option1.value = TbqTaqValues[i]; option1.textContent = TbqTaqStr[i]; TbqTaqFliter.appendChild(option1);
+    }
 
+    // Vol / Avg3dVol Filter
+    // const VolAvg3dVolFilter = document.getElementById('vol_Avg3dVol');
+    // VolAvg3dVolFilter.replaceChildren(); // Removes all exiting options
+    // const option2 = document.createElement('option'); option2.value = '';  option2.textContent = '-- Vol / Avg3dVol --'; VolAvg3dVolFilter.appendChild(option2);
+    // let VolAvg3dVolStr = ["> 2", " > 4", "> 6", "< 0.5", "< 0.25", "< 0.16"];
+    // let VolAvg3dVolValues = [2, 4, 6, 0.5, 0.25, 0.16];
+    // for (let i=0; i < VolAvg3dVolStr.length; i++)
+    // {
+    //         const option2 = document.createElement('option');
+    //         option2.value = VolAvg3dVolValues[i]; option2.textContent = VolAvg3dVolStr[i]; VolAvg3dVolFilter.appendChild(option2);
+    // }
+
+    // Vol / Avg3dVol Filter
+    const VolAvg3dVolFilter = document.getElementById('vol_Avg3dVol');
+    VolAvg3dVolFilter.replaceChildren(); // Removes all existing options
+
+    // Add default option
+    // const defaultOption = document.createElement('option');
+    // defaultOption.value = '';
+    // defaultOption.textContent = '-- Vol / Avg3dVol --';
+    // VolAvg3dVolFilter.appendChild(defaultOption);
+
+    // Get current time
+    const now = new Date();
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();  // minutes since midnight
+
+    // Define thresholds
+    const minutes_915  = 9 * 60 + 15;
+    const minutes_1015 = 10 * 60 + 15;
+    const minutes_1100 = 11 * 60;
+    const minutes_1130 = 11 * 60 + 30;
+    const minutes_1230 = 12 * 60 + 30;
+    const minutes_1330 = 13 * 60 + 30;
+    const minutes_1430 = 14 * 60 + 30;
+
+    // Default values
+    let VolAvg3dVolValues = [0.5, 1, 2, 3, 5, 7, 10];
+
+    // Time-based override
+    if (currentMinutes > minutes_1430) {
+        VolAvg3dVolValues = [2.5, 3, 5, 7, 10];
+    } else if (currentMinutes > minutes_1330) {
+        VolAvg3dVolValues = [2, 3, 5, 7, 10];
+    } else if (currentMinutes > minutes_1230) {
+        VolAvg3dVolValues = [1.5, 2, 3, 5, 7, 10];
+    } else if (currentMinutes > minutes_1130) {
+        VolAvg3dVolValues = [1, 2, 3, 5, 7, 10];
+    } else if (currentMinutes > minutes_1100) {
+        VolAvg3dVolValues = [0.7, 1, 2, 3, 5, 7, 10];
+    } else if (currentMinutes > minutes_1015) {
+        VolAvg3dVolValues = [0.5, 0.7, 1, 2, 3, 5, 7, 10];
+    } else if (currentMinutes > minutes_915) {
+        VolAvg3dVolValues = [0.3, 0.5, 1, 2, 3, 5, 7, 10];
+    }
+
+    // Construct corresponding display strings
+    let VolAvg3dVolStr = VolAvg3dVolValues.map(v => `> ${v}`);
+    // Populate select options
+    for (let i = 0; i < VolAvg3dVolStr.length; i++) {
+        const option = document.createElement('option');
+        option.value = VolAvg3dVolValues[i];
+        option.textContent = VolAvg3dVolStr[i];
+        VolAvg3dVolFilter.appendChild(option);
+    }
 
 }
+
 
