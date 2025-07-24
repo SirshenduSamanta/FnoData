@@ -345,7 +345,7 @@ function PopulateDropDown()
     const minutes_1430 = 14 * 60 + 30;
 
     // Default values
-    let VolAvg3dVolValues = [0.5, 1, 2, 3, 5, 7, 10];
+    let VolAvg3dVolValues = [2.5, 3, 5, 7, 10];
 
     // Time-based override
     if (currentMinutes > minutes_1430) {
