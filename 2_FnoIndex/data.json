@@ -698,9 +698,9 @@
             "BearishFactor": 0
         },
         "FutureData": {
-            "FutOi": 12371475,
-            "FutOiCng": 10950,
-            "FutOiPer": 0.09,
+            "FutOi": 12419625,
+            "FutOiCng": 59100,
+            "FutOiPer": 0.48,
             "Fut_category": "Short Buildup"
         },
         "PriceVol": {
@@ -1407,9 +1407,9 @@
             "BearishFactor": 0
         },
         "FutureData": {
-            "FutOi": 1824585,
-            "FutOiCng": 4865,
-            "FutOiPer": 0.27,
+            "FutOi": 1823570,
+            "FutOiCng": 3850,
+            "FutOiPer": 0.21,
             "Fut_category": "Short Buildup"
         },
         "PriceVol": {
@@ -2116,10 +2116,10 @@
             "BearishFactor": 0
         },
         "FutureData": {
-            "FutOi": 18060,
-            "FutOiCng": 0,
-            "FutOiPer": 0.0,
-            "Fut_category": "No Change"
+            "FutOi": 18300,
+            "FutOiCng": 240,
+            "FutOiPer": 1.33,
+            "Fut_category": "Short Buildup"
         },
         "PriceVol": {
             "CurrentPrice": 81886.55,
