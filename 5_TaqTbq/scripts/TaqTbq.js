@@ -148,7 +148,7 @@ function applyFilter()
                 return;
             } else if (TbqTaqValue < 1 && lastRatio >= Math.abs(TbqTaqValue)) {
                 return;
-            } else if (volAvg3dVolValue > 0 && volRatio <= volAvg3dVolValue) {
+            } else if (volAvg3dVolValue >= 0 && volRatio < volAvg3dVolValue) {
                 return;
             }
 
@@ -189,103 +189,111 @@ function applyFilter()
             ltpCngCell.textContent = ltpCng[ltpCng.length - 1]; // Last ltp Cng value
             row.appendChild(ltpCngCell);
 
-            
+            const TBQCell = document.createElement("td");
+            TBQCell.textContent = buyQty[buyQty.length - 1]; // Last buyQty value
+            row.appendChild(TBQCell);
+
+            const TAQCell = document.createElement("td");
+            TAQCell.textContent = sellQty[sellQty.length - 1]; // Last sellQty value
+            row.appendChild(TAQCell);
 
             
 
-            const chartCell = document.createElement("td");
-            const canvas = document.createElement("canvas");
-            canvas.id = `chart-${index}`;
-            chartCell.appendChild(canvas);
-            row.appendChild(chartCell);
+            
 
-            tableBody.appendChild(row);
+            // const chartCell = document.createElement("td");
+            // const canvas = document.createElement("canvas");
+            // canvas.id = `chart-${index}`;
+            // chartCell.appendChild(canvas);
+            // row.appendChild(chartCell);
+
+            // tableBody.appendChild(row);
 
 
-            canvas.width = 1070;   // 100% of td width
-            canvas.height = 300;
+            // canvas.width = 1070;   // 100% of td width
+            // canvas.height = 300;
 
-            const formattedTimes = times.map(t => t.split(' ')[1].slice(0, 5)); // to show only HH:MM
+            // const formattedTimes = times.map(t => t.split(' ')[1].slice(0, 5)); // to show only HH:MM
 
-            // Plot chart using Chart.js
-            new Chart(canvas, {
-                data: {
-                    labels: formattedTimes,
-                    datasets: [
-                        {
-                            type: 'line',
-                            label: 'Buy Qty',
-                            data: buyQty,
-                            borderColor: 'green',
-                            yAxisID: 'y1',
-                            fill: false,
-                            tension: 1,
-                            pointRadius: 2.5,
-                            borderWidth: 1.8,
-                            // spanGaps: false
-                        },
-                        {
-                            type: 'line',
-                            label: 'Sell Qty',
-                            data: sellQty,
-                            borderColor: 'red',
-                            yAxisID: 'y1',
-                            fill: false,
-                            tension: 1,
-                            pointRadius: 2.5,
-                            borderWidth: 1.8,
-                            // spanGaps: false
-                        },
-                        {
-                            type: 'bar',
-                            label: 'TBQ/TAQ Ratio',
-                            data: ratio,
-                            backgroundColor: '#b3b3ff',
-                            yAxisID: 'y2'
-                            // barPercentage: 0.6,
-                            // categoryPercentage: 0.6
-                        }
-                    ]
-                },
-                options: {
-                    responsive: false,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        },
-                        tooltip: {
-                            mode: 'index',
-                            intersect: false
-                        }
-                    },
-                    scales: {
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Time'
-                            }
-                        },
-                        y1: {
-                            position: 'left',
-                            title: {
-                                display: true,
-                                text: 'Buy/Sell Quantity'
-                            }
-                        },
-                        y2: {
-                            position: 'right',
-                            grid: { drawOnChartArea: false },
-                            title: {
-                                display: true,
-                                text: 'TBQ/TAQ Ratio'
-                            },
-                            suggestedMin: 0,
-                            suggestedMax: 2
-                        }
-                    }
-                }
-            });
+            // // Plot chart using Chart.js
+            // new Chart(canvas, {
+            //     data: {
+            //         labels: formattedTimes,
+            //         datasets: [
+            //             {
+            //                 type: 'line',
+            //                 label: 'Buy Qty',
+            //                 data: buyQty,
+            //                 borderColor: 'green',
+            //                 yAxisID: 'y1',
+            //                 fill: false,
+            //                 tension: 1,
+            //                 pointRadius: 2.5,
+            //                 borderWidth: 1.8,
+            //                 // spanGaps: false
+            //             },
+            //             {
+            //                 type: 'line',
+            //                 label: 'Sell Qty',
+            //                 data: sellQty,
+            //                 borderColor: 'red',
+            //                 yAxisID: 'y1',
+            //                 fill: false,
+            //                 tension: 1,
+            //                 pointRadius: 2.5,
+            //                 borderWidth: 1.8,
+            //                 // spanGaps: false
+            //             },
+            //             {
+            //                 type: 'bar',
+            //                 label: 'TBQ/TAQ Ratio',
+            //                 data: ratio,
+            //                 backgroundColor: '#b3b3ff',
+            //                 yAxisID: 'y2'
+            //                 // barPercentage: 0.6,
+            //                 // categoryPercentage: 0.6
+            //             }
+            //         ]
+            //     },
+            //     options: {
+            //         responsive: false,
+            //         maintainAspectRatio: false,
+            //         plugins: {
+            //             legend: {
+            //                 position: 'top'
+            //             },
+            //             tooltip: {
+            //                 mode: 'index',
+            //                 intersect: false
+            //             }
+            //         },
+            //         scales: {
+            //             x: {
+            //                 title: {
+            //                     display: true,
+            //                     text: 'Time'
+            //                 }
+            //             },
+            //             y1: {
+            //                 position: 'left',
+            //                 title: {
+            //                     display: true,
+            //                     text: 'Buy/Sell Quantity'
+            //                 }
+            //             },
+            //             y2: {
+            //                 position: 'right',
+            //                 grid: { drawOnChartArea: false },
+            //                 title: {
+            //                     display: true,
+            //                     text: 'TBQ/TAQ Ratio'
+            //                 },
+            //                 suggestedMin: 0,
+            //                 suggestedMax: 2
+            //             }
+            //         }
+            //     }
+            // });
 
 
         });
@@ -345,27 +353,27 @@ function PopulateDropDown()
     const minutes_1430 = 14 * 60 + 30;
 
     // Default values
-    let VolAvg3dVolValues = [2.5, 3, 5, 7, 10];
+    let VolAvg3dVolValues = [0] //[2.5, 3, 5, 7, 10];
 
     // Time-based override
-    if (currentMinutes > minutes_1430) {
-        VolAvg3dVolValues = [2.5, 3, 5, 7, 10];
-    } else if (currentMinutes > minutes_1330) {
-        VolAvg3dVolValues = [2, 3, 5, 7, 10];
-    } else if (currentMinutes > minutes_1230) {
-        VolAvg3dVolValues = [1.5, 2, 3, 5, 7, 10];
-    } else if (currentMinutes > minutes_1130) {
-        VolAvg3dVolValues = [1, 2, 3, 5, 7, 10];
-    } else if (currentMinutes > minutes_1100) {
-        VolAvg3dVolValues = [0.7, 1, 2, 3, 5, 7, 10];
-    } else if (currentMinutes > minutes_1015) {
-        VolAvg3dVolValues = [0.5, 0.7, 1, 2, 3, 5, 7, 10];
-    } else if (currentMinutes > minutes_915) {
-        VolAvg3dVolValues = [0.3, 0.5, 1, 2, 3, 5, 7, 10];
-    }
+    // if (currentMinutes > minutes_1430) {
+    //     VolAvg3dVolValues = [2.5, 3, 5, 7, 10];
+    // } else if (currentMinutes > minutes_1330) {
+    //     VolAvg3dVolValues = [2, 3, 5, 7, 10];
+    // } else if (currentMinutes > minutes_1230) {
+    //     VolAvg3dVolValues = [1.5, 2, 3, 5, 7, 10];
+    // } else if (currentMinutes > minutes_1130) {
+    //     VolAvg3dVolValues = [1, 2, 3, 5, 7, 10];
+    // } else if (currentMinutes > minutes_1100) {
+    //     VolAvg3dVolValues = [0.7, 1, 2, 3, 5, 7, 10];
+    // } else if (currentMinutes > minutes_1015) {
+    //     VolAvg3dVolValues = [0.5, 0.7, 1, 2, 3, 5, 7, 10];
+    // } else if (currentMinutes > minutes_915) {
+    //     VolAvg3dVolValues = [0.3, 0.5, 1, 2, 3, 5, 7, 10];
+    // }
 
     // Construct corresponding display strings
-    let VolAvg3dVolStr = VolAvg3dVolValues.map(v => `> ${v}`);
+    let VolAvg3dVolStr = [">= 0"] //VolAvg3dVolValues.map(v => `> ${v}`);
     // Populate select options
     for (let i = 0; i < VolAvg3dVolStr.length; i++) {
         const option = document.createElement('option');
