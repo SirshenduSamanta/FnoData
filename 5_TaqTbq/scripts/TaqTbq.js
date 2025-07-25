@@ -113,6 +113,7 @@ function applyFilter()
     const TbqTaqValue = parseFloat(filterTbqTaq.value);
     const volAvg3dVolValue = parseFloat(filterVolAvg3dVol.value);
 
+    //console.log(TbqTaqValue, volAvg3dVolValue);
 
     Object.entries(stockData).forEach(([symbol, timeData], index) => {
 
@@ -144,14 +145,15 @@ function applyFilter()
             // Filter based on selected TBQ/TAQ ratio
             const lastRatio = ratio[ratio.length - 1];
             //console.log(`Symbol: ${symbol}, lastRatio: ${lastRatio}`);
-            if (TbqTaqValue > 1 && lastRatio <= TbqTaqValue) {
+            if (TbqTaqValue === 1 && lastRatio <= TbqTaqValue) {
+                //console.log('>1');
                 return;
-            } else if (TbqTaqValue < 1 && lastRatio >= Math.abs(TbqTaqValue)) {
+            } else if (TbqTaqValue === -1 && lastRatio >= Math.abs(TbqTaqValue)) {
+                //console.log('<1');
                 return;
-            } else if (volAvg3dVolValue >= 0 && volRatio < volAvg3dVolValue) {
-                return;
-            }
-
+            } //else if (volAvg3dVolValue < 0 ) //&& volRatio <= volAvg3dVolValue) {
+            //     return;
+            // }
 
 
             // Create row and cells
@@ -199,6 +201,7 @@ function applyFilter()
 
             
 
+            tableBody.appendChild(row);
             
 
             // const chartCell = document.createElement("td");
