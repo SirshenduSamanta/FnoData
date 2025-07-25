@@ -117,6 +117,7 @@ function applyFilter()
 
     Object.entries(stockData).forEach(([symbol, timeData], index) => {
 
+	    try{
             // Prepare data for plotting
             const times = Object.keys(timeData);
             const buyQty = times.map(t => timeData[t].tot_buy_qty);
@@ -140,7 +141,7 @@ function applyFilter()
             });
 
             const volRatio = (vol_traded_today[vol_traded_today.length - 1] / volData[symbol].Last3dAvgVol || 0).toFixed(2);
-            //console.log(volData[symbol]);
+            //console.log(symbol," : ", volData[symbol].Last3dAvgVol);
             //console.log(typeof selectedValue);
             // Filter based on selected TBQ/TAQ ratio
             const lastRatio = ratio[ratio.length - 1];
@@ -202,6 +203,10 @@ function applyFilter()
             
 
             tableBody.appendChild(row);
+
+	   } catch (e) {
+		   console.log(symbol, e);
+	   }
             
 
             // const chartCell = document.createElement("td");
