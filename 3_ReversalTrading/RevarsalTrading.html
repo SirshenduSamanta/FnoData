@@ -10,7 +10,7 @@
   <title>Reversal Trading</title> 
 
   <link rel="stylesheet" href="style.css">
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -19,7 +19,7 @@
   </script>
 
 
-  <div class="main-container">
+<div class="main-container">
 
     <div class="headers">
       <h1 class="left-header">Reversal Trading</h1>
@@ -47,24 +47,58 @@
 
 
 
-    <table class="sortable" id="ReversalTradingTable" style="display: none;">
-      <thead>
-        <tr>
-          <th>STOCK</th>
-          <th style="width: 85px;">Possible Support</th>
-          <th style="width: 85px;">Possible Resistance</th>
-          <th>Position Shifting Support</th>
-          <th>Position Shifting Resistance</th>
-          <th>LTP</th> 
-          <th>Resistance From Ltp%</th>
-          <th>Support From Ltp%</th>
-          <th>FUT OI Cng%</th>
-          <th>BullBearFac</th>
-          <th>Sentiment</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-      </table>
+    <div class="SideBySideDiv">
+
+      <table class="sortable" id="ReversalTradingTable" style="display: none;">
+        <thead>
+          <tr>
+            <th>STOCK</th>
+            <th style="width: 85px;">Possible Support</th>
+            <th style="width: 85px;">Possible Resistance</th>
+            <th>Position Shifting Support</th>
+            <th>Position Shifting Resistance</th>
+            <th>LTP</th> 
+            <th>Resistance From Ltp%</th>
+            <th>Support From Ltp%</th>
+            <th>FUT OI Cng%</th>
+            <th>BullBearFac</th>
+            <th>Sentiment</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+
+
+        <div class="SelectedStockHistory" style="display: none;">
+
+          <div class="IvIvp plots">
+            <canvas id="ivChart" width="1100" height="300"></canvas>
+          </div>
+
+          <div class="Basis plots">
+            <canvas id="basisChart"  width="1000" height="300"></canvas>
+          </div>
+
+          <div class="FutOI plots">
+            <canvas id="futOiChart" width="800" height="250"></canvas>
+          </div>
+
+          <div class="plots">
+            <canvas id="oiHistoryChart" width="800" height="250"></canvas>
+            <h4 style="text-align: center; margin-bottom: 0; background-color: rgb(186, 230, 230); padding: 10px;">
+              <a id="industryLink" href="#" target="_blank">Click Here to See Industry OI Position Shift</a>
+            </h4>
+          </div>
+
+
+          
+
+          
+
+        </div>
+
+      </div>
+
   </div>
 
 
@@ -75,13 +109,21 @@
   <script>
 
     let data;
+    let IvFutData;
+    let FutOiAbs;
+    let FutOiData;
     let LastUpdate;
+    let Nifty500IndustryJson;
     (async function() {
       console.log('Coming here');
         data = await loadJSON("../1_FnoStock/data.json"); // Load the JSON data
-        if (data) {
+        IvFutData = await loadJSON("PythonCode/IvSpotFut.json");
+        FutOiAbs = await loadJSON("PythonCode/FutOI.json");
+        FutOiData = await loadJSON("../4_FutOiHistoty/FutOiHistory.json");
+        Nifty500IndustryJson = await loadJSON("../4_FutOiHistoty/Nifty500Industry.json");
+        if (data && IvFutData && FutOiData && Nifty500IndustryJson && FutOiAbs) {
           console.log('Data load successfully');
-          Reversaltrading(data);
+          Reversaltrading(data, IvFutData, FutOiData, Nifty500IndustryJson, FutOiAbs);
           
         } else {
           console.error("Failed to update website: Data could not be loaded.");

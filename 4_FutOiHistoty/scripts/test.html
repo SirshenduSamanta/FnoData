@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clickable Text in Chart.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="myChart"></canvas>
+
+  <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    let linkBounds = null; // store clickable area
+
+    const clickableTextPlugin = {
+      id: 'clickableText',
+      afterDraw(chart) {
+        const {ctx, chartArea} = chart;
+        ctx.save();
+        ctx.fillStyle = 'blue';
+        ctx.font = '16px Arial';
+        ctx.textBaseline = 'top';
+
+        const text = "Go to Google";
+        const x = chartArea.right - 120;
+        const y = chartArea.top + 10;
+        ctx.fillText(text, x, y);
+
+        // measure text width & height to detect clicks
+        const textWidth = ctx.measureText(text).width;
+        const textHeight = 16;
+        linkBounds = {x, y, width: textWidth, height: textHeight};
+
+        ctx.restore();
+      }
+    };
+
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [1, 2, 3, 4, 5],
+        datasets: [{
+          label: 'Demo',
+          data: [1, 2, 3, 4, 5],
+          borderColor: 'red',
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {display: false}
+        }
+      },
+      plugins: [clickableTextPlugin]
+    });
+
+    // Handle clicks on canvas
+    ctx.canvas.addEventListener('click', (event) => {
+      if (!linkBounds) return;
+      const rect = ctx.canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      if (
+        x >= linkBounds.x &&
+        x <= linkBounds.x + linkBounds.width &&
+        y >= linkBounds.y &&
+        y <= linkBounds.y + linkBounds.height
+      ) {
+        window.open("https://www.google.com", "_blank");
+      }
+    });
+  </script>
+</body>
+</html>
+
