@@ -260,11 +260,17 @@ function FindStockName(IvFutData)
                                 selectedStock = evt.target.innerText;
                                 //console.log(selectedStock);
 
+				// Go to the new page
+				let encodedselectedStock = encodeURIComponent(selectedStock);
+				let targetUrl = `../6_DataHistory/DataHistory.html?STOCK=${encodedselectedStock}`;
+					// Open in a new tab
+        			window.open(targetUrl, "_blank");
+
 
 
                                 document.querySelector(".SelectedStockHistory").style.display = "inline-block";
-                                                                // OptionChain(data, selectedStock);
-                                                                makeSelectedStockHistoryDivPlots(selectedStock, IvFutData, FutOiData, Nifty500IndustryJson, FutOiAbs);
+                                // OptionChain(data, selectedStock);
+                                makeSelectedStockHistoryDivPlots(selectedStock, IvFutData, FutOiData, Nifty500IndustryJson, FutOiAbs);
                         });
                 });
                 
@@ -339,7 +345,7 @@ function makeSelectedStockHistoryDivPlots(selectedStock, IvFutData, FutOiData, N
         //uniqueIndustryList = [...new Set([...uniqueIndustryList, Nifty500IndustryJson[stock]])];
         if (stock === selectedStock)
         {
-            console.log('The industry : ', Nifty500IndustryJson[selectedStock]);
+            //console.log('The industry : ', Nifty500IndustryJson[selectedStock]);
             let industry = Nifty500IndustryJson[selectedStock];  // <-- you can change/set this value dynamically
 
             // Encode industry safely for URL
